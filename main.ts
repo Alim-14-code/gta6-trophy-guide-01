@@ -1,32 +1,37 @@
-// Leonida Trophy Atlas — entry program (Node 22, standard library only).
-// Copies app/ and screenshots/ from this repository to the output directory
-// and writes output/dossier.json with buildDossier from the kit's library.
-// Run it as: MAKEFUN_OUTPUT_DIR=out node main.ts
-// (In the grader, /output is the writable directory and MAKEFUN_OUTPUT_DIR
-// is unset, so /output is used.) Paths resolve from this file, never from
-// the working directory, so two runs from different directories agree.
-import { cpSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
+// Leonida Trophy Atlas — entrypoint (Node 22, standard library only).
+// Copies app/ and screenshots/ from this repository to the output directory and
+// writes /output/dossier.json with buildDossier from vendor/makefun-frontend.ts.
+// Run: mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts  (or it writes to /output).
+// Paths resolve from this file itself, so it runs the same from any working directory.
+import { cpSync, existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildDossier } from './vendor/makefun-frontend.ts';
 
-const repoDir = dirname(fileURLToPath(import.meta.url));
+const repoRoot = dirname(fileURLToPath(import.meta.url));
 const outDir = process.env.MAKEFUN_OUTPUT_DIR || '/output';
 
-rmSync(outDir, { recursive: true, force: true });
+const caps = {
+  text_max_bytes: 163840,
+  screenshots: { max: 4, max_bytes: 262144 },
+  app_max_files: 993,
+  app_max_bytes: 50331648,
+  app_path_max_bytes: 1000,
+};
+
+function copyTree(src, dest) {
+  if (!existsSync(src)) throw new Error('missing input directory: ' + src);
+  mkdirSync(dest, { recursive: true });
+  cpSync(src, dest, { recursive: true });
+}
+
 mkdirSync(outDir, { recursive: true });
-cpSync(join(repoDir, 'app'), join(outDir, 'app'), { recursive: true });
-cpSync(join(repoDir, 'screenshots'), join(outDir, 'screenshots'), { recursive: true });
+for (const name of ['app', 'screenshots']) {
+  const dest = join(outDir, name);
+  rmSync(dest, { recursive: true, force: true });
+  copyTree(join(repoRoot, name), dest);
+}
 
-writeFileSync(
-  join(outDir, 'dossier.json'),
-  buildDossier(outDir, {
-    text_max_bytes: 163840,
-    screenshots: { max: 4, max_bytes: 262144 },
-    app_max_files: 993,
-    app_max_bytes: 16777216,
-    app_path_max_bytes: 1000,
-  }),
-);
-
-console.log('wrote ' + join(outDir, 'dossier.json'));
+const dossier = buildDossier(outDir, caps);
+writeFileSync(join(outDir, 'dossier.json'), dossier);
+console.log('wrote ' + join(outDir, 'dossier.json') + ' (' + dossier.length + ' bytes)');
