@@ -1,76 +1,127 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leonida Trophy Atlas — Panduan Trofi GTA 6</title>
-<meta name="description" content="Panduan trofi GTA 6: 55 trofi resmi, checklist tersimpan, roadmap platinum, missable, dan panduan bersitasi.">
+<title>Leonida Trophy Atlas — GTA 6 Trophy Guide &amp; Tracker</title>
+<meta name="description" content="Offline guide and tracker for all 55 GTA 6 PlayStation 5 trophies: cited guides, roadmap to the platinum, missable flags, and PSN count trackers.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="top">
   <div class="brand">
     <h1>Leonida Trophy Atlas</h1>
-    <p class="sub">Panduan trofi Grand Theft Auto VI &middot; 55 trofi &middot; 1 Platinum &middot; 2 Gold &middot; 6 Silver &middot; 46 Bronze</p>
+    <p class="sub">GTA 6 &middot; PlayStation 5 &middot; 55 trophies &middot; 1 platinum &middot; 2 gold &middot; 6 silver &middot; 46 bronze</p>
   </div>
-  <div class="progress" id="progress">
-    <div class="big"><span id="earnedCount">0</span><span class="of">/ 55</span></div>
-    <div class="bar"><div class="fill" id="progressFill" style="width:0%"></div></div>
-    <div class="pct" id="progressPct">0% menuju Platinum</div>
-    <div class="grades" id="gradeCounts"></div>
+  <div class="progress" id="progressBox">
+    <div class="progress-num"><span id="earnedCount">0</span> / 55 earned</div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <div class="progress-note" id="progressNote">Platinum: locked — earn the other 54 first.</div>
   </div>
 </header>
 
-<nav class="tabs" id="tabs" aria-label="Panduan">
-  <button data-view="checklist" class="active">Checklist</button>
-  <button data-view="roadmap">Roadmap</button>
-  <button data-view="missables">Missable</button>
-  <button data-view="counters">Counter PSN</button>
-  <button data-view="sources">Sumber</button>
-  <button data-view="disputes">Sengketa</button>
+<nav class="tabs" id="tabs" aria-label="Guide sections">
+  <button data-tab="checklist" class="active">Checklist</button>
+  <button data-tab="roadmap">Roadmap</button>
+  <button data-tab="missables">Missables</button>
+  <button data-tab="chapters">Chapters</button>
+  <button data-tab="counters">Counters</button>
+  <button data-tab="sources">Sources</button>
+  <button data-tab="disputes">Disputes</button>
 </nav>
 
-<section class="toolbar">
-  <input id="search" type="search" placeholder="Cari trofi…" aria-label="Cari trofi">
-  <select id="gradeFilter" aria-label="Filter grade">
-    <option value="">Semua grade</option>
-    <option value="platinum">Platinum</option>
-    <option value="gold">Gold</option>
-    <option value="silver">Silver</option>
-    <option value="bronze">Bronze</option>
-  </select>
-  <select id="kindFilter" aria-label="Filter jenis">
-    <option value="">Semua jenis</option>
-    <option value="story">Cerita</option>
-    <option value="character">Karakter</option>
-    <option value="activity">Aktivitas</option>
-    <option value="combat">Combat</option>
-    <option value="robbery">Perampokan</option>
-    <option value="collection">Koleksi</option>
-    <option value="misc">Lainnya</option>
-    <option value="unconfirmed">Belum terkonfirmasi</option>
-  </select>
-  <select id="statusFilter" aria-label="Filter status">
-    <option value="">Semua status</option>
-    <option value="earned">Sudah didapat</option>
-    <option value="unearned">Belum didapat</option>
-  </select>
-  <label class="spoiler"><input type="checkbox" id="spoilerToggle"> Sembunyikan spoiler</label>
-  <button id="exportBtn" type="button">Export</button>
-  <button id="importBtn" type="button">Import</button>
-  <input id="importFile" type="file" accept="application/json" hidden>
+<section class="controls" id="controls">
+  <label class="ctl">Search <input id="q" type="search" placeholder="trophy name or mission…" autocomplete="off"></label>
+  <label class="ctl">Kind
+    <select id="fKind">
+      <option value="">All kinds</option>
+      <option value="story">Story</option>
+      <option value="collectible">Collectibles</option>
+      <option value="activity">Activities</option>
+      <option value="missable">Missable</option>
+    </select>
+  </label>
+  <label class="ctl">Chapter
+    <select id="fChapter">
+      <option value="">All chapters</option>
+      <option value="Chapter 1">Chapter 1</option>
+      <option value="Chapter 2">Chapter 2</option>
+      <option value="Chapter 3">Chapter 3</option>
+      <option value="Chapter 4">Chapter 4</option>
+      <option value="Finale">Finale</option>
+      <option value="Strangers">Strangers</option>
+      <option value="Free Roam">Free Roam</option>
+    </select>
+  </label>
+  <label class="ctl">Grade
+    <select id="fGrade">
+      <option value="">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label class="ctl check"><input id="fUnconfirmed" type="checkbox"> Unconfirmed only</label>
+  <label class="ctl check"><input id="spoiler" type="checkbox"> Spoiler-safe mode</label>
+  <span class="spacer"></span>
+  <button id="exportBtn" type="button">Export checklist</button>
+  <label class="import-btn">Import checklist <input id="importFile" type="file" accept=".json,application/json" hidden></label>
+  <button id="resetBtn" type="button">Reset</button>
 </section>
 
 <main class="layout">
-  <section class="main" id="view"></section>
-  <aside class="detail" id="detail" aria-label="Panduan trofi">
-    <p class="hint">Pilih satu trofi untuk melihat panduannya, langkah demi langkah, beserta sumbernya.</p>
+  <div class="main-col">
+    <section id="tab-checklist" class="tabpage active" aria-label="Trophy checklist">
+      <p class="hint">Tick a trophy when you earn it. Click any row to open its cited guide in the detail pane. Spoiler-safe mode hides story trophy names and descriptions until they are earned.</p>
+      <ul class="trophy-list" id="trophyList"></ul>
+    </section>
+
+    <section id="tab-roadmap" class="tabpage" aria-label="Roadmap to the platinum">
+      <p class="hint">Six stages, in order. Work them top to bottom: story first, then strangers, collectibles, combat, money, and finally cleanup and the platinum.</p>
+      <div id="roadmapBox"></div>
+    </section>
+
+    <section id="tab-missables" class="tabpage" aria-label="Missable trophies">
+      <p class="hint">28 trophies are tied to a story beat or a one-time moment. Clear them during the stage they belong to; the chapter grid below shows where each story trophy falls.</p>
+      <h2>Missable trophies <span class="count-pill" id="missableCount"></span></h2>
+      <ul class="trophy-list compact" id="missableList"></ul>
+      <h2>Chapter grid</h2>
+      <div id="chapterGrid"></div>
+    </section>
+
+    <section id="tab-chapters" class="tabpage" aria-label="Trophies by chapter">
+      <p class="hint">Every story trophy, grouped by the chapter it belongs to. Free-roam trophies can be earned at any time.</p>
+      <div id="chapterList"></div>
+    </section>
+
+    <section id="tab-counters" class="tabpage" aria-label="PSN count trackers">
+      <p class="hint">20 trophies PlayStation tracks with a count. Tap + / − to keep your own running total here; the numbers are saved in this browser.</p>
+      <div id="counterBox"></div>
+    </section>
+
+    <section id="tab-sources" class="tabpage" aria-label="Source matrix">
+      <p class="hint">Every guide in this atlas cites its sources by name. 154 of 160 steps are backed by two or more sources; the six unconfirmed trophies have one source each and are flagged as unconfirmed.</p>
+      <div id="sourceMatrix"></div>
+    </section>
+
+    <section id="tab-disputes" class="tabpage" aria-label="Disputes">
+      <p class="hint">Six places where the sources disagree, covering twelve trophies. Each panel shows both sides and what this guide does about it.</p>
+      <div id="disputeBox"></div>
+    </section>
+  </div>
+
+  <aside class="detail" id="detailPane" aria-label="Trophy detail">
+    <div class="detail-empty" id="detailEmpty">
+      <h2>Detail pane</h2>
+      <p>Click any trophy to see its guide, its steps and its sources here. The pane stays open while you browse.</p>
+    </div>
+    <div class="detail-body" id="detailBody" hidden></div>
   </aside>
 </main>
 
 <footer class="foot">
-  <p>Data trofi: daftar resmi PS5 (Exophase &amp; PSNProfiles). Panduan ditulis sendiri dari deskripsi resmi dan panduan publik yang dikutip; yang belum terkonfirmasi ditandai, bukan ditebak. Tanpa logo atau artwork Rockstar. Berjalan offline dari file-nya sendiri.</p>
-  <p id="statLine"></p>
+  <p>Leonida Trophy Atlas — an unofficial fan guide. Grand Theft Auto and GTA are trademarks of Take-Two Interactive; this guide uses no Rockstar logo, artwork or game screenshots. Trophy names and descriptions are shown as PlayStation publishes them; every guide is written in our own words and cites its sources. Works fully offline; progress is saved only in this browser.</p>
 </footer>
 
 <script src="app.js"></script>
