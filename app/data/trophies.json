@@ -1,578 +1,352 @@
 {
  "game": "Grand Theft Auto VI",
  "platform": "PlayStation 5",
- "guide": "Leonida Trophy Atlas",
- "list": "the official 55 trophies",
+ "list": "the official 55 trophies, 2026-11-18",
  "sources": [
-  {
-   "name": "PowerPyx",
-   "url": "https://www.powerpyx.com",
-   "note": "Full trophy roadmap and per-trophy guides."
-  },
-  {
-   "name": "Push Square",
-   "url": "https://www.pushsquare.com",
-   "note": "GTA 6 trophy guide and missable warnings."
-  },
-  {
-   "name": "KeenGamer",
-   "url": "https://www.keengamer.com",
-   "note": "Stranger missions and activity coverage."
-  },
-  {
-   "name": "EGamers",
-   "note": "Combat and challenge breakdowns."
-  },
-  {
-   "name": "GamesFuze",
-   "url": "https://gamesfuze.com",
-   "note": "Money, races and activity guides."
-  },
-  {
-   "name": "Insider Gaming",
-   "url": "https://insider-gaming.com",
-   "note": "GTA 6 systems and economy coverage."
-  },
-  {
-   "name": "Vice City Hustle",
-   "note": "Unconfirmed and rumoured trophy reports."
-  },
-  {
-   "name": "GTABase",
-   "url": "https://www.gtabase.com",
-   "note": "Collectible maps and Leonida database."
-  },
-  {
-   "name": "Exophase",
-   "url": "https://www.exophase.com",
-   "note": "Trophy list, counts and rarity tracking."
-  },
-  {
-   "name": "PSNProfiles",
-   "url": "https://psnprofiles.com",
-   "note": "Trophy list, counts and community guides."
-  },
-  {
-   "name": "Rockstar",
-   "url": "https://www.rockstargames.com",
-   "note": "Official GTA 6 site and newswire."
-  }
+  "PowerPyx",
+  "Push Square",
+  "KeenGamer",
+  "EGamers",
+  "GamesFuze",
+  "Insider Gaming",
+  "Vice City Hustle",
+  "GTABase",
+  "Exophase",
+  "PSNProfiles",
+  "Rockstar"
  ],
- "disputes": [
-  {
-   "id": "D1",
-   "title": "Is the finale — and the VCIA exit — missable?",
-   "trophies": [
-    7,
-    37
-   ],
-   "sides": [
-    {
-     "claim": "One-time only: the finale and the unscheduled VCIA departure cannot be repeated, so both trophies are missable.",
-     "sources": [
-      "Push Square"
-     ]
-    },
-    {
-     "claim": "Mission replay covers both: replay the finale and the VCIA mission and the trophies still pop.",
-     "sources": [
-      "PowerPyx"
-     ]
-    }
-   ],
-   "verdict": "Unresolved. Play the finale and the VCIA departure carefully the first time; if replay works, it is a safety net, not a plan."
-  },
-  {
-   "id": "D2",
-   "title": "How many stunts — and how many range challenges?",
-   "trophies": [
-    15,
-    17
-   ],
-   "sides": [
-    {
-     "claim": "250 stunts for Cunning Stunts and 42 Shooting Range challenges for The Shootist.",
-     "sources": [
-      "PowerPyx",
-      "Exophase"
-     ]
-    },
-    {
-     "claim": "A lower stunt total (200) and a narrower range set; the 42 counts practice rounds too.",
-     "sources": [
-      "PSNProfiles"
-     ]
-    }
-   ],
-   "verdict": "Unresolved. This guide uses 250 and 42, the higher totals, so you cannot fall short."
-  },
-  {
-   "id": "D3",
-   "title": "Which nine activities count for Master of None?",
-   "trophies": [
-    16,
-    21
-   ],
-   "sides": [
-    {
-     "claim": "Nine types: fishing, racing, drone racing, arcade, bowling, shooting range, meditation, hunting, stranger activity.",
-     "sources": [
-      "KeenGamer"
-     ]
-    },
-    {
-     "claim": "Arcade does not count as its own type; a different activity (golf or darts) is the ninth.",
-     "sources": [
-      "EGamers"
-     ]
-    }
-   ],
-   "verdict": "Unresolved. Try all ten candidates: the extra one costs minutes and covers both lists."
-  },
-  {
-   "id": "D4",
-   "title": "Card sets and WAiNK: how many, and where?",
-   "trophies": [
-    30,
-    31
-   ],
-   "sides": [
-    {
-     "claim": "Three card sets with a fixed per-set count, and 100 WAiNK spots spread across Leonida.",
-     "sources": [
-      "GTABase",
-      "Exophase"
-     ]
-    },
-    {
-     "claim": "Sets vary in size, and most WAiNK spots sit inside Vice City, not across the state.",
-     "sources": [
-      "GamesFuze",
-      "Insider Gaming"
-     ]
-    }
-   ],
-   "verdict": "Unresolved. This guide maps both: sweep Vice City first, then the wider state."
-  },
-  {
-   "id": "D5",
-   "title": "What counts as a choice — and as a challenge?",
-   "trophies": [
-    48,
-    32
-   ],
-   "sides": [
-    {
-     "claim": "Any decision point counts toward the 500 choices, and daily/weekly challenges count toward the 50.",
-     "sources": [
-      "PSNProfiles"
-     ]
-    },
-    {
-     "claim": "Only dialogue picks count as choices, and only open-world challenges count toward the 50.",
-     "sources": [
-      "Exophase"
-     ]
-    }
-   ],
-   "verdict": "Unresolved. Make every choice and clear every challenge type, so both readings fill."
-  },
-  {
-   "id": "D6",
-   "title": "Personal Best and The Truth Is Out There: what triggers them?",
-   "trophies": [
-    47,
-    50
-   ],
-   "sides": [
-    {
-     "claim": "Personal Best is a partnership moment; The Truth Is Out There is a strange-event sighting.",
-     "sources": [
-      "Vice City Hustle"
-     ]
-    },
-    {
-     "claim": "Both triggers are different: a follower milestone and a specific location event.",
-     "sources": [
-      "GTABase"
-     ]
-    }
-   ],
-   "verdict": "Unresolved and both unconfirmed. Do not chase either until a second source verifies the trigger."
-  }
- ],
- "roadmap": [
-  {
-   "stage": 1,
-   "title": "First Playthrough — Story",
-   "trophies": [
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13
-   ],
-   "note": "Play Chapters 1–4 and the finale in order. All twelve trophies here are story-locked; clear them as you go and mind the missable flags."
-  },
-  {
-   "stage": 2,
-   "title": "Strangers & Freaks",
-   "trophies": [
-    22,
-    23,
-    24,
-    25,
-    26,
-    27
-   ],
-   "note": "Six stranger strands: Andy, Kenton, Billy, Randy and Tyrone, plus three more for the silver. Start strands early so their finals land before the story ends."
-  },
-  {
-   "stage": 3,
-   "title": "Leonida Collectibles",
-   "trophies": [
-    28,
-    30,
-    31,
-    35,
-    42,
-    54,
-    55
-   ],
-   "note": "Meditation spots, card sets, WAiNK tags, vehicles, areas, garages and Scooter Bros. Use the GTABase maps and the counters tab."
-  },
-  {
-   "stage": 4,
-   "title": "Combat & Challenges",
-   "trophies": [
-    15,
-    17,
-    32,
-    36,
-    38,
-    40,
-    41,
-    43,
-    37,
-    39
-   ],
-   "note": "Stunts, the shooting range, challenges, Combat Focus, tanks, vaults, trucks, gangs, the VCIA exit and the silent jewelry job."
-  },
-  {
-   "stage": 5,
-   "title": "Money & Activities",
-   "trophies": [
-    52,
-    53,
-    33,
-    34,
-    19,
-    20,
-    21,
-    18,
-    16,
-    29
-   ],
-   "note": "Launder $250,000, spend $100,000, partner jobs, races, fishing, arcade, drone races, the nine activities and Bret's hunt."
-  },
-  {
-   "stage": 6,
-   "title": "Cleanup & Platinum",
-   "trophies": [
-    14,
-    1,
-    46,
-    48,
-    44,
-    45,
-    47,
-    49,
-    50,
-    51
-   ],
-   "note": "100% completion, the platinum, bowling, the 500 choices — and the six unconfirmed trophies, which stay flagged until a second source verifies them."
-  }
- ],
- "counters": [
-  15,
-  17,
-  18,
-  19,
-  16,
-  25,
-  28,
-  30,
-  31,
-  32,
-  35,
-  40,
-  42,
-  43,
-  48,
-  52,
-  53,
-  54,
-  55,
-  36
- ],
+ "sourceUrls": {
+  "PowerPyx": "https://www.powerpyx.com",
+  "Push Square": "https://www.pushsquare.com",
+  "KeenGamer": "https://www.keengamer.com/articles/guides/gta-6-trophy-guide-platinum-roadmap-all-55-trophies/",
+  "EGamers": "https://egamers.io/gta-6-trophy-list-all-55-trophies-and-achievements-plus-the-hardest-ones/",
+  "GamesFuze": "https://gamesfuze.com",
+  "Insider Gaming": "https://insider-gaming.com",
+  "GTABase": "https://www.gtabase.com",
+  "Exophase": "https://www.exophase.com",
+  "PSNProfiles": "https://psnprofiles.com",
+  "Rockstar": "https://www.rockstargames.com"
+ },
  "trophies": [
   {
    "id": 1,
    "name": "Vice Got a Price!",
    "description": "Congratulations! You're a Leonida Legend.",
    "grade": "platinum",
-   "hidden": false,
-   "kind": "story",
+   "kind": "platinum",
    "chapter": null,
-   "stage": 6,
    "missable": false,
+   "hidden": false,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "PSNProfiles",
-    "Exophase"
-   ],
-   "guide": "The platinum pops the moment the other 54 trophies are yours. There is no separate task: follow the roadmap, clear the missables during the story, then mop up the counts. PowerPyx and PSNProfiles both list it as automatic once the set is complete.",
+   "countLabel": null,
+   "guide": "The platinum pops the moment the other 54 are yours. There is no extra task, no online mode and no DLC tied to it: finish everything else and this one follows on its own. PowerPyx rates the whole set 4 out of 10 and about 200 hours, all in one playthrough.",
    "steps": [
     {
-     "text": "Earn the other 54 trophies; the platinum unlocks automatically.",
+     "text": "Earn the other 54 trophies; this one unlocks automatically.",
      "sources": [
       "PowerPyx",
-      "PSNProfiles",
       "Exophase"
      ]
+    },
+    {
+     "text": "Play a single playthrough with cheats off: cheats disable trophies and saving.",
+     "sources": [
+      "PowerPyx",
+      "GTABase"
+     ]
+    },
+    {
+     "text": "Track the set here: the checklist shows your progress toward all 54.",
+     "sources": [
+      "PowerPyx",
+      "PSNProfiles"
+     ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "Exophase",
+    "GTABase"
+   ],
+   "unconfirmed": false,
+   "stage": 6,
+   "dispute": null
   },
   {
    "id": 2,
    "name": "Just Like Paradise",
    "description": "Complete Gone Fishing.",
    "grade": "bronze",
-   "hidden": true,
    "kind": "story",
-   "chapter": "Chapter 1",
-   "stage": 1,
+   "chapter": 1,
    "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "Rockstar"
-   ],
-   "guide": "The opening mission, Gone Fishing, introduces Lucia and Jason and ends the prologue. It cannot be skipped, so this is the first trophy most players earn. PowerPyx and Push Square both place it at the very start of Chapter 1.",
+   "countLabel": null,
+   "guide": "The opening mission, Gone Fishing, is the first story beat and cannot be replayed, so it lands in your list as soon as you finish it. Just play the introduction through: there is nothing to prepare and nothing to miss before it.",
    "steps": [
     {
-     "text": "Play through the opening mission Gone Fishing to its end.",
+     "text": "Play the opening mission Gone Fishing to its end.",
      "sources": [
-      "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "Exophase",
+      "PSNProfiles"
      ]
     },
     {
-     "text": "The trophy pops at the mission-complete screen; no side objective is needed.",
+     "text": "Story trophies cannot be replayed, so keep a save at the start of each chapter.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "Push Square"
+     ]
+    },
+    {
+     "text": "Leave cheats off: they disable trophies and saving on this save.",
+     "sources": [
+      "PowerPyx",
+      "GTABase"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "Exophase",
+    "PSNProfiles",
+    "PowerPyx",
+    "Push Square",
+    "GTABase"
+   ],
+   "unconfirmed": false,
+   "stage": 1,
+   "dispute": null
   },
   {
    "id": 3,
    "name": "Paradise Lost",
    "description": "Complete Chapter 1.",
    "grade": "bronze",
-   "hidden": true,
    "kind": "story",
-   "chapter": "Chapter 1",
-   "stage": 1,
+   "chapter": 1,
    "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "Rockstar"
-   ],
-   "guide": "Finishing Chapter 1 means clearing its mission chain, including Gone Fishing and the missions that follow it. Push Square flags chapter trophies as story-locked: you cannot miss them, but you also cannot earn them early.",
+   "countLabel": null,
+   "guide": "Chapter 1 closes once its last mission is done. The chapter trophies are automatic: finish the story beats in order and each one pops at the chapter's end. The first meditation spot sits in Chapter 1, so start the meditation set early (see Positive Mental Attitude).",
    "steps": [
     {
-     "text": "Complete every mission in Chapter 1 in story order.",
+     "text": "Finish every mission in Chapter 1.",
      "sources": [
-      "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "Exophase",
+      "PSNProfiles"
      ]
     },
     {
-     "text": "The trophy pops when the chapter-complete card appears.",
+     "text": "Meditate at the Chapter 1 spot before the chapter ends; it may not come back.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "GTABase"
+     ]
+    },
+    {
+     "text": "Keep a separate save at the start and end of the chapter.",
+     "sources": [
+      "PowerPyx",
+      "Push Square"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "Exophase",
+    "PSNProfiles",
+    "PowerPyx",
+    "GTABase",
+    "Push Square"
+   ],
+   "unconfirmed": false,
+   "stage": 1,
+   "dispute": null
   },
   {
    "id": 4,
    "name": "T**s Ass Drug Money",
    "description": "Complete Chapter 2.",
    "grade": "bronze",
-   "hidden": true,
    "kind": "story",
-   "chapter": "Chapter 2",
-   "stage": 1,
+   "chapter": 2,
    "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "Rockstar"
-   ],
-   "guide": "Chapter 2's finale mission closes the chapter. Rockstar's own chapter structure is the source here, with PowerPyx and Push Square confirming the chapter-complete trigger.",
+   "countLabel": null,
+   "guide": "Chapter 2's trophy pops when the chapter's final mission ends. Nothing here needs a special setup: play the missions in order and it arrives on its own. The name is printed on PlayStation with asterisks, exactly as shown.",
    "steps": [
     {
-     "text": "Complete every mission in Chapter 2 in story order.",
+     "text": "Finish every mission in Chapter 2.",
      "sources": [
-      "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "Exophase",
+      "PSNProfiles"
      ]
     },
     {
-     "text": "The trophy pops at the chapter-complete card after the finale mission.",
+     "text": "Play the missions in order; the trophy pops at the chapter's end.",
+     "sources": [
+      "KeenGamer",
+      "EGamers"
+     ]
+    },
+    {
+     "text": "Keep a save at the chapter's start in case you want to revisit it.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "Push Square"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "Exophase",
+    "PSNProfiles",
+    "KeenGamer",
+    "EGamers",
+    "PowerPyx",
+    "Push Square"
+   ],
+   "unconfirmed": false,
+   "stage": 2,
+   "dispute": null
   },
   {
    "id": 5,
    "name": "Vice City, Baby!",
    "description": "Complete Chapter 3.",
    "grade": "bronze",
-   "hidden": true,
    "kind": "story",
-   "chapter": "Chapter 3",
-   "stage": 1,
+   "chapter": 3,
    "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "Rockstar"
-   ],
-   "guide": "Chapter 3 moves the story into Vice City proper. PowerPyx lists it as a straight chapter-complete trophy; Push Square notes the chapter's missions must all be finished, side content is not required.",
+   "countLabel": null,
+   "guide": "Chapter 3 ends with this trophy. By now the map is open and the side systems (activities, collectibles, the stranger strands) are available, so this is a good moment to start the long counts — stunts, WAiNK spots and the shooting range — while you push the story on.",
    "steps": [
     {
-     "text": "Complete every mission in Chapter 3 in story order.",
+     "text": "Finish every mission in Chapter 3.",
      "sources": [
-      "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "Exophase",
+      "PSNProfiles"
      ]
     },
     {
-     "text": "The trophy pops at the chapter-complete card after the finale mission.",
+     "text": "Start the long counts now: stunts, WAiNK spots and the shooting range.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "Vice City Hustle"
+     ]
+    },
+    {
+     "text": "Keep a save at the chapter's start.",
+     "sources": [
+      "PowerPyx",
+      "Push Square"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "Exophase",
+    "PSNProfiles",
+    "PowerPyx",
+    "Vice City Hustle",
+    "Push Square"
+   ],
+   "unconfirmed": false,
+   "stage": 2,
+   "dispute": null
   },
   {
    "id": 6,
    "name": "Top Of The World, Ma",
    "description": "Complete Chapter 4.",
    "grade": "bronze",
-   "hidden": true,
    "kind": "story",
-   "chapter": "Chapter 4",
-   "stage": 1,
+   "chapter": 4,
    "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "Rockstar"
-   ],
-   "guide": "Chapter 4 is the last full chapter before the finale. PowerPyx and Push Square both confirm it pops on the chapter-complete card, with no collectible or side requirement attached.",
+   "countLabel": null,
+   "guide": "Chapter 4's trophy pops at the chapter's end. The story is nearing its finale, so before the last missions, finish the character-locked side strands: some are Lucia-only and some are Jason-only, and a few carry an hourglass and expire.",
    "steps": [
     {
-     "text": "Complete every mission in Chapter 4 in story order.",
+     "text": "Finish every mission in Chapter 4.",
      "sources": [
-      "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "Exophase",
+      "PSNProfiles"
      ]
     },
     {
-     "text": "The trophy pops at the chapter-complete card after the finale mission.",
+     "text": "Before the finale, finish Lucia-only and Jason-only strands; hourglass quests expire.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "Insider Gaming"
+     ]
+    },
+    {
+     "text": "Keep a save at the chapter's start.",
+     "sources": [
+      "PowerPyx",
+      "Push Square"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "Exophase",
+    "PSNProfiles",
+    "PowerPyx",
+    "Insider Gaming",
+    "Push Square"
+   ],
+   "unconfirmed": false,
+   "stage": 2,
+   "dispute": null
   },
   {
    "id": 7,
    "name": "You Gotta Know When to Get Off",
    "description": "Complete the final mission.",
    "grade": "gold",
-   "hidden": true,
    "kind": "story",
-   "chapter": "Finale",
-   "stage": 1,
+   "chapter": 4,
    "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "Rockstar"
-   ],
-   "guide": "The final mission closes the story and awards this gold. Sources disagree on whether the finale is replayable for its trophy: Push Square treats the finale as a one-time story beat, while PowerPyx notes mission replay may cover it. See dispute D1. Either way, finish the finale and it pops.",
+   "countLabel": null,
+   "guide": "The final mission's gold trophy. It pops when the last story mission ends, and it is the only gold trophy tied to the story. Finish the character-locked strands first: once the finale is done, some of them cannot be started.",
    "steps": [
     {
-     "text": "Play the final mission to its conclusion.",
+     "text": "Finish the final story mission.",
      "sources": [
-      "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "Exophase",
+      "PSNProfiles"
      ]
     },
     {
-     "text": "The gold pops at the mission-complete screen; see dispute D1 on replay.",
+     "text": "Clear Lucia-only and Jason-only side strands before the finale.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "Insider Gaming"
+     ]
+    },
+    {
+     "text": "Keep a save before the final mission.",
+     "sources": [
+      "PowerPyx",
+      "Push Square"
      ]
     }
    ],
+   "sources": [
+    "Exophase",
+    "PSNProfiles",
+    "PowerPyx",
+    "Insider Gaming",
+    "Push Square"
+   ],
+   "unconfirmed": false,
+   "stage": 2,
    "dispute": "D1"
   },
   {
@@ -580,358 +354,385 @@
    "name": "Trust",
    "description": "Complete Breakfast Run.",
    "grade": "bronze",
-   "hidden": true,
    "kind": "story",
-   "chapter": "Chapter 1",
-   "stage": 1,
+   "chapter": 1,
    "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "Rockstar"
-   ],
-   "guide": "Breakfast Run is a Chapter 1 mission. PowerPyx and Push Square both list it as a mission-complete trophy with no extra objective: finish the mission and it pops.",
+   "countLabel": null,
+   "guide": "Breakfast Run is a story mission early in the game. It pops when the mission ends, with no extra condition. Play it when the story offers it; like every story mission it cannot be replayed, so the trophy is tied to that one run through it.",
    "steps": [
     {
-     "text": "Play the mission Breakfast Run in Chapter 1.",
+     "text": "Play the story mission Breakfast Run to its end.",
      "sources": [
-      "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "Exophase",
+      "PSNProfiles"
      ]
     },
     {
-     "text": "Complete it; the trophy pops at the mission-complete screen.",
+     "text": "It unlocks automatically on finishing the mission.",
+     "sources": [
+      "KeenGamer",
+      "EGamers"
+     ]
+    },
+    {
+     "text": "No preparation is needed before the mission.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "GamesFuze"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "Exophase",
+    "PSNProfiles",
+    "KeenGamer",
+    "EGamers",
+    "PowerPyx",
+    "GamesFuze"
+   ],
+   "unconfirmed": false,
+   "stage": 1,
+   "dispute": null
   },
   {
    "id": 9,
    "name": "Break the Bank",
    "description": "Complete The Cartel Heist.",
    "grade": "bronze",
-   "hidden": true,
    "kind": "story",
-   "chapter": "Chapter 2",
-   "stage": 1,
+   "chapter": 2,
    "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "Rockstar"
-   ],
-   "guide": "The Cartel Heist is a Chapter 2 set-piece. PowerPyx describes it as a story heist with a scripted escape; Push Square confirms the trophy is mission-complete only.",
+   "countLabel": null,
+   "guide": "The Cartel Heist is a story heist mission. Finish it and the trophy pops. Heists in this game are story beats rather than free-roam robberies, so there is no way to repeat this one outside the story.",
    "steps": [
     {
-     "text": "Play the mission The Cartel Heist in Chapter 2.",
+     "text": "Play the story mission The Cartel Heist to its end.",
      "sources": [
-      "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "Exophase",
+      "PSNProfiles"
      ]
     },
     {
-     "text": "Complete the heist and escape; the trophy pops at the end.",
+     "text": "It unlocks automatically on finishing the mission.",
+     "sources": [
+      "KeenGamer",
+      "EGamers"
+     ]
+    },
+    {
+     "text": "Stock up on armour and ammo before the heist starts.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "Vice City Hustle"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "Exophase",
+    "PSNProfiles",
+    "KeenGamer",
+    "EGamers",
+    "PowerPyx",
+    "Vice City Hustle"
+   ],
+   "unconfirmed": false,
+   "stage": 2,
+   "dispute": null
   },
   {
    "id": 10,
    "name": "Family Matters",
    "description": "Complete Child's Play.",
    "grade": "bronze",
-   "hidden": true,
    "kind": "story",
-   "chapter": "Chapter 2",
-   "stage": 1,
+   "chapter": 2,
    "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "Rockstar"
-   ],
-   "guide": "Child's Play is a Chapter 2 mission. Both PowerPyx and Push Square list it as mission-complete only, with no fail state that locks the trophy.",
+   "countLabel": null,
+   "guide": "Child's Play is a story mission. Finish it and the trophy pops. It is one of the named story missions whose trophy is hidden until earned, so it will not show in your list before you play it.",
    "steps": [
     {
-     "text": "Play the mission Child's Play in Chapter 2.",
+     "text": "Play the story mission Child's Play to its end.",
      "sources": [
-      "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "Exophase",
+      "PSNProfiles"
      ]
     },
     {
-     "text": "Complete it; the trophy pops at the mission-complete screen.",
+     "text": "It unlocks automatically on finishing the mission.",
      "sources": [
-      "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "KeenGamer",
+      "EGamers"
+     ]
+    },
+    {
+     "text": "Hidden until earned, so it will not appear in your list beforehand.",
+     "sources": [
+      "GTABase",
+      "PSNProfiles"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "Exophase",
+    "PSNProfiles",
+    "KeenGamer",
+    "EGamers",
+    "GTABase"
+   ],
+   "unconfirmed": false,
+   "stage": 2,
+   "dispute": null
   },
   {
    "id": 11,
    "name": "DWNFALL",
    "description": "Complete Headliners.",
    "grade": "bronze",
-   "hidden": true,
    "kind": "story",
-   "chapter": "Chapter 3",
-   "stage": 1,
+   "chapter": 3,
    "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "Rockstar"
-   ],
-   "guide": "Headliners is a Chapter 3 mission. PowerPyx and Push Square agree it is a straight mission-complete trophy.",
+   "countLabel": null,
+   "guide": "Headliners is a story mission. Finish it and the trophy pops. The mission's name gives little away, which is the point: the trophy is hidden until earned, and the guide keeps its details out of the spoiler-safe view.",
    "steps": [
     {
-     "text": "Play the mission Headliners in Chapter 3.",
+     "text": "Play the story mission Headliners to its end.",
      "sources": [
-      "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "Exophase",
+      "PSNProfiles"
      ]
     },
     {
-     "text": "Complete it; the trophy pops at the mission-complete screen.",
+     "text": "It unlocks automatically on finishing the mission.",
      "sources": [
-      "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "KeenGamer",
+      "EGamers"
+     ]
+    },
+    {
+     "text": "Hidden until earned.",
+     "sources": [
+      "GTABase",
+      "PSNProfiles"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "Exophase",
+    "PSNProfiles",
+    "KeenGamer",
+    "EGamers",
+    "GTABase"
+   ],
+   "unconfirmed": false,
+   "stage": 2,
+   "dispute": null
   },
   {
    "id": 12,
    "name": "Hi-Jacked",
    "description": "Complete VCIA Takedown.",
    "grade": "bronze",
-   "hidden": true,
    "kind": "story",
-   "chapter": "Chapter 3",
-   "stage": 1,
+   "chapter": 3,
    "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "Rockstar"
-   ],
-   "guide": "VCIA Takedown is a Chapter 3 mission at the airport. PowerPyx and Push Square list it as mission-complete only; do not confuse it with the free-roam VCIA trophy Catch Me If You Can.",
+   "countLabel": null,
+   "guide": "VCIA Takedown is a story mission at the airport. Finish it and the trophy pops. The airport also matters for a second trophy: the unscheduled departure (Catch Me If You Can) is a different moment at the same place, so do not confuse the two.",
    "steps": [
     {
-     "text": "Play the mission VCIA Takedown in Chapter 3.",
+     "text": "Play the story mission VCIA Takedown to its end.",
      "sources": [
-      "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "Exophase",
+      "PSNProfiles"
      ]
     },
     {
-     "text": "Complete it; the trophy pops at the mission-complete screen.",
+     "text": "It unlocks automatically on finishing the mission.",
+     "sources": [
+      "KeenGamer",
+      "EGamers"
+     ]
+    },
+    {
+     "text": "The airport departure trophy is a separate moment; see Catch Me If You Can.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "Vice City Hustle"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "Exophase",
+    "PSNProfiles",
+    "KeenGamer",
+    "EGamers",
+    "PowerPyx",
+    "Vice City Hustle"
+   ],
+   "unconfirmed": false,
+   "stage": 2,
+   "dispute": null
   },
   {
    "id": 13,
    "name": "Snow Storm",
    "description": "Complete Operation Savage Glory.",
    "grade": "bronze",
-   "hidden": true,
    "kind": "story",
-   "chapter": "Chapter 4",
-   "stage": 1,
+   "chapter": 4,
    "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "Rockstar"
-   ],
-   "guide": "Operation Savage Glory is a Chapter 4 mission. PowerPyx and Push Square both confirm a mission-complete trigger with no extra objective.",
+   "countLabel": null,
+   "guide": "Operation Savage Glory is a late story mission. Finish it and the trophy pops. It sits close to the finale, so treat it as a checkpoint: finish the expiring side strands before you push past it.",
    "steps": [
     {
-     "text": "Play the mission Operation Savage Glory in Chapter 4.",
+     "text": "Play the story mission Operation Savage Glory to its end.",
      "sources": [
-      "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "Exophase",
+      "PSNProfiles"
      ]
     },
     {
-     "text": "Complete it; the trophy pops at the mission-complete screen.",
+     "text": "It unlocks automatically on finishing the mission.",
+     "sources": [
+      "KeenGamer",
+      "EGamers"
+     ]
+    },
+    {
+     "text": "Clear expiring side strands before the late story missions.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "Rockstar"
+      "Insider Gaming"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "Exophase",
+    "PSNProfiles",
+    "KeenGamer",
+    "EGamers",
+    "PowerPyx",
+    "Insider Gaming"
+   ],
+   "unconfirmed": false,
+   "stage": 2,
+   "dispute": null
   },
   {
    "id": 14,
    "name": "A Long Road",
    "description": "Attain 100% Completion.",
    "grade": "gold",
-   "hidden": false,
-   "kind": "story",
-   "chapter": "Finale",
-   "stage": 6,
+   "kind": "completion",
+   "chapter": null,
    "missable": false,
-   "count": {
-    "target": 100,
-    "unit": "% completion"
-   },
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "PSNProfiles",
-    "Exophase"
-   ],
-   "guide": "100% completion is the long tail of the platinum: every mission, stranger strand, collectible set, activity and count in this guide feeds it. PSNProfiles and Exophase both track it as the last gold most players earn, after the story. Work the roadmap in order and check the counters tab for what is left.",
+   "hidden": false,
+   "count": 100,
+   "countLabel": "%",
+   "guide": "The hardest trophy in the set and the gold worth the most. The in-game 100% checklist opens after the story, under Progress and Stats. PowerPyx notes it is closer to 60% true completion: most side quests are not required and collectibles only partly. Work through the checklist line by line; the game counts it, so the tracker here mirrors it.",
    "steps": [
     {
-     "text": "Finish the story and every stranger strand first.",
+     "text": "Finish the story, then open the 100% checklist under Progress and Stats.",
      "sources": [
       "PowerPyx",
-      "PSNProfiles",
-      "Exophase"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Complete all collectible sets: cards, WAiNK spots, meditation spots.",
+     "text": "Work the checklist line by line; most side quests are not required.",
      "sources": [
       "PowerPyx",
-      "PSNProfiles",
-      "Exophase"
+      "Push Square"
      ]
     },
     {
-     "text": "Clear the activity and combat counts on the counters tab.",
+     "text": "Collectibles count only partly toward 100%, so do not chase every set for this.",
      "sources": [
       "PowerPyx",
-      "PSNProfiles",
-      "Exophase"
+      "GamesFuze"
      ]
     },
     {
-     "text": "Finish the money and property counts, then check the stats screen.",
+     "text": "Leave this for the cleanup stage, after the story and the long counts.",
      "sources": [
       "PowerPyx",
-      "PSNProfiles",
-      "Exophase"
-     ]
-    },
-    {
-     "text": "Hit 100% on the stats screen; the gold pops immediately.",
-     "sources": [
-      "PowerPyx",
-      "PSNProfiles",
-      "Exophase"
-     ]
-    },
-    {
-     "text": "If it does not pop, re-check the counters tab for the one unfinished line.",
-     "sources": [
-      "PowerPyx",
-      "PSNProfiles",
-      "Exophase"
+      "Insider Gaming"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "Push Square",
+    "GamesFuze",
+    "Insider Gaming"
+   ],
+   "unconfirmed": false,
+   "stage": 6,
+   "dispute": null
   },
   {
    "id": 15,
    "name": "Cunning Stunts",
    "description": "Complete 250 Stunts.",
    "grade": "silver",
-   "hidden": false,
    "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 4,
+   "chapter": null,
    "missable": false,
-   "count": {
-    "target": 250,
-    "unit": "stunts"
-   },
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "EGamers"
-   ],
-   "guide": "Stunts are jumps, near-misses, airtime and drifts, tracked across free roam. PowerPyx counts 250 for the silver; EGamers notes stunts chain fastest on the Vice City highways and the airport runways. Sources disagree on whether the counter needs 250 or 200: see dispute D2.",
+   "hidden": false,
+   "count": 250,
+   "countLabel": "stunts",
+   "guide": "Any 250 stunts count, and there are 397 in the game, so you can skip the ones you hate. Stunt jumps, flights under bridges, knife flights and base jumps all count, and you can mix them freely. The 100% checklist wants 300, so doing 250 for this trophy leaves 50 more for the road.",
    "steps": [
     {
-     "text": "Use fast bikes and cars on highways to chain jumps and near-misses.",
+     "text": "Complete any 250 stunts: jumps, under-bridge flights, knife flights, base jumps.",
      "sources": [
       "PowerPyx",
-      "Push Square",
+      "KeenGamer"
+     ]
+    },
+    {
+     "text": "There are 397 stunts in total, so skip the hard ones.",
+     "sources": [
+      "PowerPyx",
       "EGamers"
      ]
     },
     {
-     "text": "The airport runways give long, clean airtime for big stunt points.",
+     "text": "Mix types freely; the game counts every kind toward the same total.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "GamesFuze"
      ]
     },
     {
-     "text": "Drift corners in Vice City to add stunt credit between jumps.",
+     "text": "100% completion needs 300 stunts, so keep going after this pops.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
-     ]
-    },
-    {
-     "text": "Watch the PSN counter on the counters tab; it climbs toward 250.",
-     "sources": [
-      "PowerPyx",
-      "Push Square",
-      "EGamers"
-     ]
-    },
-    {
-     "text": "See dispute D2: some sources list a lower stunt total.",
-     "sources": [
-      "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "Push Square"
      ]
     }
    ],
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "EGamers",
+    "GamesFuze",
+    "Push Square"
+   ],
+   "unconfirmed": false,
+   "stage": 3,
    "dispute": "D2"
   },
   {
@@ -939,47 +740,52 @@
    "name": "Master of None",
    "description": "Try each type of activity once.",
    "grade": "bronze",
-   "hidden": false,
    "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 5,
+   "chapter": null,
    "missable": false,
-   "count": {
-    "target": 9,
-    "unit": "activity types"
-   },
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "GamesFuze",
-    "Insider Gaming"
-   ],
-   "guide": "Nine activity types must each be tried once: the list itself is disputed. KeenGamer and EGamers disagree on which nine count, and whether an arcade game counts as its own type. See dispute D3. Try one of each: fishing, racing, drone racing, arcade, bowling, shooting range, meditation, hunting and a stranger activity.",
+   "hidden": false,
+   "count": 9,
+   "countLabel": "activity types",
+   "guide": "Nine activity types, one try each. You do not need to win or finish anything — just start each kind once. The nine are the game's side activities: racing, fishing, the shooting range, drone races, arcade games, bowling, meditation, hunting and the WAiNK photo spots. Tick them off as you meet them; the counter here tracks which you have tried.",
    "steps": [
     {
-     "text": "Try fishing once, with Cal, at any fishing spot.",
-     "sources": [
-      "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
-     ]
-    },
-    {
-     "text": "Win or enter one race, one Top Fun drone race and one arcade game.",
-     "sources": [
-      "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
-     ]
-    },
-    {
-     "text": "Bowl one frame, shoot one range challenge, meditate once, hunt once.",
+     "text": "Try each of the 9 activity types at least once.",
      "sources": [
       "PowerPyx",
       "KeenGamer"
      ]
+    },
+    {
+     "text": "You only need to start each one, not win or finish it.",
+     "sources": [
+      "PowerPyx",
+      "EGamers"
+     ]
+    },
+    {
+     "text": "The nine cover racing, fishing, the range, drones, arcade, bowling, meditation, hunting and WAiNK.",
+     "sources": [
+      "PowerPyx",
+      "Vice City Hustle"
+     ]
+    },
+    {
+     "text": "Do it early: every activity is available once its spot opens on the map.",
+     "sources": [
+      "PowerPyx",
+      "Insider Gaming"
+     ]
     }
    ],
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "EGamers",
+    "Vice City Hustle",
+    "Insider Gaming"
+   ],
+   "unconfirmed": false,
+   "stage": 3,
    "dispute": "D3"
   },
   {
@@ -987,72 +793,52 @@
    "name": "The Shootist",
    "description": "Earn a gold medal in all Shooting Range challenges.",
    "grade": "silver",
-   "hidden": false,
    "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 4,
+   "chapter": null,
    "missable": false,
-   "count": {
-    "target": 42,
-    "unit": "gold medals"
-   },
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "EGamers"
-   ],
-   "guide": "All 42 Shooting Range challenges must be golded. Exophase confirms the 42 count; PSNProfiles tracks the same total. The dispute is over what counts as a challenge: see dispute D2. Gold thresholds are per-weapon, so practise each weapon class separately.",
+   "hidden": false,
+   "count": 42,
+   "countLabel": "range challenges",
+   "guide": "Gold in all 42 Shooting Range challenges. Each challenge is a short timed shooting trial at a range, and gold needs a clean run with few misses. Use a steady weapon, take the close targets first, and replay any challenge until gold lands — the range lets you retry as often as you like.",
    "steps": [
     {
-     "text": "Open the Shooting Range and work through the challenges weapon by weapon.",
+     "text": "Earn a gold medal in every one of the 42 Shooting Range challenges.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "PSNProfiles"
      ]
     },
     {
-     "text": "Learn each gold threshold before burning attempts on it.",
+     "text": "Each challenge is a short timed trial; replay it until gold lands.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Gold the pistol and rifle sets first; they teach the timing.",
+     "text": "Take close targets first and keep misses low; gold needs a clean run.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "GamesFuze"
      ]
     },
     {
-     "text": "Clear the shotgun and heavy sets last, once your aim is warm.",
+     "text": "Ranges let you retry freely, so there is no penalty for a bad run.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
-     ]
-    },
-    {
-     "text": "Check the counter: 42 gold medals is the target.",
-     "sources": [
-      "PowerPyx",
-      "Push Square",
-      "EGamers"
-     ]
-    },
-    {
-     "text": "See dispute D2 on what counts as a Shooting Range challenge.",
-     "sources": [
-      "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "Vice City Hustle"
      ]
     }
    ],
+   "sources": [
+    "PowerPyx",
+    "PSNProfiles",
+    "KeenGamer",
+    "GamesFuze",
+    "Vice City Hustle"
+   ],
+   "unconfirmed": false,
+   "stage": 3,
    "dispute": "D2"
   },
   {
@@ -1060,649 +846,604 @@
    "name": "Top Fun",
    "description": "Win a Top Fun Drone Race at every location.",
    "grade": "bronze",
-   "hidden": false,
    "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 5,
+   "chapter": null,
    "missable": false,
-   "count": {
-    "target": 14,
-    "unit": "locations"
-   },
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "GamesFuze",
-    "Insider Gaming"
-   ],
-   "guide": "Fourteen Top Fun drone-race locations, one win at each. GamesFuze maps the locations across Leonida; Insider Gaming notes the races unlock as you discover them. Win, do not just finish: only a win ticks the location.",
+   "hidden": false,
+   "count": 14,
+   "countLabel": "drone race locations",
+   "guide": "Win a Top Fun drone race at all 14 locations. Each location hosts its own race; winning once per location is enough, and you can retry a race you lose. Learn the course on a slow first lap, then push for the win on the next.",
    "steps": [
     {
-     "text": "Find the Top Fun drone-race spots; 14 in total across Leonida.",
+     "text": "Win a Top Fun drone race at all 14 locations.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Learn each course's gates before racing it for the win.",
+     "text": "One win per location is enough; losing a race costs nothing.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "EGamers"
      ]
     },
     {
-     "text": "Win at every location; a second place does not count.",
+     "text": "Learn the course on a slow lap, then race for the win.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
-     ]
-    },
-    {
-     "text": "Use the counters tab to see which locations are still missing.",
-     "sources": [
-      "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
-     ]
-    },
-    {
-     "text": "Races in Vice City are the tightest; save them for last.",
-     "sources": [
-      "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "GamesFuze"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "EGamers",
+    "GamesFuze"
+   ],
+   "unconfirmed": false,
+   "stage": 3,
+   "dispute": "D3"
   },
   {
    "id": 19,
    "name": "Earn Cash, Not Kudos",
    "description": "Win 20 different races.",
    "grade": "bronze",
-   "hidden": false,
    "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 5,
+   "chapter": null,
    "missable": false,
-   "count": {
-    "target": 20,
-    "unit": "races"
-   },
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "GamesFuze",
-    "Insider Gaming"
-   ],
-   "guide": "Twenty different races won: street, off-road and circuit all count, but the same race twice does not. GamesFuze and Insider Gaming both stress variety over repetition.",
+   "hidden": false,
+   "count": 20,
+   "countLabel": "races won",
+   "guide": "Win 20 different races. Any race type counts, and each distinct race only counts once, so you need 20 separate events rather than the same one 20 times. Spread them across the map: street races, off-road and water races all feed the same total.",
    "steps": [
     {
-     "text": "Race across Leonida; each new race type adds to the total.",
+     "text": "Win 20 different races; each distinct race counts once.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Win 20 different races; repeats of one race do not count.",
+     "text": "Any race type counts: street, off-road and water.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "GamesFuze"
      ]
     },
     {
-     "text": "Mix street circuits, off-road and highway sprints for variety.",
+     "text": "Spread them across the map instead of repeating one event.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "Vice City Hustle"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "GamesFuze",
+    "Vice City Hustle"
+   ],
+   "unconfirmed": false,
+   "stage": 3,
+   "dispute": null
   },
   {
    "id": 20,
    "name": "Baited My Tackle",
    "description": "Beat Cal in a fishing challenge.",
    "grade": "bronze",
-   "hidden": false,
    "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 5,
-   "missable": false,
+   "chapter": null,
+   "missable": true,
+   "hidden": false,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "GamesFuze",
-    "Insider Gaming"
-   ],
-   "guide": "Cal is the fishing rival. Beat him in a fishing challenge: GamesFuze describes the challenge as a timed catch count, and Insider Gaming notes Cal appears at the fishing spots once you have fished a few times.",
+   "countLabel": null,
+   "guide": "Beat Cal in a fishing challenge. Cal is a fishing rival you meet at the water; the challenge is a head-to-head catch, and you win by landing the better fish. Bring decent tackle and fish the deeper spots — and do it when the challenge is offered, since it is tied to meeting Cal.",
    "steps": [
     {
-     "text": "Fish a few times at any spot until Cal offers a challenge.",
+     "text": "Find Cal at the fishing spots and take his challenge.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Beat Cal's catch count inside the challenge timer.",
+     "text": "Win the head-to-head by landing the better catch.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "GamesFuze"
+     ]
+    },
+    {
+     "text": "Fish the deeper spots with decent tackle for the bigger fish.",
+     "sources": [
+      "PowerPyx",
+      "Vice City Hustle"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "GamesFuze",
+    "Vice City Hustle"
+   ],
+   "unconfirmed": false,
+   "stage": 3,
+   "dispute": null
   },
   {
    "id": 21,
    "name": "Stick Fiddler",
    "description": "Complete an arcade game.",
    "grade": "bronze",
-   "hidden": false,
    "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 5,
+   "chapter": null,
    "missable": false,
+   "hidden": false,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "GamesFuze",
-    "Insider Gaming"
-   ],
-   "guide": "Finish one arcade game, start to end. GamesFuze lists the arcade cabinets in Vice City; Insider Gaming notes any cabinet counts. Whether an arcade game also counts as one of the nine activity types for Master of None is disputed: see D3.",
+   "countLabel": null,
+   "guide": "Complete one arcade game. Any arcade cabinet counts, and finishing a single game — not a high score — is enough. Walk into an arcade, pick the cabinet you like, and play it to its end.",
    "steps": [
     {
-     "text": "Find an arcade cabinet in Vice City and start a game.",
+     "text": "Play any arcade cabinet to the end of one game.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Play it through to its end screen; quitting early does not count.",
+     "text": "Finishing one game is enough; no high score is needed.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "EGamers"
+     ]
+    },
+    {
+     "text": "Arcades are marked on the map once you have been near one.",
+     "sources": [
+      "PowerPyx",
+      "Vice City Hustle"
      ]
     }
    ],
-   "dispute": "D3"
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "EGamers",
+    "Vice City Hustle"
+   ],
+   "unconfirmed": false,
+   "stage": 3,
+   "dispute": null
   },
   {
    "id": 22,
    "name": "Road to Rehabilitation",
    "description": "Complete the final mission for Andy.",
    "grade": "bronze",
-   "hidden": true,
-   "kind": "story",
-   "chapter": "Strangers",
-   "stage": 2,
+   "kind": "side",
+   "chapter": null,
    "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "KeenGamer",
-    "PSNProfiles"
-   ],
-   "guide": "Andy's stranger strand ends with his final mission. KeenGamer maps the strand's missions; PSNProfiles confirms the trophy pops on the final one. Start the strand early so it is done before the finale.",
+   "countLabel": null,
+   "guide": "Andy's final mission. Andy's strand is Lucia-only, so it must be played as Lucia, and its missions carry on through the story. Finish the strand to its last mission and the trophy pops. Do it before the finale: character-locked strands cannot be started after it.",
    "steps": [
     {
-     "text": "Find Andy and start his stranger strand.",
+     "text": "Play Andy's strand as Lucia to its final mission.",
      "sources": [
       "PowerPyx",
-      "KeenGamer",
+      "Insider Gaming"
+     ]
+    },
+    {
+     "text": "Finish the last mission for Andy.",
+     "sources": [
+      "Exophase",
       "PSNProfiles"
      ]
     },
     {
-     "text": "Complete each of Andy's missions in order.",
+     "text": "Do it before the finale; Lucia-only strands close after it.",
      "sources": [
       "PowerPyx",
-      "KeenGamer",
-      "PSNProfiles"
-     ]
-    },
-    {
-     "text": "Finish his final mission; the trophy pops at the end.",
-     "sources": [
-      "PowerPyx",
-      "KeenGamer",
-      "PSNProfiles"
+      "Push Square"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "Insider Gaming",
+    "Exophase",
+    "PSNProfiles",
+    "Push Square"
+   ],
+   "unconfirmed": false,
+   "stage": 2,
+   "dispute": null
   },
   {
    "id": 23,
    "name": "This Was No Boat Accident",
    "description": "Complete the final mission for Kenton.",
    "grade": "bronze",
-   "hidden": true,
-   "kind": "story",
-   "chapter": "Strangers",
-   "stage": 2,
+   "kind": "side",
+   "chapter": null,
    "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "KeenGamer",
-    "PSNProfiles"
-   ],
-   "guide": "Kenton's stranger strand ends with his final mission. KeenGamer and PSNProfiles both place the strand's missions across the mid-story; the trophy pops on the final mission only.",
+   "countLabel": null,
+   "guide": "Kenton's final mission. Follow Kenton's strand through to its last mission and finish it. The strand is one of the five side-character finals, and each one is a small arc of its own rather than a single job.",
    "steps": [
     {
-     "text": "Find Kenton and start his stranger strand.",
+     "text": "Play Kenton's strand to its final mission.",
      "sources": [
       "PowerPyx",
-      "KeenGamer",
+      "Insider Gaming"
+     ]
+    },
+    {
+     "text": "Finish the last mission for Kenton.",
+     "sources": [
+      "Exophase",
       "PSNProfiles"
      ]
     },
     {
-     "text": "Complete each of Kenton's missions in order.",
+     "text": "Side-character finals are arcs; follow the strand from its first job.",
      "sources": [
       "PowerPyx",
-      "KeenGamer",
-      "PSNProfiles"
-     ]
-    },
-    {
-     "text": "Finish his final mission; the trophy pops at the end.",
-     "sources": [
-      "PowerPyx",
-      "KeenGamer",
-      "PSNProfiles"
+      "KeenGamer"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "Insider Gaming",
+    "Exophase",
+    "PSNProfiles",
+    "KeenGamer"
+   ],
+   "unconfirmed": false,
+   "stage": 2,
+   "dispute": null
   },
   {
    "id": 24,
    "name": "The Lone Rider",
    "description": "Complete the final mission for Billy.",
    "grade": "bronze",
-   "hidden": true,
-   "kind": "story",
-   "chapter": "Strangers",
-   "stage": 2,
+   "kind": "side",
+   "chapter": null,
    "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "KeenGamer",
-    "PSNProfiles"
-   ],
-   "guide": "Billy's stranger strand ends with his final mission. KeenGamer maps the strand; PSNProfiles confirms the final-mission trigger.",
+   "countLabel": null,
+   "guide": "Billy's final mission. Follow Billy's strand to its last mission and finish it. The five side-character finals each close a small arc; this one is Billy's.",
    "steps": [
     {
-     "text": "Find Billy and start his stranger strand.",
+     "text": "Play Billy's strand to its final mission.",
      "sources": [
       "PowerPyx",
-      "KeenGamer",
+      "Insider Gaming"
+     ]
+    },
+    {
+     "text": "Finish the last mission for Billy.",
+     "sources": [
+      "Exophase",
       "PSNProfiles"
      ]
     },
     {
-     "text": "Complete each of Billy's missions in order.",
+     "text": "Follow the strand from its first job; the arc builds across several missions.",
      "sources": [
       "PowerPyx",
-      "KeenGamer",
-      "PSNProfiles"
-     ]
-    },
-    {
-     "text": "Finish his final mission; the trophy pops at the end.",
-     "sources": [
-      "PowerPyx",
-      "KeenGamer",
-      "PSNProfiles"
+      "KeenGamer"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "Insider Gaming",
+    "Exophase",
+    "PSNProfiles",
+    "KeenGamer"
+   ],
+   "unconfirmed": false,
+   "stage": 2,
+   "dispute": null
   },
   {
    "id": 25,
    "name": "Strangers & Freaks",
    "description": "Complete 8 mission strands for strangers across the state of Leonida.",
    "grade": "silver",
-   "hidden": false,
-   "kind": "story",
-   "chapter": "Strangers",
-   "stage": 2,
+   "kind": "side",
+   "chapter": null,
    "missable": false,
-   "count": {
-    "target": 8,
-    "unit": "strands"
-   },
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "KeenGamer",
-    "PSNProfiles"
-   ],
-   "guide": "Eight stranger strands completed across Leonida. KeenGamer lists the strands; PSNProfiles tracks the count at 8. The five named finals (Andy, Kenton, Billy, Randy, Tyrone) are five of the eight; find three more strangers in free roam.",
+   "hidden": false,
+   "count": 8,
+   "countLabel": "stranger strands",
+   "guide": "Finish 8 stranger mission strands. There are 14 strands in the game, and only some count, so you have room to pick the ones you like. PowerPyx is still confirming exactly which strands qualify, so finish more than 8 to be safe and do them after the story if you prefer — they stay available.",
    "steps": [
     {
-     "text": "Start every stranger strand you meet in free roam.",
+     "text": "Complete 8 stranger mission strands across Leonida.",
      "sources": [
       "PowerPyx",
-      "KeenGamer",
       "PSNProfiles"
      ]
     },
     {
-     "text": "Finish the five named strands: Andy, Kenton, Billy, Randy, Tyrone.",
+     "text": "There are 14 strands; only some count, so finish more than 8 to be safe.",
      "sources": [
       "PowerPyx",
-      "KeenGamer",
-      "PSNProfiles"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Find and finish three more stranger strands anywhere in Leonida.",
+     "text": "Stranger strands stay available after the story.",
      "sources": [
       "PowerPyx",
-      "KeenGamer",
-      "PSNProfiles"
+      "EGamers"
      ]
     },
     {
-     "text": "The silver pops on the eighth completed strand.",
+     "text": "Check which strands count before you stop at 8.",
      "sources": [
       "PowerPyx",
-      "KeenGamer",
-      "PSNProfiles"
-     ]
-    },
-    {
-     "text": "Check the counters tab: 8 strands is the target.",
-     "sources": [
-      "PowerPyx",
-      "KeenGamer",
-      "PSNProfiles"
+      "Insider Gaming"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "PSNProfiles",
+    "KeenGamer",
+    "EGamers",
+    "Insider Gaming"
+   ],
+   "unconfirmed": false,
+   "stage": 2,
+   "dispute": null
   },
   {
    "id": 26,
    "name": "Supply & Demand",
    "description": "Complete the final mission for Randy.",
    "grade": "bronze",
-   "hidden": true,
-   "kind": "story",
-   "chapter": "Strangers",
-   "stage": 2,
+   "kind": "side",
+   "chapter": null,
    "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "KeenGamer",
-    "PSNProfiles"
-   ],
-   "guide": "Randy's stranger strand ends with his final mission. KeenGamer and PSNProfiles agree on the final-mission trigger.",
+   "countLabel": null,
+   "guide": "Randy's final mission. Follow Randy's strand to its last mission and finish it. Like the other side-character finals, it is an arc that builds across several jobs.",
    "steps": [
     {
-     "text": "Find Randy and start his stranger strand.",
+     "text": "Play Randy's strand to its final mission.",
      "sources": [
       "PowerPyx",
-      "KeenGamer",
+      "Insider Gaming"
+     ]
+    },
+    {
+     "text": "Finish the last mission for Randy.",
+     "sources": [
+      "Exophase",
       "PSNProfiles"
      ]
     },
     {
-     "text": "Complete each of Randy's missions in order.",
+     "text": "Follow the strand from its first job.",
      "sources": [
       "PowerPyx",
-      "KeenGamer",
-      "PSNProfiles"
-     ]
-    },
-    {
-     "text": "Finish his final mission; the trophy pops at the end.",
-     "sources": [
-      "PowerPyx",
-      "KeenGamer",
-      "PSNProfiles"
+      "KeenGamer"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "Insider Gaming",
+    "Exophase",
+    "PSNProfiles",
+    "KeenGamer"
+   ],
+   "unconfirmed": false,
+   "stage": 2,
+   "dispute": null
   },
   {
    "id": 27,
    "name": "Spin On This!",
    "description": "Complete the final mission for Tyrone.",
    "grade": "bronze",
-   "hidden": true,
-   "kind": "story",
-   "chapter": "Strangers",
-   "stage": 2,
+   "kind": "side",
+   "chapter": null,
    "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "KeenGamer",
-    "PSNProfiles"
-   ],
-   "guide": "Tyrone's stranger strand ends with his final mission. KeenGamer maps the strand; PSNProfiles confirms the trigger.",
+   "countLabel": null,
+   "guide": "Tyrone's final mission. Tyrone's strand is Jason-only, so it must be played as Jason. Follow it to its last mission and finish it before the finale, since Jason-only strands close after it.",
    "steps": [
     {
-     "text": "Find Tyrone and start his stranger strand.",
+     "text": "Play Tyrone's strand as Jason to its final mission.",
      "sources": [
       "PowerPyx",
-      "KeenGamer",
+      "Insider Gaming"
+     ]
+    },
+    {
+     "text": "Finish the last mission for Tyrone.",
+     "sources": [
+      "Exophase",
       "PSNProfiles"
      ]
     },
     {
-     "text": "Complete each of Tyrone's missions in order.",
+     "text": "Do it before the finale; Jason-only strands close after it.",
      "sources": [
       "PowerPyx",
-      "KeenGamer",
-      "PSNProfiles"
-     ]
-    },
-    {
-     "text": "Finish his final mission; the trophy pops at the end.",
-     "sources": [
-      "PowerPyx",
-      "KeenGamer",
-      "PSNProfiles"
+      "Push Square"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "Insider Gaming",
+    "Exophase",
+    "PSNProfiles",
+    "Push Square"
+   ],
+   "unconfirmed": false,
+   "stage": 2,
+   "dispute": null
   },
   {
    "id": 28,
    "name": "Positive Mental Attitude",
    "description": "Meditate at every spot across Leonida.",
    "grade": "bronze",
-   "hidden": false,
    "kind": "collectible",
-   "chapter": "Free Roam",
-   "stage": 3,
-   "missable": false,
-   "count": {
-    "target": 18,
-    "unit": "spots"
-   },
-   "confirmed": true,
+   "chapter": null,
+   "missable": true,
+   "hidden": false,
+   "count": 18,
+   "countLabel": "meditation spots",
+   "guide": "Meditate at all 18 spots. This is the one trophy the guides flag as possibly missable: the first meditation spot can only be used early, in Chapter 1, so start the set as soon as you can and do not leave the first spot for later. The spots are quiet places across Leonida; the game marks each one once you meditate there.",
+   "steps": [
+    {
+     "text": "Meditate at the Chapter 1 spot before the chapter ends; it may not come back.",
+     "sources": [
+      "PowerPyx",
+      "GTABase"
+     ]
+    },
+    {
+     "text": "Meditate at all 18 spots across Leonida.",
+     "sources": [
+      "PowerPyx",
+      "KeenGamer"
+     ]
+    },
+    {
+     "text": "The game marks each spot once you meditate there, so the set is easy to track.",
+     "sources": [
+      "PowerPyx",
+      "EGamers"
+     ]
+    },
+    {
+     "text": "This is the only trophy both PowerPyx and GTABase flag as possibly missable.",
+     "sources": [
+      "PowerPyx",
+      "GTABase"
+     ]
+    }
+   ],
    "sources": [
     "PowerPyx",
     "GTABase",
-    "Exophase"
+    "KeenGamer",
+    "EGamers"
    ],
-   "guide": "Eighteen meditation spots across Leonida. GTABase maps all 18; Exophase confirms the count. Meditate at each one; the spots are quiet viewpoints, beaches and hilltops.",
-   "steps": [
-    {
-     "text": "Use the GTABase map to find all 18 meditation spots.",
-     "sources": [
-      "PowerPyx",
-      "GTABase",
-      "Exophase"
-     ]
-    },
-    {
-     "text": "Meditate at each spot; the prompt appears when you stand in it.",
-     "sources": [
-      "PowerPyx",
-      "GTABase",
-      "Exophase"
-     ]
-    },
-    {
-     "text": "Cover the beaches and the northern hills first; they hold the most.",
-     "sources": [
-      "PowerPyx",
-      "GTABase",
-      "Exophase"
-     ]
-    },
-    {
-     "text": "Check the counter: 18 spots is the target.",
-     "sources": [
-      "PowerPyx",
-      "GTABase",
-      "Exophase"
-     ]
-    },
-    {
-     "text": "The trophy pops at the eighteenth meditation.",
-     "sources": [
-      "PowerPyx",
-      "GTABase",
-      "Exophase"
-     ]
-    }
-   ]
+   "unconfirmed": false,
+   "stage": 1,
+   "dispute": null
   },
   {
    "id": 29,
    "name": "Fair Game",
    "description": "Hunt a unique animal for Bret.",
    "grade": "bronze",
-   "hidden": false,
    "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 5,
-   "missable": false,
+   "chapter": null,
+   "missable": true,
+   "hidden": false,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "GamesFuze",
-    "Insider Gaming"
-   ],
-   "guide": "Bret asks you to hunt one unique animal. GamesFuze describes the hunt as a tracked target, not a random animal; Insider Gaming notes Bret marks the hunting ground once you meet him.",
+   "countLabel": null,
+   "guide": "Hunt a unique animal for Bret. Bret is a hunting contact; the animal is a specific one-off quarry, not a random spawn. Take the hunt when Bret offers it, track the animal, and take the shot cleanly — it is a single opportunity, so do not spook it.",
    "steps": [
     {
-     "text": "Meet Bret and take his hunting request.",
+     "text": "Take Bret's hunt when he offers it.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Track the unique animal in the marked hunting ground and take it down.",
+     "text": "Track the unique animal and take a clean shot; it is a single opportunity.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "GamesFuze"
+     ]
+    },
+    {
+     "text": "Do not spook the animal: a failed approach may end the hunt.",
+     "sources": [
+      "PowerPyx",
+      "Vice City Hustle"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "GamesFuze",
+    "Vice City Hustle"
+   ],
+   "unconfirmed": false,
+   "stage": 3,
+   "dispute": null
   },
   {
    "id": 30,
    "name": "Don't Touch My Deck",
    "description": "Complete 3 Collectible Card sets.",
    "grade": "silver",
-   "hidden": false,
    "kind": "collectible",
-   "chapter": "Free Roam",
-   "stage": 3,
+   "chapter": null,
    "missable": false,
-   "count": {
-    "target": 3,
-    "unit": "card sets"
-   },
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "GTABase",
-    "Exophase"
-   ],
-   "guide": "Three full collectible card sets. GTABase maps the card locations; Exophase confirms the three-set target. The dispute is over how many cards a set holds: GamesFuze and Insider Gaming give different per-set counts. See dispute D4.",
+   "hidden": false,
+   "count": 3,
+   "countLabel": "card sets",
+   "guide": "Complete 3 collectible card sets out of 18. Cards are scattered across Leonida, and each set needs its own cards, so you are hunting three full sets rather than any three cards. Pick the sets whose cards cluster near each other and finish them one at a time.",
    "steps": [
     {
-     "text": "Find collectible cards across Leonida; GTABase maps them.",
+     "text": "Complete 3 full collectible card sets out of 18.",
      "sources": [
       "PowerPyx",
-      "GTABase",
-      "Exophase"
+      "PSNProfiles"
      ]
     },
     {
-     "text": "Complete one full set, then a second and a third.",
+     "text": "Each set needs its own cards; three loose cards do not count.",
      "sources": [
       "PowerPyx",
-      "GTABase",
-      "Exophase"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Cards hide in shops, safehouses and story locations.",
+     "text": "Pick sets whose cards cluster together and finish one set at a time.",
      "sources": [
       "PowerPyx",
-      "GTABase",
-      "Exophase"
-     ]
-    },
-    {
-     "text": "Check the counter: 3 complete sets is the target.",
-     "sources": [
-      "PowerPyx",
-      "GTABase",
-      "Exophase"
-     ]
-    },
-    {
-     "text": "See dispute D4 on how many cards each set holds.",
-     "sources": [
-      "PowerPyx",
-      "GTABase",
-      "Exophase"
-     ]
-    },
-    {
-     "text": "The silver pops on the third completed set.",
-     "sources": [
-      "PowerPyx",
-      "GTABase",
-      "Exophase"
+      "GTABase"
      ]
     }
    ],
+   "sources": [
+    "PowerPyx",
+    "PSNProfiles",
+    "KeenGamer",
+    "GTABase"
+   ],
+   "unconfirmed": false,
+   "stage": 4,
    "dispute": "D4"
   },
   {
@@ -1710,64 +1451,52 @@
    "name": "You WAiNKer!",
    "description": "WAiNK It at 100 locations.",
    "grade": "silver",
-   "hidden": false,
    "kind": "collectible",
-   "chapter": "Free Roam",
-   "stage": 3,
+   "chapter": null,
    "missable": false,
-   "count": {
-    "target": 100,
-    "unit": "locations"
-   },
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "GTABase",
-    "Exophase"
-   ],
-   "guide": "WAiNK It at 100 locations: the in-world photo/tag spots. GTABase maps them; Exophase confirms the 100 total. Whether all 100 sit inside Vice City or spread across Leonida is disputed: see dispute D4.",
+   "hidden": false,
+   "count": 100,
+   "countLabel": "WAiNK locations",
+   "guide": "WAiNK It at 100 locations. The WAiNK phone app tags landmarks, curiosities and sculptures: open it at a spot and snap the tag. Landmarks, curiosities and sculptures all count toward the same 100, so tag whatever you pass — the set builds itself as you explore.",
    "steps": [
     {
-     "text": "Open the WAiNK app at marked locations and tag them.",
+     "text": "Open the WAiNK app at a spot and tag it.",
      "sources": [
       "PowerPyx",
-      "GTABase",
-      "Exophase"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Work Vice City first; it holds the densest cluster.",
+     "text": "Landmarks, curiosities and sculptures all count toward the 100.",
      "sources": [
       "PowerPyx",
-      "GTABase",
-      "Exophase"
+      "EGamers"
      ]
     },
     {
-     "text": "Then sweep the coast towns and the northern routes.",
+     "text": "Tag spots as you explore; the set builds itself across the map.",
      "sources": [
       "PowerPyx",
-      "GTABase",
-      "Exophase"
+      "GTABase"
      ]
     },
     {
-     "text": "Check the counter: 100 tagged locations is the target.",
+     "text": "Check the app's list to see which kinds of spots you still need.",
      "sources": [
       "PowerPyx",
-      "GTABase",
-      "Exophase"
-     ]
-    },
-    {
-     "text": "See dispute D4 on where the 100 locations sit.",
-     "sources": [
-      "PowerPyx",
-      "GTABase",
-      "Exophase"
+      "Vice City Hustle"
      ]
     }
    ],
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "EGamers",
+    "GTABase",
+    "Vice City Hustle"
+   ],
+   "unconfirmed": false,
+   "stage": 4,
    "dispute": "D4"
   },
   {
@@ -1775,64 +1504,44 @@
    "name": "One Last Thing",
    "description": "Complete 50 Challenges.",
    "grade": "bronze",
-   "hidden": false,
-   "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 4,
+   "kind": "completion",
+   "chapter": null,
    "missable": false,
-   "count": {
-    "target": 50,
-    "unit": "challenges"
-   },
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "EGamers"
-   ],
-   "guide": "Fifty challenges completed. PowerPyx lists the challenge types; EGamers notes daily and weekly challenges count alongside the open-world ones. What counts as a challenge is disputed: see dispute D5.",
+   "hidden": false,
+   "count": 50,
+   "countLabel": "challenges",
+   "guide": "Complete 50 challenges. There are 80 challenges in 8 groups of 10, so you need most of them but not all. Pick the groups that suit how you play — driving, shooting, flying — and finish 50 across them. The challenge list shows your progress per group.",
    "steps": [
     {
-     "text": "Open the challenges menu and work the open-world list.",
+     "text": "Complete any 50 of the 80 challenges.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "PSNProfiles"
      ]
     },
     {
-     "text": "Mix driving, combat and exploration challenges for variety.",
+     "text": "Challenges sit in 8 groups of 10; pick the groups that suit you.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Daily and weekly challenges count toward the 50.",
+     "text": "The challenge list shows progress per group, so chase the nearest ones.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
-     ]
-    },
-    {
-     "text": "Check the counter: 50 completed challenges is the target.",
-     "sources": [
-      "PowerPyx",
-      "Push Square",
-      "EGamers"
-     ]
-    },
-    {
-     "text": "See dispute D5 on which challenges count.",
-     "sources": [
-      "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "GamesFuze"
      ]
     }
    ],
+   "sources": [
+    "PowerPyx",
+    "PSNProfiles",
+    "KeenGamer",
+    "GamesFuze"
+   ],
+   "unconfirmed": false,
+   "stage": 6,
    "dispute": "D5"
   },
   {
@@ -1840,207 +1549,224 @@
    "name": "Hot Together",
    "description": "Lose a 4 star Wanted Level with your partner and escape the heat.",
    "grade": "bronze",
-   "hidden": true,
-   "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 5,
+   "kind": "combat",
+   "chapter": null,
    "missable": true,
+   "hidden": false,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "GamesFuze",
-    "Insider Gaming"
-   ],
-   "guide": "Lose a 4-star wanted level while your partner is with you, then escape. GamesFuze recommends building the wanted level away from the city centre, then breaking line of sight with your partner beside you. Your partner must be present when the stars clear.",
+   "countLabel": null,
+   "guide": "Lose a 4-star wanted level with your partner beside you and escape. Get the heat to 4 stars while your partner is with you, then break line of sight and stay hidden until it clears. A fast car and a quiet corner of the map make it far easier than a shootout.",
    "steps": [
     {
-     "text": "Bring your partner along before raising your wanted level.",
+     "text": "Reach a 4-star wanted level with your partner beside you.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Reach 4 stars, then break line of sight and escape with your partner.",
+     "text": "Break line of sight and stay hidden until the heat clears.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "GamesFuze"
+     ]
+    },
+    {
+     "text": "Use a fast car and a quiet corner rather than fighting it out.",
+     "sources": [
+      "PowerPyx",
+      "Vice City Hustle"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "GamesFuze",
+    "Vice City Hustle"
+   ],
+   "unconfirmed": false,
+   "stage": 5,
+   "dispute": null
   },
   {
    "id": 34,
    "name": "Retail Therapy",
    "description": "Rob 3 shops back-to-back with your partner without losing your Wanted Level.",
    "grade": "bronze",
-   "hidden": true,
-   "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 5,
+   "kind": "combat",
+   "chapter": null,
    "missable": true,
+   "hidden": false,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "GamesFuze",
-    "Insider Gaming"
-   ],
-   "guide": "Rob three shops in a row with your partner, keeping your wanted level the whole time. GamesFuze advises small shops in a row on one street; Insider Gaming notes losing the wanted level between robberies resets the chain.",
+   "countLabel": null,
+   "guide": "Rob 3 shops back-to-back with your partner, without losing your wanted level. The trick is the opposite of the usual: keep the wanted level alive through all three robberies. Hit three shops in a row quickly, keep moving, and do not let the heat drop before the third till is empty.",
    "steps": [
     {
-     "text": "Bring your partner and pick three small shops on one street.",
+     "text": "Rob 3 shops in a row with your partner.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Rob the first, then the second and third without losing your wanted level.",
+     "text": "Keep the wanted level alive through all three robberies.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "GamesFuze"
      ]
     },
     {
-     "text": "Do not let the wanted level drop between robberies or the chain resets.",
+     "text": "Hit the shops quickly and keep moving; do not let the heat drop.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "Vice City Hustle"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "GamesFuze",
+    "Vice City Hustle"
+   ],
+   "unconfirmed": false,
+   "stage": 5,
+   "dispute": null
   },
   {
    "id": 35,
    "name": "Whip It Good",
    "description": "Discover 100 vehicles.",
    "grade": "bronze",
-   "hidden": false,
-   "kind": "collectible",
-   "chapter": "Free Roam",
-   "stage": 3,
+   "kind": "exploration",
+   "chapter": null,
    "missable": false,
-   "count": {
-    "target": 100,
-    "unit": "vehicles"
-   },
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "GTABase",
-    "Exophase"
-   ],
-   "guide": "Discover 100 distinct vehicles: drive or enter each one and it counts. GTABase lists the vehicle roster; Exophase confirms the 100 total. Rare spawns cluster at the airport, the docks and the wealthy districts.",
+   "hidden": false,
+   "count": 100,
+   "countLabel": "vehicles",
+   "guide": "Discover 100 vehicles. Every distinct vehicle you drive counts once, so the set grows as you try new rides: cars, bikes, boats and aircraft all feed it. Grab a new vehicle whenever you see one you have not driven, and the 100 arrives on its own.",
    "steps": [
     {
-     "text": "Drive every new vehicle you see; entering it counts as discovered.",
+     "text": "Drive 100 distinct vehicles; each one counts once.",
      "sources": [
       "PowerPyx",
-      "GTABase",
-      "Exophase"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Sweep the airport, docks and wealthy districts for rare spawns.",
+     "text": "Cars, bikes, boats and aircraft all feed the same total.",
      "sources": [
       "PowerPyx",
-      "GTABase",
-      "Exophase"
+      "EGamers"
      ]
     },
     {
-     "text": "Check the counter: 100 distinct vehicles is the target.",
+     "text": "Take a new ride whenever you see one you have not driven.",
      "sources": [
       "PowerPyx",
-      "GTABase",
-      "Exophase"
+      "GTABase"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "EGamers",
+    "GTABase"
+   ],
+   "unconfirmed": false,
+   "stage": 4,
+   "dispute": null
   },
   {
    "id": 36,
    "name": "Gunslinger",
    "description": "Take down 5 enemies in a single use of Combat Focus.",
    "grade": "bronze",
+   "kind": "combat",
+   "chapter": null,
+   "missable": true,
    "hidden": false,
-   "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 4,
-   "missable": false,
-   "count": {
-    "target": 5,
-    "unit": "enemies"
-   },
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "EGamers"
-   ],
-   "guide": "Down five enemies inside one Combat Focus. PowerPyx describes Combat Focus as the slow-aim mode; EGamers recommends a crowded shootout so five targets are in range at once.",
+   "count": null,
+   "countLabel": null,
+   "guide": "Take down 5 enemies in a single use of Combat Focus. Combat Focus slows time, so the window is short: pick a spot with a cluster of enemies, trigger it, and drop five before it ends. Food, drinks or a shower at home buff your focus beforehand, and Adrenaline stretches the window.",
    "steps": [
     {
-     "text": "Enter a shootout with at least five enemies in range.",
+     "text": "Find a cluster of enemies, then trigger Combat Focus.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Trigger Combat Focus and down five enemies before it ends.",
+     "text": "Drop 5 enemies before the focus window ends.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "GamesFuze"
+     ]
+    },
+    {
+     "text": "Buff focus first with food, drinks or a shower, and bring Adrenaline.",
+     "sources": [
+      "PowerPyx",
+      "Vice City Hustle"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "GamesFuze",
+    "Vice City Hustle"
+   ],
+   "unconfirmed": false,
+   "stage": 3,
+   "dispute": null
   },
   {
    "id": 37,
    "name": "Catch Me If You Can",
    "description": "Make an unscheduled departure at VCIA.",
    "grade": "bronze",
-   "hidden": true,
-   "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 4,
+   "kind": "exploration",
+   "chapter": null,
    "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "EGamers"
-   ],
-   "guide": "Leave VCIA (the airport) in an unscheduled way: take a plane and depart without a flight plan. Sources disagree on whether this is a one-time missable moment or replayable: Push Square calls it missable, PowerPyx says mission replay covers it. See dispute D1.",
+   "countLabel": null,
+   "guide": "Make an unscheduled departure at VCIA, the airport. This is not the story mission at the airport — it is a separate free-roam moment: get to a runway or a plane and leave the airport in a way no timetable planned. It is hidden until earned, so the exact trigger is easy to miss.",
    "steps": [
     {
-     "text": "Go to VCIA, take a plane and depart without following a flight plan.",
+     "text": "Go to VCIA airport in free roam, away from the story mission.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "Vice City Hustle"
      ]
     },
     {
-     "text": "See dispute D1: sources disagree on whether this can be repeated.",
+     "text": "Leave the airport by an unscheduled route: a runway or a plane.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "KeenGamer"
+     ]
+    },
+    {
+     "text": "Hidden until earned; it is a separate moment from VCIA Takedown.",
+     "sources": [
+      "PowerPyx",
+      "GTABase"
      ]
     }
    ],
+   "sources": [
+    "PowerPyx",
+    "Vice City Hustle",
+    "KeenGamer",
+    "GTABase"
+   ],
+   "unconfirmed": false,
+   "stage": 5,
    "dispute": "D1"
   },
   {
@@ -2048,431 +1774,396 @@
    "name": "Challenging Tank",
    "description": "Kinda hot in these Rhinos.",
    "grade": "bronze",
-   "hidden": false,
-   "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 4,
-   "missable": false,
+   "kind": "combat",
+   "chapter": null,
+   "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "EGamers"
-   ],
-   "guide": "The Rhinos are tanks. PowerPyx reads this trophy as surviving or dealing with Rhino tanks in free roam; EGamers notes the military base is where Rhinos spawn. Get in a Rhino or take one on and the trophy pops.",
+   "countLabel": null,
+   "guide": "Deal with Rhinos — the tanks. The description is a joke, and the trophy is hidden until earned, so the exact trigger is not spelled out. Get into a Rhino tank and use it, or take one down: either way the tanks are the point, and the military areas are where you will find them.",
    "steps": [
     {
-     "text": "Find Rhinos at the military base or during wanted-level chaos.",
+     "text": "Find a Rhino tank in a military area.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "Vice City Hustle"
      ]
     },
     {
-     "text": "Get in a Rhino, or take one on, until the trophy pops.",
+     "text": "Use the tank, or take one down — the tanks are the point.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "KeenGamer"
+     ]
+    },
+    {
+     "text": "Hidden until earned; the description gives the hint, not the method.",
+     "sources": [
+      "PowerPyx",
+      "GTABase"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "Vice City Hustle",
+    "KeenGamer",
+    "GTABase"
+   ],
+   "unconfirmed": false,
+   "stage": 5,
+   "dispute": null
   },
   {
    "id": 39,
    "name": "Sneakthief",
    "description": "Rob a jewelry store without being detected.",
    "grade": "bronze",
-   "hidden": false,
-   "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 4,
+   "kind": "combat",
+   "chapter": null,
    "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "EGamers"
-   ],
-   "guide": "Rob a jewelry store with no detection: no alarm, no witness, no camera spotting you. PowerPyx recommends going at night and cutting the cameras first; EGamers notes a silent approach through the back.",
+   "countLabel": null,
+   "guide": "Rob a jewelry store without being detected. This is a one-shot stealth job: once you are spotted, the attempt is blown, so plan it. Go in quiet, take the goods without tripping the alarm, and leave before anyone raises it. It is the stealth trophy the guides single out as a single attempt.",
    "steps": [
     {
-     "text": "Case a jewelry store and cut its cameras first.",
+     "text": "Pick a jewelry store and go in quiet.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Enter quietly at night and take the goods without tripping an alarm.",
+     "text": "Take the goods without tripping the alarm or being seen.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "GamesFuze"
      ]
     },
     {
-     "text": "Leave without being seen; detection at any point voids the attempt.",
+     "text": "Leave before anyone raises the alarm; being spotted blows the attempt.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "Vice City Hustle"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "GamesFuze",
+    "Vice City Hustle"
+   ],
+   "unconfirmed": false,
+   "stage": 5,
+   "dispute": null
   },
   {
    "id": 40,
    "name": "Maximum Withdrawal",
    "description": "Rob 5 Bank Vaults and escape.",
    "grade": "silver",
-   "hidden": false,
-   "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 4,
+   "kind": "combat",
+   "chapter": null,
    "missable": false,
-   "count": {
-    "target": 5,
-    "unit": "vaults"
-   },
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "EGamers"
-   ],
-   "guide": "Rob five bank vaults and escape each time. PowerPyx maps the vault locations; EGamers stresses the escape: the robbery only counts once you are clear. Plan a fast car at each bank before you go in.",
+   "hidden": false,
+   "count": 5,
+   "countLabel": "bank vaults",
+   "guide": "Rob 5 bank vaults and escape. Each vault is a heist of its own: get in, crack the vault, and get out with the heat on you. Do them one at a time and escape cleanly each time — the count only rises on a clean getaway.",
    "steps": [
     {
-     "text": "Find the five bank vault locations across Leonida.",
+     "text": "Rob a bank vault and escape cleanly; the count rises on a getaway.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Stage a fast getaway car at each bank before entering.",
+     "text": "Repeat for 5 vaults, one at a time.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "GamesFuze"
      ]
     },
     {
-     "text": "Rob the vault, then escape cleanly; the count ticks on escape.",
+     "text": "Plan the escape before you crack the vault.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
-     ]
-    },
-    {
-     "text": "Repeat at all five banks.",
-     "sources": [
-      "PowerPyx",
-      "Push Square",
-      "EGamers"
-     ]
-    },
-    {
-     "text": "Check the counter: 5 vaults robbed and escaped.",
-     "sources": [
-      "PowerPyx",
-      "Push Square",
-      "EGamers"
-     ]
-    },
-    {
-     "text": "The silver pops after the fifth clean escape.",
-     "sources": [
-      "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "Vice City Hustle"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "GamesFuze",
+    "Vice City Hustle"
+   ],
+   "unconfirmed": false,
+   "stage": 5,
+   "dispute": null
   },
   {
    "id": 41,
    "name": "A Classic Blitz Play",
    "description": "Rob an Armored Truck and escape.",
    "grade": "bronze",
+   "kind": "combat",
+   "chapter": null,
+   "missable": true,
    "hidden": false,
-   "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 4,
-   "missable": false,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "EGamers"
-   ],
-   "guide": "Rob an armored truck and escape. PowerPyx notes the trucks run set routes through Vice City; EGamers recommends blocking the route, then breaking away fast once the cash is grabbed.",
+   "countLabel": null,
+   "guide": "Rob an armored truck and escape. Armored trucks run set routes; stop one, crack it, take the cash and get away before the response arrives. It is a single clean getaway, so plan the escape route before you hit the truck.",
    "steps": [
     {
-     "text": "Find an armored truck on its route through Vice City.",
+     "text": "Find an armored truck on its route and stop it.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Block it, grab the cash and escape before the escort responds.",
+     "text": "Crack it, take the cash, and escape before the response arrives.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "GamesFuze"
+     ]
+    },
+    {
+     "text": "Plan the escape route before you hit the truck.",
+     "sources": [
+      "PowerPyx",
+      "Vice City Hustle"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "GamesFuze",
+    "Vice City Hustle"
+   ],
+   "unconfirmed": false,
+   "stage": 5,
+   "dispute": null
   },
   {
    "id": 42,
    "name": "The Goodtime State",
    "description": "Explore all of Leonida.",
    "grade": "bronze",
-   "hidden": false,
-   "kind": "collectible",
-   "chapter": "Free Roam",
-   "stage": 3,
+   "kind": "exploration",
+   "chapter": null,
    "missable": false,
-   "count": {
-    "target": 52,
-    "unit": "areas"
-   },
-   "confirmed": true,
+   "hidden": false,
+   "count": 52,
+   "countLabel": "Leonida areas",
+   "guide": "Explore all 52 areas of Leonida. The state is the whole map: Vice City, the Keys, the swamps and the small towns. Visit each named area once and the counter rises; the map shades in as you go, so the gaps show where you still need to go.",
+   "steps": [
+    {
+     "text": "Visit each of the 52 named areas of Leonida once.",
+     "sources": [
+      "PowerPyx",
+      "GTABase",
+      "Rockstar"
+     ]
+    },
+    {
+     "text": "The map shades in as you go; the gaps show where to head next.",
+     "sources": [
+      "PowerPyx",
+      "KeenGamer"
+     ]
+    },
+    {
+     "text": "Cover Vice City, the Keys, the swamps and the small towns.",
+     "sources": [
+      "PowerPyx",
+      "EGamers"
+     ]
+    }
+   ],
    "sources": [
     "PowerPyx",
     "GTABase",
-    "Exophase"
+    "KeenGamer",
+    "EGamers"
    ],
-   "guide": "Explore all 52 areas of Leonida. GTABase maps the 52 named areas; Exophase confirms the count. Drive through each one and the map fills in; the trophy pops on the last undiscovered area.",
-   "steps": [
-    {
-     "text": "Drive through every named area; the map marks each as found.",
-     "sources": [
-      "PowerPyx",
-      "GTABase",
-      "Exophase"
-     ]
-    },
-    {
-     "text": "Sweep the coast towns first, then the inland routes.",
-     "sources": [
-      "PowerPyx",
-      "GTABase",
-      "Exophase"
-     ]
-    },
-    {
-     "text": "Check the counter: 52 areas is the target.",
-     "sources": [
-      "PowerPyx",
-      "GTABase",
-      "Exophase"
-     ]
-    },
-    {
-     "text": "The northern swamps and keys hide the last few areas.",
-     "sources": [
-      "PowerPyx",
-      "GTABase",
-      "Exophase"
-     ]
-    },
-    {
-     "text": "The trophy pops when the fifty-second area is discovered.",
-     "sources": [
-      "PowerPyx",
-      "GTABase",
-      "Exophase"
-     ]
-    }
-   ]
+   "unconfirmed": false,
+   "stage": 4,
+   "dispute": null
   },
   {
    "id": 43,
    "name": "Pest Control",
    "description": "Rob an Illegal Operation belonging to each gang.",
    "grade": "bronze",
-   "hidden": false,
-   "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 4,
+   "kind": "combat",
+   "chapter": null,
    "missable": false,
-   "count": {
-    "target": 9,
-    "unit": "gangs"
-   },
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "Push Square",
-    "EGamers"
-   ],
-   "guide": "Rob one illegal operation for each of the nine gangs. PowerPyx lists the gangs and their turf; EGamers notes each operation is marked once you are near its territory. One per gang, nine in total.",
+   "hidden": false,
+   "count": 9,
+   "countLabel": "gangs",
+   "guide": "Rob an illegal operation belonging to each of the 9 gangs. Each gang runs its own operations around the map; hit one operation per gang and the set is done. Mark the gangs off as you go so you do not repeat one and miss another.",
    "steps": [
     {
-     "text": "Learn the nine gangs and where each holds territory.",
+     "text": "Rob one illegal operation for each of the 9 gangs.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Rob one illegal operation in each gang's turf.",
+     "text": "Each gang runs its own operations; hit a different gang each time.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "GamesFuze"
      ]
     },
     {
-     "text": "Operations are marked when you enter the gang's area.",
+     "text": "Mark the gangs off as you go so none is missed.",
      "sources": [
       "PowerPyx",
-      "Push Square",
-      "EGamers"
-     ]
-    },
-    {
-     "text": "Check the counter: 9 gangs is the target.",
-     "sources": [
-      "PowerPyx",
-      "Push Square",
-      "EGamers"
-     ]
-    },
-    {
-     "text": "The trophy pops after the ninth gang's operation.",
-     "sources": [
-      "PowerPyx",
-      "Push Square",
-      "EGamers"
+      "GTABase"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "GamesFuze",
+    "GTABase"
+   ],
+   "unconfirmed": false,
+   "stage": 5,
+   "dispute": null
   },
   {
    "id": 44,
    "name": "In The Beginning…",
    "description": "Enjoy a cocktail with a view on Ocean Beach.",
    "grade": "bronze",
+   "kind": "hidden-moment",
+   "chapter": null,
+   "missable": false,
    "hidden": true,
-   "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 6,
-   "missable": true,
    "count": null,
-   "confirmed": false,
-   "sources": [
-    "Vice City Hustle"
-   ],
-   "guide": "UNCONFIRMED: Vice City Hustle reports a cocktail moment on Ocean Beach, but no second source has verified the trigger, the bar, or the exact requirement. Treat this as a rumour until PowerPyx, Push Square or Rockstar confirms it. Do not plan a run around it.",
+   "countLabel": null,
+   "guide": "UNCONFIRMED. The description points to a cocktail with a view on Ocean Beach, but no guide has pinned down the exact spot or trigger yet. PowerPyx lists this as one of the five hidden trophies whose conditions are still unknown. Treat it as a moment to try on Ocean Beach rather than a checked step.",
    "steps": [
     {
-     "text": "Reported: have a cocktail with a view on Ocean Beach. UNCONFIRMED — one source only.",
+     "text": "UNCONFIRMED: try a cocktail spot with a view on Ocean Beach; the exact trigger is not yet pinned down.",
      "sources": [
-      "Vice City Hustle"
+      "PowerPyx"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx"
+   ],
+   "unconfirmed": true,
+   "stage": 4,
+   "dispute": null
   },
   {
    "id": 45,
    "name": "Capital Offense",
    "description": "Smash your way out of a vehicle showroom in classic style.",
    "grade": "bronze",
+   "kind": "hidden-moment",
+   "chapter": null,
+   "missable": false,
    "hidden": true,
-   "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 6,
-   "missable": true,
    "count": null,
-   "confirmed": false,
-   "sources": [
-    "GTABase"
-   ],
-   "guide": "UNCONFIRMED: GTABase lists a showroom-smash moment, but no second source has verified which showroom, what counts as classic style, or whether the trophy exists as described. Treat this as a rumour until a second source confirms it.",
+   "countLabel": null,
+   "guide": "UNCONFIRMED. The description points to smashing out of a vehicle showroom, but no guide has pinned down which showroom or what counts as the classic exit. PowerPyx lists this as one of the five hidden trophies whose conditions are still unknown.",
    "steps": [
     {
-     "text": "Reported: smash out of a vehicle showroom in classic style. UNCONFIRMED — one source only.",
+     "text": "UNCONFIRMED: try smashing out of a vehicle showroom; the exact showroom and exit are not yet pinned down.",
      "sources": [
-      "GTABase"
+      "PowerPyx"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx"
+   ],
+   "unconfirmed": true,
+   "stage": 4,
+   "dispute": null
   },
   {
    "id": 46,
    "name": "Let’s Go Bowling",
    "description": "Follow-through at the Kolt & Associates' bowling alley.",
    "grade": "bronze",
-   "hidden": true,
-   "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 6,
+   "kind": "hidden-moment",
+   "chapter": null,
    "missable": true,
+   "hidden": true,
    "count": null,
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "GamesFuze",
-    "Insider Gaming"
-   ],
-   "guide": "Bowl at the Kolt & Associates alley and follow through. GamesFuze places the alley in Vice City; Insider Gaming notes the follow-through is the scored part, not just showing up.",
+   "countLabel": null,
+   "guide": "Follow through at the Kolt & Associates bowling alley. The description points to a bowling moment — the follow-through — at a specific alley. Play a frame there and finish the follow-through; it is hidden until earned, so the alley itself is the clue.",
    "steps": [
     {
-     "text": "Go to the Kolt & Associates bowling alley in Vice City.",
+     "text": "Go to the Kolt & Associates bowling alley.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "Vice City Hustle"
      ]
     },
     {
-     "text": "Bowl a full game and follow through on your shots.",
+     "text": "Bowl a frame and complete the follow-through.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "KeenGamer"
+     ]
+    },
+    {
+     "text": "Hidden until earned; the alley is the clue.",
+     "sources": [
+      "PowerPyx",
+      "GTABase"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "Vice City Hustle",
+    "KeenGamer",
+    "GTABase"
+   ],
+   "unconfirmed": false,
+   "stage": 4,
+   "dispute": null
   },
   {
    "id": 47,
    "name": "Personal Best",
    "description": "A partnership with mass appeal.",
    "grade": "bronze",
+   "kind": "hidden-moment",
+   "chapter": null,
+   "missable": false,
    "hidden": true,
-   "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 6,
-   "missable": true,
    "count": null,
-   "confirmed": false,
-   "sources": [
-    "Vice City Hustle"
-   ],
-   "guide": "UNCONFIRMED: Vice City Hustle reports a partnership moment with mass appeal, but the trigger is unknown and no second source has verified it. GTABase lists a different trigger for the same name, which is why it sits in dispute D6. Treat this as a rumour.",
+   "countLabel": null,
+   "guide": "UNCONFIRMED. The description hints at a partnership moment with mass appeal, but no guide has pinned down what it asks for. This is the sixth unconfirmed trophy in this guide: the condition is not yet known, so do not chase a specific method until one is confirmed.",
    "steps": [
     {
-     "text": "Reported: a partnership moment with mass appeal. UNCONFIRMED — see dispute D6.",
+     "text": "UNCONFIRMED: the condition is not yet known; wait for a confirmed method before chasing it.",
      "sources": [
-      "Vice City Hustle"
+      "PowerPyx"
      ]
     }
    ],
+   "sources": [
+    "PowerPyx"
+   ],
+   "unconfirmed": true,
+   "stage": 4,
    "dispute": "D6"
   },
   {
@@ -2480,48 +2171,44 @@
    "name": "Actions Speak Louder",
    "description": "Choices made (for better or worse).",
    "grade": "bronze",
-   "hidden": true,
-   "kind": "story",
-   "chapter": "Free Roam",
-   "stage": 6,
+   "kind": "completion",
+   "chapter": null,
    "missable": false,
-   "count": {
-    "target": 500,
-    "unit": "choices"
-   },
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "PSNProfiles",
-    "Exophase"
-   ],
-   "guide": "Five hundred choices, tracked by PSN. PSNProfiles confirms the 500 count; Exophase tracks the same total. What counts as a choice is disputed: some sources count dialogue picks, others count any decision point. See dispute D5.",
+   "hidden": true,
+   "count": 500,
+   "countLabel": "choices",
+   "guide": "Make choices — PSN tracks a count to 500. The game logs decisions across the story and the side content, and the counter climbs as you make them. There is no single big choice: it is the accumulation of many small ones, so just keep playing and deciding.",
    "steps": [
     {
-     "text": "Make choices whenever the game offers them: dialogue, jobs, side calls.",
+     "text": "Make choices across the story and side content; PSN tracks a count to 500.",
      "sources": [
       "PowerPyx",
-      "PSNProfiles",
-      "Exophase"
+      "PSNProfiles"
      ]
     },
     {
-     "text": "The PSN counter climbs toward 500 across the whole playthrough.",
+     "text": "The count climbs on many small decisions, not one big choice.",
      "sources": [
       "PowerPyx",
-      "PSNProfiles",
-      "Exophase"
+      "KeenGamer"
      ]
     },
     {
-     "text": "See dispute D5 on what counts as a choice.",
+     "text": "Keep playing and deciding; the total builds across a playthrough.",
      "sources": [
       "PowerPyx",
-      "PSNProfiles",
-      "Exophase"
+      "GamesFuze"
      ]
     }
    ],
+   "sources": [
+    "PowerPyx",
+    "PSNProfiles",
+    "KeenGamer",
+    "GamesFuze"
+   ],
+   "unconfirmed": false,
+   "stage": 4,
    "dispute": "D5"
   },
   {
@@ -2529,50 +2216,53 @@
    "name": "Bad Luck, I Guess",
    "description": "Second time's the charm.",
    "grade": "bronze",
+   "kind": "hidden-moment",
+   "chapter": null,
+   "missable": false,
    "hidden": true,
-   "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 6,
-   "missable": true,
    "count": null,
-   "confirmed": false,
-   "sources": [
-    "GTABase"
-   ],
-   "guide": "UNCONFIRMED: GTABase reports a second-try success trophy, but no second source has verified what must be failed once and then passed, or whether the trophy exists as described. Treat this as a rumour until a second source confirms it.",
+   "countLabel": null,
+   "guide": "UNCONFIRMED. The description hints that the second try is the charm, but no guide has pinned down what must fail once and succeed the second time. PowerPyx lists this as one of the five hidden trophies whose conditions are still unknown.",
    "steps": [
     {
-     "text": "Reported: succeed on a second try. UNCONFIRMED — one source only.",
+     "text": "UNCONFIRMED: the trigger is not yet pinned down; it hints at succeeding on a second try.",
      "sources": [
-      "GTABase"
+      "PowerPyx"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx"
+   ],
+   "unconfirmed": true,
+   "stage": 4,
+   "dispute": null
   },
   {
    "id": 50,
    "name": "The Truth Is Out There",
    "description": "What the hell just happened?",
    "grade": "bronze",
+   "kind": "hidden-moment",
+   "chapter": null,
+   "missable": false,
    "hidden": true,
-   "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 6,
-   "missable": true,
    "count": null,
-   "confirmed": false,
-   "sources": [
-    "Vice City Hustle"
-   ],
-   "guide": "UNCONFIRMED: Vice City Hustle reports a strange-event trophy, but the event, the place and the trigger are all unverified, and GTABase gives a different account of the same name. See dispute D6. Treat this as a rumour.",
+   "countLabel": null,
+   "guide": "UNCONFIRMED. The description reads like a reaction to something strange, but no guide has pinned down what event it asks for. PowerPyx lists this as one of the five hidden trophies whose conditions are still unknown — likely a rare world event, but that is a guess, not a checked fact.",
    "steps": [
     {
-     "text": "Reported: witness something strange. UNCONFIRMED — see dispute D6.",
+     "text": "UNCONFIRMED: the event is not yet pinned down; it reads like a rare world moment.",
      "sources": [
-      "Vice City Hustle"
+      "PowerPyx"
      ]
     }
    ],
+   "sources": [
+    "PowerPyx"
+   ],
+   "unconfirmed": true,
+   "stage": 4,
    "dispute": "D6"
   },
   {
@@ -2580,233 +2270,207 @@
    "name": "Ten Pin",
    "description": "Bowl 'em over with a melee drive-by.",
    "grade": "bronze",
+   "kind": "hidden-moment",
+   "chapter": null,
+   "missable": false,
    "hidden": true,
-   "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 6,
-   "missable": true,
    "count": null,
-   "confirmed": false,
-   "sources": [
-    "GTABase"
-   ],
-   "guide": "UNCONFIRMED: GTABase reports a melee drive-by knockdown, but no second source has verified the move, the target, or the count. Treat this as a rumour until a second source confirms it.",
+   "countLabel": null,
+   "guide": "UNCONFIRMED. The description points to knocking someone down with a melee drive-by, but the precise method — where, with what, and what counts — is still being confirmed. KeenGamer notes the method is still being confirmed, so treat any specific recipe as unproven.",
    "steps": [
     {
-     "text": "Reported: knock someone down with a melee drive-by. UNCONFIRMED — one source only.",
+     "text": "UNCONFIRMED: the precise method is still being confirmed; do not trust a specific recipe yet.",
      "sources": [
-      "GTABase"
+      "KeenGamer"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "KeenGamer"
+   ],
+   "unconfirmed": true,
+   "stage": 4,
+   "dispute": null
   },
   {
    "id": 52,
    "name": "Dime on the Dollar",
    "description": "Earn $250,000 laundering Marked Bills through your contacts.",
    "grade": "bronze",
-   "hidden": false,
-   "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 5,
+   "kind": "money",
+   "chapter": null,
    "missable": false,
-   "count": {
-    "target": 250000,
-    "unit": "$ laundered"
-   },
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "GamesFuze",
-    "Insider Gaming"
-   ],
-   "guide": "Launder $250,000 of Marked Bills through your contacts. GamesFuze explains the laundering loop: Marked Bills come from heists and robberies, and contacts clean them for a cut. Insider Gaming notes the cut varies by contact, so use the cheapest contact for the full $250,000.",
+   "hidden": false,
+   "count": 250000,
+   "countLabel": "$ laundered",
+   "guide": "Launder $250,000 of Marked Bills through your contacts. Marked Bills come from robberies and heists; your contacts wash them into clean cash, and the counter tracks the total laundered. Keep feeding bills through your contacts as you earn them and the quarter-million arrives.",
    "steps": [
     {
-     "text": "Collect Marked Bills from heists, vaults and truck robberies.",
+     "text": "Earn Marked Bills from robberies and heists.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Take them to a contact to launder; each contact takes a cut.",
+     "text": "Launder them through your contacts; the counter tracks the total.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "GamesFuze"
      ]
     },
     {
-     "text": "Use the cheapest contact to keep more of the $250,000.",
+     "text": "Keep feeding bills through as you earn them until $250,000 is washed.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
-     ]
-    },
-    {
-     "text": "Check the counter: $250,000 laundered is the target.",
-     "sources": [
-      "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
-     ]
-    },
-    {
-     "text": "The trophy pops when the laundered total hits $250,000.",
-     "sources": [
-      "PowerPyx",
-      "GamesFuze",
       "Insider Gaming"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "GamesFuze",
+    "Insider Gaming"
+   ],
+   "unconfirmed": false,
+   "stage": 5,
+   "dispute": null
   },
   {
    "id": 53,
    "name": "Treat Yo Self",
    "description": "Spend $100,000 across all shops.",
    "grade": "bronze",
-   "hidden": false,
-   "kind": "activity",
-   "chapter": "Free Roam",
-   "stage": 5,
+   "kind": "money",
+   "chapter": null,
    "missable": false,
-   "count": {
-    "target": 100000,
-    "unit": "$ spent"
-   },
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "GamesFuze",
-    "Insider Gaming"
-   ],
-   "guide": "Spend $100,000 across all shops: clothes, weapons, cars, food, anything. GamesFuze notes the total is cumulative across every shop type; Insider Gaming recommends buying the big-ticket items (cars, weapons) to reach it fast.",
+   "hidden": false,
+   "count": 100000,
+   "countLabel": "$ spent",
+   "guide": "Spend $100,000 across all shops. Every shop counts — clothes, weapons, food, cars — and the total accumulates across the whole playthrough. Buy what you need as you go and the hundred thousand arrives without a grind.",
    "steps": [
     {
-     "text": "Spend across all shop types; the total is cumulative.",
+     "text": "Spend across any shops: clothes, weapons, food, cars.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Big-ticket buys (cars, weapons) move the total fastest.",
+     "text": "The total accumulates across the whole playthrough.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
-      "Insider Gaming"
+      "GamesFuze"
      ]
     },
     {
-     "text": "Check the counter: $100,000 spent is the target.",
+     "text": "Buy what you need as you go; the total arrives without a grind.",
      "sources": [
       "PowerPyx",
-      "GamesFuze",
       "Insider Gaming"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "GamesFuze",
+    "Insider Gaming"
+   ],
+   "unconfirmed": false,
+   "stage": 5,
+   "dispute": null
   },
   {
    "id": 54,
    "name": "Little Boxes",
    "description": "Purchase all garage properties.",
    "grade": "bronze",
-   "hidden": false,
-   "kind": "collectible",
-   "chapter": "Free Roam",
-   "stage": 3,
+   "kind": "money",
+   "chapter": null,
    "missable": false,
-   "count": {
-    "target": 8,
-    "unit": "garages"
-   },
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "GTABase",
-    "Exophase"
-   ],
-   "guide": "Buy all eight garage properties. GTABase maps the eight garages; Exophase confirms the count. They unlock across the story, so buy each one as it appears rather than saving them all for the end.",
+   "hidden": false,
+   "count": 8,
+   "countLabel": "garage properties",
+   "guide": "Purchase all 8 garage properties. Garages are buyable properties around Leonida; each one costs money and gives you storage. Buy them as you can afford them, and the eighth purchase pops the trophy.",
    "steps": [
     {
-     "text": "Buy each garage property as it becomes available.",
+     "text": "Buy garage properties around Leonida; there are 8 in total.",
      "sources": [
       "PowerPyx",
-      "GTABase",
-      "Exophase"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Eight garages in total across Leonida.",
+     "text": "Each garage costs money and gives you storage.",
      "sources": [
       "PowerPyx",
-      "GTABase",
-      "Exophase"
+      "GamesFuze"
      ]
     },
     {
-     "text": "Check the counter: 8 garages is the target.",
+     "text": "Buy them as you can afford them; the eighth pops the trophy.",
      "sources": [
       "PowerPyx",
-      "GTABase",
-      "Exophase"
+      "Insider Gaming"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "GamesFuze",
+    "Insider Gaming"
+   ],
+   "unconfirmed": false,
+   "stage": 5,
+   "dispute": null
   },
   {
    "id": 55,
    "name": "On the Spot",
    "description": "Register 10 vehicles to the Scooter Bros app.",
    "grade": "bronze",
-   "hidden": false,
-   "kind": "collectible",
-   "chapter": "Free Roam",
-   "stage": 3,
+   "kind": "money",
+   "chapter": null,
    "missable": false,
-   "count": {
-    "target": 10,
-    "unit": "vehicles"
-   },
-   "confirmed": true,
-   "sources": [
-    "PowerPyx",
-    "GTABase",
-    "Exophase"
-   ],
-   "guide": "Register ten vehicles to the Scooter Bros app. GTABase lists the app's registration flow; Exophase confirms the ten-vehicle target. Any discovered vehicle can be registered, so pair this with Whip It Good.",
+   "hidden": false,
+   "count": 10,
+   "countLabel": "vehicles registered",
+   "guide": "Register 10 vehicles to the Scooter Bros app. Find vehicles around Leonida, open the Scooter Bros app, and register each one. Any vehicle counts, so register the ones you drive anyway and the ten arrives quickly.",
    "steps": [
     {
-     "text": "Open the Scooter Bros app and register a discovered vehicle.",
+     "text": "Find vehicles around Leonida and open the Scooter Bros app.",
      "sources": [
       "PowerPyx",
-      "GTABase",
-      "Exophase"
+      "KeenGamer"
      ]
     },
     {
-     "text": "Register ten different vehicles in total.",
+     "text": "Register each vehicle; any vehicle counts.",
      "sources": [
       "PowerPyx",
-      "GTABase",
-      "Exophase"
+      "GamesFuze"
      ]
     },
     {
-     "text": "Pair this with Whip It Good: discover, then register.",
+     "text": "Register the ones you drive anyway; ten arrives quickly.",
      "sources": [
       "PowerPyx",
-      "GTABase",
-      "Exophase"
+      "Insider Gaming"
      ]
     }
-   ]
+   ],
+   "sources": [
+    "PowerPyx",
+    "KeenGamer",
+    "GamesFuze",
+    "Insider Gaming"
+   ],
+   "unconfirmed": false,
+   "stage": 5,
+   "dispute": null
   }
  ]
 }
