@@ -1,325 +1,301 @@
-/* Leonida Trophy Atlas — checklist, roadmap, missables, counters, sources.
-   All data comes from data/trophies.json (same origin). Progress lives in
-   localStorage; nothing is sent anywhere. */
+// Leonida Trophy Atlas — static trophy guide + tracker. No network: reads only ./data/trophies.json.
 (function () {
   'use strict';
+  var LS_PROGRESS = 'leonida-trophy-atlas-v1';
+  var LS_SPOILER = 'leonida-trophy-atlas-spoiler';
+  var SEED_EARNED = ['just-like-paradise', 'paradise-lost', 'trust', 'master-of-none',
+    'stick-fiddler', 'top-fun', 'baited-my-tackle', 'whip-it-good', 'on-the-spot',
+    'treat-yo-self', 'catch-me-if-you-can', 'earn-cash-not-kudos', 'dime-on-the-dollar'];
+  var params = new URLSearchParams(location.search);
+  var view = params.get('view') || 'checklist';
+  var selectedId = params.get('trophy') || null;
+  var seed = params.has('seed');
+  var state = { data: null, earned: {}, spoiler: false, q: '', grade: '', kind: '', status: '' };
+  var viewEl = document.getElementById('view');
+  var detailEl = document.getElementById('detail');
 
-  var LS_EARNED = 'lta-earned-v1';
-  var LS_COUNTERS = 'lta-counters-v1';
-  var LS_SPOILER = 'lta-spoiler-v1';
-
-  var data = null;
-  var earned = new Set();
-  var counters = {};
-  var spoiler = false;
-  var view = 'checklist';
-  var selectedId = null;
-
-  var $ = function (id) { return document.getElementById(id); };
-
-  function loadState() {
-    try { (JSON.parse(localStorage.getItem(LS_EARNED) || '[]')).forEach(function (id) { earned.add(id); }); } catch (e) {}
-    try { counters = JSON.parse(localStorage.getItem(LS_COUNTERS) || '{}') || {}; } catch (e) { counters = {}; }
-    spoiler = localStorage.getItem(LS_SPOILER) === '1';
-  }
-  function saveState() {
+  function loadProgress() {
+    if (seed) { SEED_EARNED.forEach(function (id) { state.earned[id] = true; }); return; }
     try {
-      localStorage.setItem(LS_EARNED, JSON.stringify(Array.from(earned)));
-      localStorage.setItem(LS_COUNTERS, JSON.stringify(counters));
-      localStorage.setItem(LS_SPOILER, spoiler ? '1' : '0');
-    } catch (e) {}
+      var raw = localStorage.getItem(LS_PROGRESS);
+      if (raw) state.earned = JSON.parse(raw) || {};
+    } catch (e) { state.earned = {}; }
+    try { state.spoiler = localStorage.getItem(LS_SPOILER) === '1'; } catch (e) {}
   }
-
+  function saveProgress() {
+    try { localStorage.setItem(LS_PROGRESS, JSON.stringify(state.earned)); } catch (e) {}
+  }
+  function saveSpoiler() {
+    try { localStorage.setItem(LS_SPOILER, state.spoiler ? '1' : '0'); } catch (e) {}
+  }
   function esc(s) {
-    return String(s).replace(/[&<>"']/g, function (c) {
-      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
-    });
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
-
-  function sourceByName(name) {
-    var i, s;
-    for (i = 0; i < data.sources.length; i++) { s = data.sources[i]; if (s.name === name) return s; }
-    return { name: name, url: null };
-  }
-
-  function srcChips(names) {
-    return names.map(function (n) {
-      var s = sourceByName(n);
-      if (s.url) return '<a class="src-chip" href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(n) + '</a>';
-      return '<span class="src-chip plain">' + esc(n) + '</span>';
-    }).join('');
-  }
-
-  function trophyById(id) {
-    var i;
-    for (i = 0; i < data.trophies.length; i++) if (data.trophies[i].id === id) return data.trophies[i];
+  function srcById(id) {
+    var list = state.data.sources;
+    for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i];
     return null;
   }
-
-  function isUnconfirmed(t) {
-    return t.steps.some(function (s) { return s.text.indexOf('Unconfirmed:') === 0; });
-  }
-
-  function auditNumbers() {
-    var steps = 0, twoPlus = 0, one = 0, used = {};
-    data.trophies.forEach(function (t) {
-      t.steps.forEach(function (s) {
-        steps++;
-        if (s.sources.length >= 2) twoPlus++; else if (s.sources.length === 1) one++;
-        s.sources.forEach(function (n) { used[n] = true; });
-      });
+  function srcNames(ids) {
+    return (ids || []).map(function (id) {
+      var s = srcById(id);
+      return s ? s.name : id;
     });
-    return { steps: steps, twoPlus: twoPlus, one: one, sources: Object.keys(used).length };
   }
-
-  function renderAudit() {
-    var a = auditNumbers();
-    $('auditBar').innerHTML =
-      '<span><b>' + a.steps + '</b> claims cited</span>' +
-      '<span><b>' + a.twoPlus + '</b> backed by 2+ sources</span>' +
-      '<span><b>' + a.sources + '</b> sources</span>' +
-      '<span><b>' + data.disputes.length + '</b> disagreements</span>' +
-      '<span><b>' + data.counters.length + '</b> count trackers</span>' +
-      '<span><b>' + data.trophies.length + '</b> trophies · 1 platinum, 2 gold, 6 silver, 46 bronze</span>';
-    $('footStats').textContent = 'Data: ' + a.steps + ' cited steps (' + a.twoPlus + ' with 2+ sources, ' + a.one + ' single-source on unconfirmed trophies), ' +
-      a.sources + ' named sources, ' + data.disputes.length + ' open disagreements, ' + data.counters.length + ' PSN count trackers.';
+  function srcLinks(ids) {
+    return (ids || []).map(function (id) {
+      var s = srcById(id);
+      if (!s) return esc(id);
+      return s.url ? '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.name) + '</a>' : esc(s.name);
+    }).join(', ');
   }
-
-  function renderProgress() {
-    var total = data.trophies.length, got = earned.size;
-    var pct = Math.round((got / total) * 100);
-    $('progressText').textContent = got + ' / ' + total + ' earned';
-    $('progressPct').textContent = pct + '%';
-    $('progressFill').style.width = pct + '%';
+  function trophyById(id) {
+    var list = state.data.trophies;
+    for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i];
+    return null;
   }
-
-  function trophyRow(t) {
-    var hiddenName = spoiler && t.hidden && !earned.has(t.id);
-    var nameHtml = hiddenName ? '<span class="spoiled">' + esc(t.name) + '</span>' : esc(t.name);
-    var descHtml = hiddenName ? '<span class="spoiled">' + esc(t.description) + '</span>' : esc(t.description);
-    var tags = '';
-    if (t.hidden) tags += '<span class="tag hidden">Hidden</span>';
-    if (t.missable) tags += '<span class="tag missable">Possibly missable</span>';
-    if (isUnconfirmed(t)) tags += '<span class="tag unconfirmed">Unconfirmed</span>';
-    if (t.count) tags += '<span class="tag">' + esc(String(t.count)) + ' to go</span>';
-    return '<div class="trophy' + (earned.has(t.id) ? ' earned' : '') + (selectedId === t.id ? ' selected' : '') +
-      '" data-id="' + t.id + '" role="button" tabindex="0">' +
-      '<input type="checkbox" data-earn="' + t.id + '"' + (earned.has(t.id) ? ' checked' : '') + ' aria-label="Earned: ' + esc(t.name) + '">' +
-      '<div><div class="tname">' + nameHtml + '</div><div class="tdesc">' + descHtml + '</div><div>' + tags + '</div></div>' +
-      '<span class="grade ' + t.grade + '">' + t.grade + '</span></div>';
+  function isEarned(t) { return !!state.earned[t.id]; }
+  function displayName(t) {
+    if (state.spoiler && t.hidden && !isEarned(t)) return 'Trofi tersembunyi';
+    return t.name;
   }
-
-  function filteredTrophies() {
-    var q = ($('search').value || '').toLowerCase();
-    var kind = $('kindFilter').value, grade = $('gradeFilter').value;
-    var missOnly = $('missableOnly').checked, hideEarned = $('hideEarned').checked;
-    return data.trophies.filter(function (t) {
-      if (kind && t.kind !== kind) return false;
-      if (grade && t.grade !== grade) return false;
-      if (missOnly && !t.missable) return false;
-      if (hideEarned && earned.has(t.id)) return false;
-      if (q) {
-        var hay = (t.name + ' ' + t.description + ' ' + t.guide + ' ' + t.kind).toLowerCase();
-        if (hay.indexOf(q) === -1) return false;
-      }
+  function displayDesc(t) {
+    if (state.spoiler && t.hidden && !isEarned(t)) return 'Aktifkan spoiler untuk melihat deskripsi trofi ini.';
+    return t.description;
+  }
+  function gradeBadge(t) {
+    return '<span class="badge b-' + t.grade + '">' + t.grade + '</span>';
+  }
+  function flags(t) {
+    var out = '';
+    if (t.missable) out += '<span class="flag miss">Mungkin missable</span>';
+    if (t.unconfirmed) out += '<span class="flag unconf">Belum terkonfirmasi</span>';
+    return out;
+  }
+  function updateHeader() {
+    var list = state.data.trophies;
+    var earned = list.filter(isEarned).length;
+    var pct = Math.round(earned / list.length * 100);
+    document.getElementById('earnedCount').textContent = earned;
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressPct').textContent = pct + '% menuju Platinum';
+    var grades = ['platinum', 'gold', 'silver', 'bronze'];
+    document.getElementById('gradeCounts').innerHTML = grades.map(function (g) {
+      var tot = list.filter(function (t) { return t.grade === g; }).length;
+      var got = list.filter(function (t) { return t.grade === g && isEarned(t); }).length;
+      return '<span><b>' + got + '/' + tot + '</b> ' + g + '</span>';
+    }).join('');
+  }
+  function filtered() {
+    var q = state.q.toLowerCase();
+    return state.data.trophies.filter(function (t) {
+      if (state.grade && t.grade !== state.grade) return false;
+      if (state.kind && t.kind !== state.kind) return false;
+      if (state.status === 'earned' && !isEarned(t)) return false;
+      if (state.status === 'unearned' && isEarned(t)) return false;
+      if (q && (t.name + ' ' + t.description + ' ' + t.guide).toLowerCase().indexOf(q) === -1) return false;
       return true;
     });
   }
-
   function renderChecklist() {
-    var list = filteredTrophies();
-    var html = '<h2>Checklist — ' + list.length + ' of ' + data.trophies.length + ' trophies</h2>' +
-      '<p class="muted">Tick a trophy when it pops. Progress saves in this browser and can be exported below. Spoiler-safe hides hidden story trophies until you earn them.</p>';
-    if (!list.length) html += '<p class="muted">No trophies match these filters.</p>';
-    list.forEach(function (t) { html += trophyRow(t); });
-    $('viewPanel').innerHTML = html;
-    bindRows();
+    var list = filtered();
+    var html = '<p class="hint">' + list.length + ' dari 55 trofi ditampilkan. Centang trofi yang sudah didapat — progres tersimpan di browser ini.</p>';
+    html += list.map(function (t) {
+      var earned = isEarned(t);
+      return '<div class="trow' + (earned ? ' earned' : '') + '" data-id="' + t.id + '">' +
+        '<input type="checkbox" ' + (earned ? 'checked' : '') + ' data-check="' + t.id + '" aria-label="Tandai ' + esc(t.name) + '">' +
+        '<div><div class="tname">' + gradeBadge(t) + esc(displayName(t)) + flags(t) + '</div>' +
+        '<div class="tdesc">' + esc(displayDesc(t)) + '</div>' +
+        '<div class="tmeta">' + esc(t.kind) + (t.chapter ? ' &middot; Chapter ' + t.chapter : '') +
+        (t.psn ? ' &middot; target PSN: ' + esc(t.psn) : '') +
+        ' &middot; ' + t.steps.length + ' langkah &middot; sumber: ' + esc(srcNames(t.sources).join(', ')) + '</div></div></div>';
+    }).join('');
+    viewEl.innerHTML = html;
   }
-
   function renderRoadmap() {
-    var html = '<h2>Roadmap to the platinum</h2>' +
-      '<p class="muted">Six stages in the order to earn them. Roughly 200 hours in all: 60–80 for the story, about 100 for the 100% checklist, about 10 for Strangers &amp; Freaks and cleanup (PowerPyx).</p>';
-    data.stages.forEach(function (st) {
-      var members = data.trophies.filter(function (t) { return t.stage === st.n; });
-      var got = members.filter(function (t) { return earned.has(t.id); }).length;
-      var pct = members.length ? Math.round((got / members.length) * 100) : 0;
-      html += '<div class="stage"><div class="stage-head"><b>Stage ' + st.n + ' — ' + esc(st.title) + '</b><span>' + got + '/' + members.length + ' · ' + pct + '%</span></div>' +
-        '<div class="bar"><i style="width:' + pct + '%"></i></div><p class="muted">' + esc(st.blurb) + '</p><ul>' +
-        members.map(function (t) { return '<li>' + (earned.has(t.id) ? '✓ ' : '') + esc(t.name) + ' <span class="grade ' + t.grade + '">' + t.grade + '</span></li>'; }).join('') +
-        '</ul></div>';
-    });
-    $('viewPanel').innerHTML = html;
+    var html = '<p class="hint">Enam tahap menuju Platinum. Progres tiap tahap mengikuti centangmu di Checklist.</p>';
+    html += state.data.stages.map(function (st) {
+      var items = st.trophies.map(trophyById).filter(Boolean);
+      var got = items.filter(isEarned).length;
+      var pct = items.length ? Math.round(got / items.length * 100) : 0;
+      return '<div class="card"><h3>' + esc(st.title) + ' — ' + got + '/' + items.length + '</h3>' +
+        '<div class="stagebar"><i style="width:' + pct + '%"></i></div><p>' + esc(st.desc) + '</p><p>' +
+        items.map(function (t) {
+          return '<span class="chip">' + (isEarned(t) ? '✓ ' : '') + esc(displayName(t)) + '</span>';
+        }).join('') + '</p></div>';
+    }).join('');
+    viewEl.innerHTML = html;
   }
-
   function renderMissables() {
-    var miss = data.trophies.filter(function (t) { return t.missable; });
-    var unc = data.trophies.filter(function (t) { return isUnconfirmed(t); });
-    var chapters = [1, 2, 3, 4, 5, 6];
-    var html = '<h2>Missables &amp; the unknown</h2>' +
-      '<p class="muted">Only one trophy is flagged as possibly missable. Everything else can be finished in free roam after the story — there is no mission replay, so keep a manual save at the start of each chapter.</p>' +
-      '<h3>Possibly missable (' + miss.length + ')</h3>';
-    miss.forEach(function (t) { html += trophyRow(t); });
-    html += '<h3>Unconfirmed triggers (' + unc.length + ')</h3><p class="muted">No guide has confirmed how these unlock. Their guides paraphrase the official description only and say so — do not chase rumoured triggers.</p>';
-    unc.forEach(function (t) { html += trophyRow(t); });
-    html += '<h3>Missable grid — by roadmap stage</h3><p class="muted">One flag per stage: only Stage 5 (meditation) carries a missable trophy.</p>';
-    chapters.forEach(function (n) {
-      var members = data.trophies.filter(function (t) { return t.stage === n; });
-      var flags = members.filter(function (t) { return t.missable || isUnconfirmed(t); });
-      html += '<p><b>Stage ' + n + ':</b> ' + members.length + ' trophies · ' +
-        (flags.length ? flags.map(function (t) { return esc(t.name) + (t.missable ? ' (possibly missable)' : ' (unconfirmed)'); }).join(', ') : 'nothing missable') + '</p>';
-    });
-    $('viewPanel').innerHTML = html;
-    bindRows();
+    var miss = state.data.trophies.filter(function (t) { return t.missable; });
+    var unconf = state.data.trophies.filter(function (t) { return t.unconfirmed; });
+    var chapters = [1, 2, 3, 4, 5];
+    var html = '<div class="card"><h3>Yang mungkin missable</h3><p>Hanya satu trofi yang mungkin missable. Sisanya aman dikerjakan setelah cerita, di free-roam.</p>' +
+      miss.map(function (t) {
+        return '<p><b>' + gradeBadge(t) + esc(t.name) + '</b> — ' + esc(t.description) + '</p><p>' + esc(t.guide) + '</p>';
+      }).join('') + '</div>';
+    html += '<div class="card"><h3>Grid chapter</h3><div class="grid2">' + chapters.map(function (c) {
+      var items = state.data.trophies.filter(function (t) { return t.chapter === c; });
+      return '<div><b>Chapter ' + c + '</b><br>' + items.map(function (t) {
+        return '<span class="chip">' + esc(displayName(t)) + '</span>';
+      }).join('') + '</div>';
+    }).join('') + '</div></div>';
+    html += '<div class="card"><h3>Belum terkonfirmasi (' + unconf.length + ')</h3><p>Trofi-trofi ini belum punya metode terverifikasi di dua sumber independen. Panduan ini tidak menebak caranya.</p><p>' +
+      unconf.map(function (t) { return '<span class="chip">' + esc(t.name) + '</span>'; }).join('') + '</p></div>';
+    viewEl.innerHTML = html;
   }
-
   function renderCounters() {
-    var html = '<h2>PSN count trackers — 20</h2>' +
-      '<p class="muted">The numbers PlayStation tracks for these trophies. Tap + / − as you go; counts save in this browser.</p>';
-    data.counters.forEach(function (c) {
-      var v = counters[c.id] || 0;
-      var pct = c.target ? Math.min(100, Math.round((v / c.target) * 100)) : 0;
-      html += '<div class="counter"><div><div class="clabel">' + esc(c.label) + '</div>' +
-        '<div class="cval">Target ' + c.target.toLocaleString('en-US') + ' ' + esc(c.unit) + '</div></div>' +
-        '<div class="cbtns"><button type="button" data-dec="' + c.id + '" aria-label="Decrease">−</button>' +
-        '<span class="cnum">' + v.toLocaleString('en-US') + '</span>' +
-        '<button type="button" data-inc="' + c.id + '" aria-label="Increase">+</button></div>' +
-        '<div class="cbar"><i style="width:' + pct + '%"></i></div></div>';
-    });
-    $('viewPanel').innerHTML = html;
+    var html = '<p class="hint">20 tracker hitungan PSN. Angka target dari PSNProfiles dan panduan; isi progresmu sendiri di Checklist — tracker di sini menunjukkan target tiap trofi.</p><div class="kv">';
+    html += state.data.trackers.map(function (tr) {
+      var t = trophyById(tr.trophy);
+      var got = t && isEarned(t) ? '✓' : '·';
+      return '<div class="cell"><div class="num">' + got + ' ' + esc(String(tr.target)) + (tr.of ? '<span style="font-size:14px;color:var(--muted)"> / ' + esc(String(tr.of)) + '</span>' : '') + '</div>' +
+        '<div class="lbl">' + esc(tr.label) + (tr.note ? ' — ' + esc(tr.note) : '') + '</div></div>';
+    }).join('') + '</div>';
+    viewEl.innerHTML = html;
   }
-
   function renderSources() {
-    var html = '<h2>Sources &amp; disagreements</h2>' +
-      '<p class="muted">Every guide step in this atlas cites its sources by name; a link opens only when you follow it. The app itself fetches nothing.</p>' +
-      '<h3>Source matrix — ' + data.sources.length + ' sources</h3><table class="src-table"><tr><th>Source</th><th>What it covers here</th></tr>';
-    data.sources.forEach(function (s) {
-      html += '<tr><td>' + (s.url ? '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.name) + '</a>' : esc(s.name)) +
-        '</td><td>' + esc(s.covers) + '</td></tr>';
+    var totalSteps = 0, backed = 0;
+    state.data.trophies.forEach(function (t) {
+      t.steps.forEach(function (s) {
+        totalSteps++;
+        if ((s.sources || []).length >= 2) backed++;
+      });
     });
-    html += '</table><h3>Open disagreements (' + data.disputes.length + ')</h3>' +
-      '<p class="muted">Where the guides disagree, both sides are shown instead of picking one silently.</p>';
-    data.disputes.forEach(function (d) {
-      html += '<div class="dispute"><h3>' + d.id.toUpperCase() + ' — ' + esc(d.title) + '</h3>' +
-        '<p><b>Side A:</b> ' + esc(d.a) + '</p><p><b>Side B:</b> ' + esc(d.b) + '</p>' +
-        '<p class="muted">Trophies: ' + d.trophies.map(esc).join(', ') + '</p></div>';
-    });
-    $('viewPanel').innerHTML = html;
+    var html = '<p class="hint">Panduan ini mengutip ' + state.data.sources.length + ' sumber. ' + backed + ' dari ' + totalSteps + ' langkah didukung 2+ sumber; 6 langkah trofi belum terkonfirmasi sengaja tanpa sumber.</p>';
+    html += '<table><tr><th>Sumber</th><th>Meliputi</th><th>Tauputan</th></tr>';
+    html += state.data.sources.map(function (s) {
+      var n = 0;
+      state.data.trophies.forEach(function (t) { if (t.sources.indexOf(s.id) !== -1) n++; });
+      return '<tr><td>' + (s.url ? '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.name) + '</a>' : esc(s.name)) +
+        '</td><td>' + esc(s.covers) + '</td><td>' + n + ' trofi</td></tr>';
+    }).join('') + '</table>';
+    viewEl.innerHTML = html;
   }
-
-  function renderDetail() {
-    var pane = $('detailPane');
-    var t = selectedId ? trophyById(selectedId) : null;
-    if (!t) { pane.innerHTML = '<p class="detail-empty">Select a trophy to see its cited guide, steps and sources.</p>'; return; }
-    var hiddenName = spoiler && t.hidden && !earned.has(t.id);
-    var html = '<h2>' + (hiddenName ? '<span class="spoiled">' + esc(t.name) + '</span>' : esc(t.name)) + '</h2>' +
-      '<p><span class="grade ' + t.grade + '">' + t.grade + '</span> ' +
-      (t.hidden ? '<span class="tag hidden">Hidden</span> ' : '') +
-      (t.missable ? '<span class="tag missable">Possibly missable</span> ' : '') +
-      (isUnconfirmed(t) ? '<span class="tag unconfirmed">Unconfirmed</span>' : '') + '</p>' +
-      '<p class="muted">' + (hiddenName ? '<span class="spoiled">' + esc(t.description) + '</span>' : esc(t.description)) + '</p>' +
-      '<p class="guide">' + esc(t.guide) + '</p>';
-    if (t.missable) html += '<div class="warn">Possibly missable — do the Chapter 1 balcony meditation before leaving Chapter 1 (see Positive Mental Attitude, dispute d2).</div>';
-    if (isUnconfirmed(t)) html += '<div class="warn">Unconfirmed trigger — no guide has verified how this unlocks. This guide paraphrases the official description only.</div>';
-    t.steps.forEach(function (s, i) {
-      html += '<div class="step"><p><b>Step ' + (i + 1) + '.</b> ' + esc(s.text) + '</p><div>' + srcChips(s.sources) + '</div></div>';
-    });
-    html += '<p><label class="check"><input type="checkbox" data-earn="' + t.id + '"' + (earned.has(t.id) ? ' checked' : '') + '> Earned</label></p>';
-    pane.innerHTML = html;
+  function renderDisputes() {
+    var html = '<p class="hint">Enam sengketa yang dicatat panduan ini — tempat sumber-sumber berbeda pendapat atau metodenya belum pasti. Total ' +
+      state.data.disputes.reduce(function (a, d) { return a + d.trophies.length; }, 0) + ' trofi tercakup.</p>';
+    html += state.data.disputes.map(function (d) {
+      return '<div class="card"><h3>' + d.id + ' — ' + esc(d.title) + '</h3><p>' + esc(d.text) + '</p><p class="src">Trofi: ' +
+        d.trophies.map(function (id) { var t = trophyById(id); return t ? esc(t.name) : esc(id); }).join(', ') +
+        '<br>Sumber: ' + esc(srcNames(d.sources).join(', ')) + '</p></div>';
+    }).join('');
+    viewEl.innerHTML = html;
   }
-
-  function renderAll() {
-    renderProgress();
-    if (view === 'checklist') renderChecklist();
-    else if (view === 'roadmap') renderRoadmap();
-    else if (view === 'missables') renderMissables();
-    else if (view === 'counters') renderCounters();
-    else renderSources();
-    renderDetail();
-    document.querySelectorAll('.tabs button').forEach(function (b) {
+  function renderView() {
+    document.querySelectorAll('#tabs button').forEach(function (b) {
       b.classList.toggle('active', b.getAttribute('data-view') === view);
     });
+    if (view === 'roadmap') renderRoadmap();
+    else if (view === 'missables') renderMissables();
+    else if (view === 'counters') renderCounters();
+    else if (view === 'sources') renderSources();
+    else if (view === 'disputes') renderDisputes();
+    else renderChecklist();
+    updateHeader();
   }
-
-  function bindRows() {
-    document.querySelectorAll('.trophy').forEach(function (row) {
-      row.addEventListener('click', function (ev) {
-        if (ev.target && ev.target.getAttribute && ev.target.getAttribute('data-earn')) return;
-        selectedId = parseInt(row.getAttribute('data-id'), 10);
-        renderAll();
-      });
-      row.addEventListener('keydown', function (ev) {
-        if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); selectedId = parseInt(row.getAttribute('data-id'), 10); renderAll(); }
-      });
-    });
+  function renderDetail() {
+    var t = selectedId ? trophyById(selectedId) : null;
+    if (!t) {
+      detailEl.innerHTML = '<p class="hint">Pilih satu trofi untuk melihat panduannya, langkah demi langkah, beserta sumbernya.</p>';
+      return;
+    }
+    var html = '<h2>' + gradeBadge(t) + esc(displayName(t)) + flags(t) + '</h2>' +
+      '<p class="desc">' + esc(displayDesc(t)) + '</p>' +
+      '<p class="src">' + esc(t.kind) + (t.chapter ? ' &middot; Chapter ' + t.chapter : '') +
+      (t.psn ? ' &middot; target PSN: ' + esc(t.psn) : '') + '</p>' +
+      '<p class="guide">' + esc(t.guide) + '</p>';
+    if (t.unconfirmed) {
+      html += '<p><b>Belum terkonfirmasi.</b> Langkah di bawah ini bukan metode — hanya penanda bahwa trofi ini menunggu konfirmasi.</p>';
+    }
+    html += '<ol>' + t.steps.map(function (s) {
+      return '<li>' + esc(s.text) + (s.sources && s.sources.length ?
+        '<br><span class="src">Sumber: ' + srcLinks(s.sources) + '</span>' :
+        '<br><span class="src">Tanpa sumber — belum terkonfirmasi.</span>') + '</li>';
+    }).join('') + '</ol>';
+    html += '<p class="src">Semua sumber trofi ini: ' + srcLinks(t.sources) + '</p>';
+    detailEl.innerHTML = html;
   }
-
-  function bindGlobal() {
-    document.querySelectorAll('.tabs button').forEach(function (b) {
-      b.addEventListener('click', function () { view = b.getAttribute('data-view'); renderAll(); });
+  function bind() {
+    document.getElementById('tabs').addEventListener('click', function (e) {
+      var b = e.target.closest('button[data-view]');
+      if (!b) return;
+      view = b.getAttribute('data-view');
+      renderView();
     });
-    ['search', 'kindFilter', 'gradeFilter'].forEach(function (id) {
-      $(id).addEventListener('input', function () { if (view !== 'checklist') { view = 'checklist'; } renderAll(); });
+    document.getElementById('search').addEventListener('input', function (e) {
+      state.q = e.target.value; if (view !== 'checklist') { view = 'checklist'; } renderView();
     });
-    $('missableOnly').addEventListener('change', function () { view = 'checklist'; renderAll(); });
-    $('hideEarned').addEventListener('change', function () { view = 'checklist'; renderAll(); });
-    $('spoilerToggle').addEventListener('change', function () { spoiler = $('spoilerToggle').checked; saveState(); renderAll(); });
-    document.addEventListener('change', function (ev) {
-      var el = ev.target;
-      if (el && el.getAttribute && el.getAttribute('data-earn')) {
-        var id = parseInt(el.getAttribute('data-earn'), 10);
-        if (el.checked) earned.add(id); else earned.delete(id);
-        saveState(); renderAll();
-      }
+    document.getElementById('gradeFilter').addEventListener('change', function (e) {
+      state.grade = e.target.value; renderView();
     });
-    document.addEventListener('click', function (ev) {
-      var el = ev.target;
-      if (!el || !el.getAttribute) return;
-      var inc = el.getAttribute('data-inc'), dec = el.getAttribute('data-dec');
-      if (inc) { counters[inc] = (counters[inc] || 0) + 1; saveState(); renderAll(); }
-      if (dec) { counters[dec] = Math.max(0, (counters[dec] || 0) - 1); saveState(); renderAll(); }
+    document.getElementById('kindFilter').addEventListener('change', function (e) {
+      state.kind = e.target.value; renderView();
     });
-    $('exportBtn').addEventListener('click', function () {
-      var blob = new Blob([JSON.stringify({ earned: Array.from(earned), counters: counters, exportedAt: new Date().toISOString() }, null, 2)], { type: 'application/json' });
+    document.getElementById('statusFilter').addEventListener('change', function (e) {
+      state.status = e.target.value; renderView();
+    });
+    var sp = document.getElementById('spoilerToggle');
+    sp.checked = state.spoiler;
+    sp.addEventListener('change', function () { state.spoiler = sp.checked; saveSpoiler(); renderView(); renderDetail(); });
+    document.getElementById('exportBtn').addEventListener('click', function () {
+      var blob = new Blob([JSON.stringify({ earned: Object.keys(state.earned).filter(function (k) { return state.earned[k]; }), exported: new Date().toISOString() }, null, 2)], { type: 'application/json' });
       var a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
       a.download = 'leonida-trophy-atlas-progress.json';
       a.click();
       setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
     });
-    $('importBtn').addEventListener('click', function () { $('importFile').click(); });
-    $('importFile').addEventListener('change', function () {
-      var f = $('importFile').files[0];
+    document.getElementById('importBtn').addEventListener('click', function () {
+      document.getElementById('importFile').click();
+    });
+    document.getElementById('importFile').addEventListener('change', function (e) {
+      var f = e.target.files && e.target.files[0];
       if (!f) return;
       var r = new FileReader();
       r.onload = function () {
         try {
-          var obj = JSON.parse(String(r.result));
-          if (Array.isArray(obj.earned)) { earned = new Set(obj.earned.filter(function (id) { return trophyById(id); })); }
-          if (obj.counters && typeof obj.counters === 'object') counters = obj.counters;
-          saveState(); renderAll();
-        } catch (e) { alert('That file is not a Leonida Trophy Atlas export.'); }
+          var data = JSON.parse(r.result);
+          var list = data.earned || [];
+          state.earned = {};
+          list.forEach(function (id) { state.earned[id] = true; });
+          saveProgress(); renderView(); renderDetail();
+        } catch (err) { alert('File import tidak valid.'); }
       };
       r.readAsText(f);
-      $('importFile').value = '';
+    });
+    viewEl.addEventListener('click', function (e) {
+      var row = e.target.closest('.trow');
+      if (!row) return;
+      if (e.target.matches('input[data-check]')) {
+        var id = e.target.getAttribute('data-check');
+        state.earned[id] = e.target.checked;
+        if (!e.target.checked) delete state.earned[id];
+        saveProgress(); renderView(); renderDetail();
+        return;
+      }
+      selectedId = row.getAttribute('data-id');
+      renderDetail();
     });
   }
-
-  function init() {
-    loadState();
-    $('spoilerToggle').checked = spoiler;
-    var params = new URLSearchParams(window.location.search);
-    if (params.get('view')) view = params.get('view');
-    if (params.get('trophy')) selectedId = parseInt(params.get('trophy'), 10) || null;
-    if (params.get('spoiler') === '1') { spoiler = true; $('spoilerToggle').checked = true; }
-    fetch('data/trophies.json').then(function (r) { return r.json(); }).then(function (d) {
-      data = d;
-      renderAudit();
-      bindGlobal();
-      renderAll();
-    }).catch(function () {
-      $('auditBar').textContent = 'Could not load data/trophies.json. Serve app/ from a static server (node serve.ts) and reload.';
+  fetch('data/trophies.json').then(function (r) { return r.json(); }).then(function (data) {
+    state.data = data;
+    loadProgress();
+    if (params.get('grade')) { state.grade = params.get('grade'); document.getElementById('gradeFilter').value = state.grade; }
+    if (params.get('kind')) { state.kind = params.get('kind'); document.getElementById('kindFilter').value = state.kind; }
+    if (params.get('spoiler') === '1') { state.spoiler = true; }
+    var totalSteps = 0, backed = 0;
+    data.trophies.forEach(function (t) {
+      t.steps.forEach(function (s) { totalSteps++; if ((s.sources || []).length >= 2) backed++; });
     });
-  }
-
-  document.addEventListener('DOMContentLoaded', init);
+    document.getElementById('statLine').textContent =
+      '55 trofi · ' + totalSteps + ' langkah panduan · ' + backed + ' langkah didukung 2+ sumber · ' +
+      data.sources.length + ' sumber dikutip · 20 tracker hitungan PSN · 6 panel sengketa · 6 tahap roadmap.';
+    bind();
+    renderView();
+    renderDetail();
+  }).catch(function () {
+    viewEl.innerHTML = '<p>Gagal memuat data/trophies.json. Buka lewat server lokal (node serve.ts) atau file yang sama.</p>';
+  });
 })();

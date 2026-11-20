@@ -1,75 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leonida Trophy Atlas — GTA VI Trophy Guide &amp; Tracker</title>
+<title>Leonida Trophy Atlas — Panduan Trofi GTA 6</title>
+<meta name="description" content="Panduan trofi GTA 6: 55 trofi resmi, checklist tersimpan, roadmap platinum, missable, dan panduan bersitasi.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="topbar">
+<header class="top">
   <div class="brand">
-    <div class="brand-mark">LA</div>
-    <div>
-      <h1>Leonida Trophy Atlas</h1>
-      <p class="tagline">Every GTA VI PlayStation 5 trophy — cited, roadmapped, tracked. 100% offline.</p>
-    </div>
+    <h1>Leonida Trophy Atlas</h1>
+    <p class="sub">Panduan trofi Grand Theft Auto VI &middot; 55 trofi &middot; 1 Platinum &middot; 2 Gold &middot; 6 Silver &middot; 46 Bronze</p>
   </div>
-  <div class="progress-wrap" id="progressWrap">
-    <div class="progress-label"><span id="progressText">0 / 55 earned</span><span id="progressPct">0%</span></div>
-    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="progress" id="progress">
+    <div class="big"><span id="earnedCount">0</span><span class="of">/ 55</span></div>
+    <div class="bar"><div class="fill" id="progressFill" style="width:0%"></div></div>
+    <div class="pct" id="progressPct">0% menuju Platinum</div>
+    <div class="grades" id="gradeCounts"></div>
   </div>
 </header>
 
-<div class="audit-bar" id="auditBar" aria-label="Audit summary">Loading trophy data…</div>
+<nav class="tabs" id="tabs" aria-label="Panduan">
+  <button data-view="checklist" class="active">Checklist</button>
+  <button data-view="roadmap">Roadmap</button>
+  <button data-view="missables">Missable</button>
+  <button data-view="counters">Counter PSN</button>
+  <button data-view="sources">Sumber</button>
+  <button data-view="disputes">Sengketa</button>
+</nav>
 
-<div class="controls">
-  <input id="search" type="search" placeholder="Search a trophy, mission or keyword…" aria-label="Search trophies">
-  <select id="kindFilter" aria-label="Filter by kind">
-    <option value="">All kinds</option>
-    <option value="story">Story</option>
-    <option value="side">Side missions</option>
-    <option value="activities">Activities</option>
-    <option value="collectibles">Collectibles</option>
-    <option value="heists">Heists</option>
-    <option value="exploration">Exploration</option>
-    <option value="money">Money</option>
-    <option value="secret">Secret</option>
-    <option value="meta">Platinum &amp; meta</option>
-  </select>
-  <select id="gradeFilter" aria-label="Filter by grade">
-    <option value="">All grades</option>
+<section class="toolbar">
+  <input id="search" type="search" placeholder="Cari trofi…" aria-label="Cari trofi">
+  <select id="gradeFilter" aria-label="Filter grade">
+    <option value="">Semua grade</option>
     <option value="platinum">Platinum</option>
     <option value="gold">Gold</option>
     <option value="silver">Silver</option>
     <option value="bronze">Bronze</option>
   </select>
-  <label class="check"><input type="checkbox" id="missableOnly"> Missable only</label>
-  <label class="check"><input type="checkbox" id="hideEarned"> Hide earned</label>
-  <label class="check spoiler"><input type="checkbox" id="spoilerToggle"> Spoiler-safe</label>
-  <button id="exportBtn" type="button">Export progress</button>
-  <button id="importBtn" type="button">Import progress</button>
-  <input id="importFile" type="file" accept=".json,application/json" hidden>
-</div>
-
-<nav class="tabs" aria-label="Views">
-  <button type="button" data-view="checklist" class="active">Checklist</button>
-  <button type="button" data-view="roadmap">Roadmap</button>
-  <button type="button" data-view="missables">Missables</button>
-  <button type="button" data-view="counters">Counters</button>
-  <button type="button" data-view="sources">Sources &amp; disputes</button>
-</nav>
+  <select id="kindFilter" aria-label="Filter jenis">
+    <option value="">Semua jenis</option>
+    <option value="story">Cerita</option>
+    <option value="character">Karakter</option>
+    <option value="activity">Aktivitas</option>
+    <option value="combat">Combat</option>
+    <option value="robbery">Perampokan</option>
+    <option value="collection">Koleksi</option>
+    <option value="misc">Lainnya</option>
+    <option value="unconfirmed">Belum terkonfirmasi</option>
+  </select>
+  <select id="statusFilter" aria-label="Filter status">
+    <option value="">Semua status</option>
+    <option value="earned">Sudah didapat</option>
+    <option value="unearned">Belum didapat</option>
+  </select>
+  <label class="spoiler"><input type="checkbox" id="spoilerToggle"> Sembunyikan spoiler</label>
+  <button id="exportBtn" type="button">Export</button>
+  <button id="importBtn" type="button">Import</button>
+  <input id="importFile" type="file" accept="application/json" hidden>
+</section>
 
 <main class="layout">
-  <section class="panel" id="viewPanel" aria-live="polite"></section>
-  <aside class="detail" id="detailPane" aria-label="Trophy detail">
-    <p class="detail-empty">Select a trophy to see its cited guide, steps and sources.</p>
+  <section class="main" id="view"></section>
+  <aside class="detail" id="detail" aria-label="Panduan trofi">
+    <p class="hint">Pilih satu trofi untuk melihat panduannya, langkah demi langkah, beserta sumbernya.</p>
   </aside>
 </main>
 
 <footer class="foot">
-  <p>Leonida Trophy Atlas — an unofficial fan guide. Grand Theft Auto and GTA are trademarks of Take-Two Interactive; this guide uses no Rockstar artwork, logos or game screenshots. Trophy names and descriptions are shown as PlayStation publishes them. Sources are cited beside every guide step.</p>
-  <p id="footStats"></p>
+  <p>Data trofi: daftar resmi PS5 (Exophase &amp; PSNProfiles). Panduan ditulis sendiri dari deskripsi resmi dan panduan publik yang dikutip; yang belum terkonfirmasi ditandai, bukan ditebak. Tanpa logo atau artwork Rockstar. Berjalan offline dari file-nya sendiri.</p>
+  <p id="statLine"></p>
 </footer>
 
 <script src="app.js"></script>
