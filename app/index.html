@@ -3,167 +3,71 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leonida Trophy Atlas — GTA VI Trophy Guide (PS5)</title>
-<meta name="description" content="A complete, offline GTA VI trophy guide: all 55 PlayStation trophies with rarity, how-to guides, a platinum roadmap, the one missable trophy, and a progress tracker.">
+<title>Leonida Trophy Atlas — GTA VI Platinum Guide &amp; Tracker</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="masthead">
-  <div class="masthead-inner">
-    <p class="eyebrow">Grand Theft Auto VI · PlayStation 5 · 55 trophies</p>
-    <h1>Leonida Trophy Atlas</h1>
-    <p class="lede">Every GTA VI trophy, with rarity and a plain how-to. No online trophies, one playthrough, about 200 hours — and exactly one trophy you can miss.</p>
-    <div class="masthead-stats" id="mastheadStats"></div>
-    <div class="progress-wrap" aria-label="Platinum progress">
-      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-      <p class="progress-text" id="progressText">0 of 55 earned (0%)</p>
-    </div>
+<header class="top">
+  <div>
+    <h1>LEONIDA TROPHY ATLAS</h1>
+    <p class="sub">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies: 1 platinum, 2 gold, 6 silver, 46 bronze &middot; 28 hidden &middot; all offline, no online trophies</p>
+  </div>
+  <div class="progressbox">
+    <div class="bigcount" id="bigcount">0 / 55</div>
+    <div class="bar"><div class="fill" id="progressfill" style="width:0%"></div></div>
+    <div class="muted" id="progresstext">0 earned &middot; 0% to platinum</div>
   </div>
 </header>
 
-<nav class="view-tabs" aria-label="Guide views">
-  <button type="button" class="view-tab active" data-view="checklist">Checklist</button>
-  <button type="button" class="view-tab" data-view="roadmap">Roadmap to Platinum</button>
-  <button type="button" class="view-tab" data-view="missables">Missables</button>
-  <button type="button" class="view-tab" data-view="sources">Sources &amp; Notes</button>
+<section class="audit" id="audit" aria-label="Citation audit">
+  <strong>CITATION AUDIT</strong>
+  <span id="auditline">Loading guide data&hellip;</span>
+</section>
+
+<nav class="tabs" id="tabs" aria-label="Sections">
+  <button type="button" data-tab="checklist" class="active">Checklist</button>
+  <button type="button" data-tab="roadmap">Roadmap &middot; 6 stages</button>
+  <button type="button" data-tab="missables">Missables</button>
+  <button type="button" data-tab="counters">Count trackers</button>
+  <button type="button" data-tab="sources">Sources &amp; disputes</button>
 </nav>
 
-<main>
-  <section class="view" id="view-checklist">
-    <div class="toolbar">
-      <label class="search-box">
-        <span class="sr-only">Search trophies</span>
-        <input type="search" id="search" placeholder="Search name, description or guide…" autocomplete="off">
-      </label>
-      <label>Grade
-        <select id="gradeFilter">
-          <option value="all">All grades</option>
-          <option value="platinum">Platinum</option>
-          <option value="gold">Gold</option>
-          <option value="silver">Silver</option>
-          <option value="bronze">Bronze</option>
-        </select>
-      </label>
-      <label>Status
-        <select id="statusFilter">
-          <option value="all">All</option>
-          <option value="earned">Earned</option>
-          <option value="remaining">Remaining</option>
-        </select>
-      </label>
-      <label class="spoiler-label">
-        <input type="checkbox" id="spoilerToggle">
-        Hide hidden trophies until earned
-      </label>
+<div class="controls">
+  <label class="search">Search <input id="search" type="search" placeholder="trophy, mission or keyword&hellip;"></label>
+  <div class="kinds" id="kinds" role="group" aria-label="Filter by kind">
+    <button type="button" data-kind="all" class="active">All 55</button>
+    <button type="button" data-kind="story">Story</button>
+    <button type="button" data-kind="missable">Missable</button>
+    <button type="button" data-kind="collectibles">Collectibles</button>
+    <button type="button" data-kind="activities">Activities</button>
+    <button type="button" data-kind="other">Heists &amp; more</button>
+  </div>
+  <label>Grade <select id="grade"><option value="all">All grades</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
+  <label class="spoiler"><input id="spoiler" type="checkbox"> Spoiler-safe: hide story trophies until earned</label>
+  <button id="export" type="button">Export progress</button>
+  <label class="import">Import progress <input id="import" type="file" accept="application/json,.json"></label>
+</div>
+
+<main class="layout">
+  <section class="left" id="leftpanel">
+    <div id="tab-checklist" class="tabpanel">
+      <p class="hint" id="listhint"></p>
+      <ul class="trophylist" id="trophylist"></ul>
     </div>
-    <div class="kind-chips" id="kindChips" aria-label="Filter by kind"></div>
-    <p class="list-meta" id="listMeta">55 trophies shown · 0 earned in this view</p>
-    <div class="guide-grid">
-      <ul class="trophy-list" id="trophyList"></ul>
-      <aside class="detail" id="detail" aria-live="polite"></aside>
-    </div>
+    <div id="tab-roadmap" class="tabpanel" hidden></div>
+    <div id="tab-missables" class="tabpanel" hidden></div>
+    <div id="tab-counters" class="tabpanel" hidden></div>
+    <div id="tab-sources" class="tabpanel" hidden></div>
   </section>
 
-  <section class="view" id="view-roadmap" hidden>
-    <h2>Roadmap to Platinum</h2>
-    <p class="section-lede">One playthrough, about 200 hours, difficulty 4/10 (PowerPyx). Work in three stages: story first, then the 100% checklist, then the Strangers &amp; Freaks cleanup. Keep cheats off the whole run — using one disables trophies and saving.</p>
-    <div class="stage">
-      <h3>Stage 1 — Story (about 60–80 hours)</h3>
-      <p>Play the story end to end. All 12 story trophies pop automatically, along with the mission trophies for Breakfast Run, The Cartel Heist, Child's Play, Headliners, VCIA Takedown and Operation Savage Glory. Do the one missable trophy — Positive Mental Attitude, the Chapter 1 meditation — before Chapter 1 ends. See the Missables tab.</p>
-      <p class="yield"><strong>Yields:</strong> all 12 story trophies, plus Positive Mental Attitude.</p>
-    </div>
-    <div class="stage">
-      <h3>Stage 2 — 100% Completion (about 100 hours)</h3>
-      <p>After the credits, open Progress &gt; Stats &gt; 100% Completion and work down the list. The bar is lenient — roughly 60% true completion — and most rows only need a share of the total:</p>
-      <table class="checklist-table">
-        <thead><tr><th>What</th><th>Needed</th><th>Must be all?</th></tr></thead>
-        <tbody>
-          <tr><td>Vehicles discovered (WAiNK scan)</td><td>200 / 277</td><td>No</td></tr>
-          <tr><td>Animals encountered</td><td>100 / 255</td><td>No</td></tr>
-          <tr><td>Weapons collected</td><td>50 / 66</td><td>No</td></tr>
-          <tr><td>Challenges</td><td>70 / 80</td><td>No</td></tr>
-          <tr><td>Stunts</td><td>300 / 397</td><td>No</td></tr>
-          <tr><td>Top Fun Drone Races</td><td>14 / 14</td><td>Yes</td></tr>
-          <tr><td>Race spots won</td><td>40 / 40</td><td>Yes</td></tr>
-          <tr><td>Shooting Range gold medals</td><td>42 / 42</td><td>Yes</td></tr>
-          <tr><td>Activity types tried</td><td>9 / 9</td><td>Yes</td></tr>
-          <tr><td>Collectible Card sets</td><td>18 / 18</td><td>Yes</td></tr>
-          <tr><td>WAiNK locations scanned</td><td>100 / 100</td><td>Yes</td></tr>
-          <tr><td>Vehicles scanned</td><td>100 / 100</td><td>Yes</td></tr>
-          <tr><td>Garages bought</td><td>8 / 8</td><td>Yes</td></tr>
-          <tr><td>Scooter Bros vehicles registered</td><td>10 / 10</td><td>Yes</td></tr>
-          <tr><td>Marked Bills laundered</td><td>$250,000 / $250,000</td><td>Yes</td></tr>
-          <tr><td>Money spent across shops</td><td>$100,000 / $100,000</td><td>Yes</td></tr>
-          <tr><td>Leonida areas explored</td><td>52 / 52</td><td>Yes</td></tr>
-          <tr><td>Randy's cars delivered</td><td>16 / 16</td><td>Yes</td></tr>
-          <tr><td>Kenton's shipwrecks cleared</td><td>7 / 7</td><td>Yes</td></tr>
-          <tr><td>Andy's quests</td><td>5 / 5</td><td>Yes</td></tr>
-          <tr><td>Billy's quests</td><td>5 / 5</td><td>Yes</td></tr>
-          <tr><td>Tyrone's quests</td><td>2 / 2</td><td>Yes</td></tr>
-          <tr><td>Choices made (Actions Speak Louder)</td><td>500 / 500</td><td>Yes</td></tr>
-          <tr><td>Strangers &amp; Freaks strands</td><td>8 / 8</td><td>Yes</td></tr>
-          <tr><td>Story missions</td><td>All</td><td>Yes</td></tr>
-          <tr><td>Online trophies</td><td>0 / 0</td><td>—</td></tr>
-        </tbody>
-      </table>
-      <p class="yield"><strong>Yields:</strong> A Long Road (gold), Cunning Stunts, Master of None, The Shootist, Top Fun, Earn Cash, Not Kudos, Don't Touch My Deck, You WAiNKer!, One Last Thing, Whip It Good, The Goodtime State, Dime on the Dollar, Treat Yo Self, Little Boxes, On the Spot, and the side-quest trophies.</p>
-    </div>
-    <div class="stage">
-      <h3>Stage 3 — Strangers &amp; Freaks cleanup (about 10 hours)</h3>
-      <p>Finish any remaining Strangers &amp; Freaks strands — Kirk, Kyle, Yago and Pilot Pete — and mop up the last crime and exploration trophies. When the 8th strand is done, the silver pops, and with it the platinum.</p>
-      <p class="yield"><strong>Yields:</strong> Strangers &amp; Freaks (silver), then Vice Got a Price! (platinum).</p>
-    </div>
-  </section>
-
-  <section class="view" id="view-missables" hidden>
-    <h2>Missables</h2>
-    <p class="section-lede">Good news: there is only one trophy you can miss. Everything else can be finished after the story, in free roam.</p>
-    <div class="missable-card">
-      <h3>Positive Mental Attitude <span class="badge missable-badge">Possibly missable</span></h3>
-      <p><strong>What:</strong> Meditate at every spot across Leonida — 18 spots in 10 locations.</p>
-      <p><strong>Why it can be missed:</strong> the first meditation happens at Jason's house in Chapter 1. After the mission “Down to Earth”, talk to Lucia in the kitchen in the morning, follow her to the balcony and choose “Accept”. That spot is gone after Chapter 1.</p>
-      <p><strong>Then:</strong> meditate at the other 17 spots; you can meditate with both characters at each spot for +2.</p>
-      <p class="caveat">PowerPyx and GTABase flag this one “possibly missable”, not confirmed — do it in Chapter 1 to be safe.</p>
-    </div>
-    <h3>Unconfirmed triggers (as of 19 Nov 2026)</h3>
-    <p>Five trophies have no confirmed unlock trigger in any published guide yet. This guide says so plainly instead of inventing steps:</p>
-    <ul class="unconfirmed-list">
-      <li><strong>In The Beginning…</strong> — Enjoy a cocktail with a view on Ocean Beach.</li>
-      <li><strong>Capital Offense</strong> — Smash your way out of a vehicle showroom in classic style.</li>
-      <li><strong>Bad Luck, I Guess</strong> — Second time's the charm.</li>
-      <li><strong>The Truth Is Out There</strong> — What the hell just happened?</li>
-      <li><strong>Ten Pin</strong> — Bowl 'em over with a melee drive-by.</li>
-    </ul>
-    <p class="caveat">All other 50 trophies have a confirmed path in the Checklist tab.</p>
-  </section>
-
-  <section class="view" id="view-sources" hidden>
-    <h2>Sources &amp; Notes</h2>
-    <p class="section-lede">Trophy names, descriptions and grades are as PlayStation / Exophase publish them. Guides are written in our own words from the sources listed per trophy. Data checked 19 November 2026 — launch day — so a few triggers are still unconfirmed; where that is the case, the guide says so instead of guessing.</p>
-    <ul class="source-list" id="sourceList"></ul>
-    <h3>Notes</h3>
-    <ul class="notes-list">
-      <li>There are <strong>no online trophies</strong> — all 55 are offline single-player, so the Platinum can never expire with a server.</li>
-      <li><strong>28 trophies are hidden</strong> on PSN until earned. Turn on “Hide hidden trophies until earned” in the Checklist toolbar to see them the way PlayStation does.</li>
-      <li>Cheats disable trophies and saving — keep them off for the whole run.</li>
-      <li>Rarity percentages are not published on PSN yet for a launch-day list; this guide uses the official grades and the 100% checklist instead of invented rarity numbers.</li>
-      <li>Your progress is stored only in this browser (localStorage). Export it below to back it up or move it to another device.</li>
-    </ul>
-  </section>
+  <aside class="detail" id="detail" aria-label="Selected trophy guide">
+    <p class="empty">Select a trophy on the left to read its cited guide.</p>
+  </aside>
 </main>
 
-<footer class="page-footer">
-  <p id="saveState">Progress saved in this browser (localStorage) — 0 of 55 earned.</p>
-  <div class="footer-actions">
-    <button type="button" id="exportBtn">Export progress</button>
-    <label class="import-label">Import progress
-      <input type="file" id="importFile" accept="application/json">
-    </label>
-    <button type="button" id="resetBtn">Reset tracker</button>
-  </div>
-  <p class="footer-note">Leonida Trophy Atlas — an independent fan guide. Not affiliated with Rockstar Games, Sony or PlayStation. Trophy data: Exophase, PowerPyx, GTABase, GTA Zone, PSNProfiles.</p>
+<footer>
+  <p>Guide written fresh for this entry, in its own words. Every step names the guide it draws on; official names and descriptions are shown as PlayStation publishes them. Where the published guides disagree, both sides are shown. Two trophies (Personal Best, The Truth Is Out There) have no confirmed trigger in any published guide yet — this guide says so instead of inventing one. Works fully offline; progress is saved in your browser only.</p>
 </footer>
-
 <script type="module" src="app.js"></script>
 </body>
 </html>
