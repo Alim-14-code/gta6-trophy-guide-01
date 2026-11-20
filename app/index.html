@@ -1,73 +1,77 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leonida Trophy Atlas — GTA VI Platinum Guide &amp; Tracker</title>
+<title>Leonida Trophy Atlas — GTA VI Trophy Guide &amp; Tracker</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top">
-  <div>
-    <h1>LEONIDA TROPHY ATLAS</h1>
-    <p class="sub">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies: 1 platinum, 2 gold, 6 silver, 46 bronze &middot; 28 hidden &middot; all offline, no online trophies</p>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">LA</div>
+    <div>
+      <h1>Leonida Trophy Atlas</h1>
+      <p class="tagline">Every GTA VI PlayStation 5 trophy — cited, roadmapped, tracked. 100% offline.</p>
+    </div>
   </div>
-  <div class="progressbox">
-    <div class="bigcount" id="bigcount">0 / 55</div>
-    <div class="bar"><div class="fill" id="progressfill" style="width:0%"></div></div>
-    <div class="muted" id="progresstext">0 earned &middot; 0% to platinum</div>
+  <div class="progress-wrap" id="progressWrap">
+    <div class="progress-label"><span id="progressText">0 / 55 earned</span><span id="progressPct">0%</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
   </div>
 </header>
 
-<section class="audit" id="audit" aria-label="Citation audit">
-  <strong>CITATION AUDIT</strong>
-  <span id="auditline">Loading guide data&hellip;</span>
-</section>
-
-<nav class="tabs" id="tabs" aria-label="Sections">
-  <button type="button" data-tab="checklist" class="active">Checklist</button>
-  <button type="button" data-tab="roadmap">Roadmap &middot; 6 stages</button>
-  <button type="button" data-tab="missables">Missables</button>
-  <button type="button" data-tab="counters">Count trackers</button>
-  <button type="button" data-tab="sources">Sources &amp; disputes</button>
-</nav>
+<div class="audit-bar" id="auditBar" aria-label="Audit summary">Loading trophy data…</div>
 
 <div class="controls">
-  <label class="search">Search <input id="search" type="search" placeholder="trophy, mission or keyword&hellip;"></label>
-  <div class="kinds" id="kinds" role="group" aria-label="Filter by kind">
-    <button type="button" data-kind="all" class="active">All 55</button>
-    <button type="button" data-kind="story">Story</button>
-    <button type="button" data-kind="missable">Missable</button>
-    <button type="button" data-kind="collectibles">Collectibles</button>
-    <button type="button" data-kind="activities">Activities</button>
-    <button type="button" data-kind="other">Heists &amp; more</button>
-  </div>
-  <label>Grade <select id="grade"><option value="all">All grades</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
-  <label class="spoiler"><input id="spoiler" type="checkbox"> Spoiler-safe: hide story trophies until earned</label>
-  <button id="export" type="button">Export progress</button>
-  <label class="import">Import progress <input id="import" type="file" accept="application/json,.json"></label>
+  <input id="search" type="search" placeholder="Search a trophy, mission or keyword…" aria-label="Search trophies">
+  <select id="kindFilter" aria-label="Filter by kind">
+    <option value="">All kinds</option>
+    <option value="story">Story</option>
+    <option value="side">Side missions</option>
+    <option value="activities">Activities</option>
+    <option value="collectibles">Collectibles</option>
+    <option value="heists">Heists</option>
+    <option value="exploration">Exploration</option>
+    <option value="money">Money</option>
+    <option value="secret">Secret</option>
+    <option value="meta">Platinum &amp; meta</option>
+  </select>
+  <select id="gradeFilter" aria-label="Filter by grade">
+    <option value="">All grades</option>
+    <option value="platinum">Platinum</option>
+    <option value="gold">Gold</option>
+    <option value="silver">Silver</option>
+    <option value="bronze">Bronze</option>
+  </select>
+  <label class="check"><input type="checkbox" id="missableOnly"> Missable only</label>
+  <label class="check"><input type="checkbox" id="hideEarned"> Hide earned</label>
+  <label class="check spoiler"><input type="checkbox" id="spoilerToggle"> Spoiler-safe</label>
+  <button id="exportBtn" type="button">Export progress</button>
+  <button id="importBtn" type="button">Import progress</button>
+  <input id="importFile" type="file" accept=".json,application/json" hidden>
 </div>
 
-<main class="layout">
-  <section class="left" id="leftpanel">
-    <div id="tab-checklist" class="tabpanel">
-      <p class="hint" id="listhint"></p>
-      <ul class="trophylist" id="trophylist"></ul>
-    </div>
-    <div id="tab-roadmap" class="tabpanel" hidden></div>
-    <div id="tab-missables" class="tabpanel" hidden></div>
-    <div id="tab-counters" class="tabpanel" hidden></div>
-    <div id="tab-sources" class="tabpanel" hidden></div>
-  </section>
+<nav class="tabs" aria-label="Views">
+  <button type="button" data-view="checklist" class="active">Checklist</button>
+  <button type="button" data-view="roadmap">Roadmap</button>
+  <button type="button" data-view="missables">Missables</button>
+  <button type="button" data-view="counters">Counters</button>
+  <button type="button" data-view="sources">Sources &amp; disputes</button>
+</nav>
 
-  <aside class="detail" id="detail" aria-label="Selected trophy guide">
-    <p class="empty">Select a trophy on the left to read its cited guide.</p>
+<main class="layout">
+  <section class="panel" id="viewPanel" aria-live="polite"></section>
+  <aside class="detail" id="detailPane" aria-label="Trophy detail">
+    <p class="detail-empty">Select a trophy to see its cited guide, steps and sources.</p>
   </aside>
 </main>
 
-<footer>
-  <p>Guide written fresh for this entry, in its own words. Every step names the guide it draws on; official names and descriptions are shown as PlayStation publishes them. Where the published guides disagree, both sides are shown. Two trophies (Personal Best, The Truth Is Out There) have no confirmed trigger in any published guide yet — this guide says so instead of inventing one. Works fully offline; progress is saved in your browser only.</p>
+<footer class="foot">
+  <p>Leonida Trophy Atlas — an unofficial fan guide. Grand Theft Auto and GTA are trademarks of Take-Two Interactive; this guide uses no Rockstar artwork, logos or game screenshots. Trophy names and descriptions are shown as PlayStation publishes them. Sources are cited beside every guide step.</p>
+  <p id="footStats"></p>
 </footer>
-<script type="module" src="app.js"></script>
+
+<script src="app.js"></script>
 </body>
 </html>
