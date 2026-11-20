@@ -4,124 +4,101 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Leonida Trophy Atlas — GTA 6 Trophy Guide &amp; Tracker</title>
-<meta name="description" content="Offline guide and tracker for all 55 GTA 6 PlayStation 5 trophies: cited guides, roadmap to the platinum, missable flags, and PSN count trackers.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="top">
   <div class="brand">
     <h1>Leonida Trophy Atlas</h1>
-    <p class="sub">GTA 6 &middot; PlayStation 5 &middot; 55 trophies &middot; 1 platinum &middot; 2 gold &middot; 6 silver &middot; 46 bronze</p>
+    <p class="sub">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies &middot; offline guide &amp; tracker</p>
   </div>
-  <div class="progress" id="progressBox">
-    <div class="progress-num"><span id="earnedCount">0</span> / 55 earned</div>
-    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
-    <div class="progress-note" id="progressNote">Platinum: locked — earn the other 54 first.</div>
+  <div class="progress" id="progressBox" aria-live="polite">
+    <div class="big"><span id="earnedCount">0</span><span class="of">/ 55 earned</span></div>
+    <div class="bar"><div class="fill" id="progressFill" style="width:0%"></div></div>
+    <div class="grades" id="gradeCounts"></div>
   </div>
 </header>
 
-<nav class="tabs" id="tabs" aria-label="Guide sections">
-  <button data-tab="checklist" class="active">Checklist</button>
-  <button data-tab="roadmap">Roadmap</button>
-  <button data-tab="missables">Missables</button>
-  <button data-tab="chapters">Chapters</button>
-  <button data-tab="counters">Counters</button>
-  <button data-tab="sources">Sources</button>
-  <button data-tab="disputes">Disputes</button>
+<nav class="tabs" role="tablist" aria-label="Guide sections">
+  <button class="tab active" data-tab="checklist" role="tab" aria-selected="true">Checklist</button>
+  <button class="tab" data-tab="roadmap" role="tab" aria-selected="false">Roadmap</button>
+  <button class="tab" data-tab="missables" role="tab" aria-selected="false">Missables</button>
+  <button class="tab" data-tab="counters" role="tab" aria-selected="false">Counters</button>
+  <button class="tab" data-tab="sources" role="tab" aria-selected="false">Sources</button>
+  <button class="tab" data-tab="disputes" role="tab" aria-selected="false">Disputes</button>
 </nav>
 
-<section class="controls" id="controls">
-  <label class="ctl">Search <input id="q" type="search" placeholder="trophy name or mission…" autocomplete="off"></label>
-  <label class="ctl">Kind
-    <select id="fKind">
-      <option value="">All kinds</option>
-      <option value="story">Story</option>
-      <option value="collectible">Collectibles</option>
-      <option value="activity">Activities</option>
-      <option value="missable">Missable</option>
-    </select>
-  </label>
-  <label class="ctl">Chapter
-    <select id="fChapter">
-      <option value="">All chapters</option>
-      <option value="Chapter 1">Chapter 1</option>
-      <option value="Chapter 2">Chapter 2</option>
-      <option value="Chapter 3">Chapter 3</option>
-      <option value="Chapter 4">Chapter 4</option>
-      <option value="Finale">Finale</option>
-      <option value="Strangers">Strangers</option>
-      <option value="Free Roam">Free Roam</option>
-    </select>
-  </label>
-  <label class="ctl">Grade
-    <select id="fGrade">
-      <option value="">All grades</option>
-      <option value="platinum">Platinum</option>
-      <option value="gold">Gold</option>
-      <option value="silver">Silver</option>
-      <option value="bronze">Bronze</option>
-    </select>
-  </label>
-  <label class="ctl check"><input id="fUnconfirmed" type="checkbox"> Unconfirmed only</label>
-  <label class="ctl check"><input id="spoiler" type="checkbox"> Spoiler-safe mode</label>
-  <span class="spacer"></span>
-  <button id="exportBtn" type="button">Export checklist</button>
-  <label class="import-btn">Import checklist <input id="importFile" type="file" accept=".json,application/json" hidden></label>
-  <button id="resetBtn" type="button">Reset</button>
-</section>
-
-<main class="layout">
-  <div class="main-col">
-    <section id="tab-checklist" class="tabpage active" aria-label="Trophy checklist">
-      <p class="hint">Tick a trophy when you earn it. Click any row to open its cited guide in the detail pane. Spoiler-safe mode hides story trophy names and descriptions until they are earned.</p>
-      <ul class="trophy-list" id="trophyList"></ul>
-    </section>
-
-    <section id="tab-roadmap" class="tabpage" aria-label="Roadmap to the platinum">
-      <p class="hint">Six stages, in order. Work them top to bottom: story first, then strangers, collectibles, combat, money, and finally cleanup and the platinum.</p>
-      <div id="roadmapBox"></div>
-    </section>
-
-    <section id="tab-missables" class="tabpage" aria-label="Missable trophies">
-      <p class="hint">28 trophies are tied to a story beat or a one-time moment. Clear them during the stage they belong to; the chapter grid below shows where each story trophy falls.</p>
-      <h2>Missable trophies <span class="count-pill" id="missableCount"></span></h2>
-      <ul class="trophy-list compact" id="missableList"></ul>
-      <h2>Chapter grid</h2>
-      <div id="chapterGrid"></div>
-    </section>
-
-    <section id="tab-chapters" class="tabpage" aria-label="Trophies by chapter">
-      <p class="hint">Every story trophy, grouped by the chapter it belongs to. Free-roam trophies can be earned at any time.</p>
-      <div id="chapterList"></div>
-    </section>
-
-    <section id="tab-counters" class="tabpage" aria-label="PSN count trackers">
-      <p class="hint">20 trophies PlayStation tracks with a count. Tap + / − to keep your own running total here; the numbers are saved in this browser.</p>
-      <div id="counterBox"></div>
-    </section>
-
-    <section id="tab-sources" class="tabpage" aria-label="Source matrix">
-      <p class="hint">Every guide in this atlas cites its sources by name. 154 of 160 steps are backed by two or more sources; the six unconfirmed trophies have one source each and are flagged as unconfirmed.</p>
-      <div id="sourceMatrix"></div>
-    </section>
-
-    <section id="tab-disputes" class="tabpage" aria-label="Disputes">
-      <p class="hint">Six places where the sources disagree, covering twelve trophies. Each panel shows both sides and what this guide does about it.</p>
-      <div id="disputeBox"></div>
-    </section>
-  </div>
-
-  <aside class="detail" id="detailPane" aria-label="Trophy detail">
-    <div class="detail-empty" id="detailEmpty">
-      <h2>Detail pane</h2>
-      <p>Click any trophy to see its guide, its steps and its sources here. The pane stays open while you browse.</p>
+<main>
+  <section id="tab-checklist" class="panel active" role="tabpanel">
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Search a trophy by name…" aria-label="Search trophies">
+      <select id="kindFilter" aria-label="Filter by kind">
+        <option value="">All kinds</option>
+        <option value="story">Story</option>
+        <option value="activity">Activities</option>
+        <option value="collectible">Collectibles</option>
+        <option value="side">Side characters</option>
+        <option value="combat">Combat &amp; heists</option>
+        <option value="exploration">Exploration</option>
+        <option value="money">Money</option>
+        <option value="completion">Completion</option>
+        <option value="hidden-moment">Hidden moments</option>
+        <option value="platinum">Platinum</option>
+      </select>
+      <select id="gradeFilter" aria-label="Filter by grade">
+        <option value="">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+      <label class="check"><input type="checkbox" id="missableOnly"> Missable only</label>
+      <label class="check"><input type="checkbox" id="unconfirmedOnly"> Unconfirmed only</label>
+      <label class="check"><input type="checkbox" id="hideEarned"> Hide earned</label>
+      <label class="check"><input type="checkbox" id="spoilerSafe"> Spoiler-safe</label>
+      <button id="exportBtn" type="button">Export</button>
+      <button id="importBtn" type="button">Import</button>
+      <input id="importFile" type="file" accept="application/json,.json" hidden>
     </div>
-    <div class="detail-body" id="detailBody" hidden></div>
-  </aside>
+    <div class="layout">
+      <div class="list" id="trophyList" aria-live="polite"></div>
+      <aside class="detail" id="detailPane" aria-label="Trophy detail">
+        <p class="empty">Pick a trophy to see its guide, steps and sources.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="tab-roadmap" class="panel" role="tabpanel">
+    <p class="intro">Six stages to the platinum, in the order to play them. Progress is live: it follows the checklist.</p>
+    <div id="roadmapStages"></div>
+  </section>
+
+  <section id="tab-missables" class="panel" role="tabpanel">
+    <p class="intro">28 trophies can be missed. Most are story moments with no mission replay; a few are one-shot chances. The chapter grid shows where each story trophy sits.</p>
+    <h2>Missable trophies (28)</h2>
+    <div class="grid" id="missableGrid"></div>
+    <h2>Story trophies by chapter</h2>
+    <div id="chapterGrid"></div>
+  </section>
+
+  <section id="tab-counters" class="panel" role="tabpanel">
+    <p class="intro">The 20 counts PlayStation tracks. Step each one up or down; your numbers are saved in this browser.</p>
+    <div class="counters" id="counterList"></div>
+  </section>
+
+  <section id="tab-sources" class="panel" role="tabpanel">
+    <p class="intro">Every guide step cites its sources. The matrix shows which sources back which trophies; a step with two or more sources is the norm — only the 6 unconfirmed trophies rest on a single source.</p>
+    <div id="sourceMatrix"></div>
+  </section>
+
+  <section id="tab-disputes" class="panel" role="tabpanel">
+    <p class="intro">Twelve trophies whose details are still argued over, in six panels. Each panel says what is settled, what is not, and what would settle it.</p>
+    <div id="disputePanels"></div>
+  </section>
 </main>
 
-<footer class="foot">
-  <p>Leonida Trophy Atlas — an unofficial fan guide. Grand Theft Auto and GTA are trademarks of Take-Two Interactive; this guide uses no Rockstar logo, artwork or game screenshots. Trophy names and descriptions are shown as PlayStation publishes them; every guide is written in our own words and cites its sources. Works fully offline; progress is saved only in this browser.</p>
+<footer>
+  <p>Leonida Trophy Atlas — an unofficial, open-source guide. Grand Theft Auto and GTA are trademarks of Take-Two Interactive; this guide is not affiliated with Rockstar Games. Trophy names and descriptions are as PlayStation publishes them; every guide is written for this entry and cites its sources. Works offline from its own files.</p>
 </footer>
 
 <script src="app.js"></script>
