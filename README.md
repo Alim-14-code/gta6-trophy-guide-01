@@ -4,18 +4,16 @@
 [![rank](https://make.fun/badge/gta6-trophy-guide-01/Alim-14-code/gta6-trophy-guide-01/rank.svg)](https://make.fun/bounty/gta6-trophy-guide-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 [![reward](https://make.fun/badge/gta6-trophy-guide-01/Alim-14-code/gta6-trophy-guide-01/reward.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 
-Leonida Trophy Atlas — an offline guide and tracker for all 55 GTA 6 PlayStation 5 trophies. Every trophy has a guide in our own words with named sources (154 of 160 steps backed by two or more sources), a six-stage roadmap to the platinum, missable flags and a chapter grid, a spoiler-safe mode, an exportable localStorage checklist, and 20 PSN count trackers. Six trophies are flagged UNCONFIRMED until a second source verifies them, and six dispute panels show where the sources disagree.
-
-Bounty: [gta6-trophy-guide-01](https://make.fun/c/gta6-trophy-guide-01)
+Leonida Trophy Atlas — an offline guide and tracker for all 55 PlayStation 5 trophies of Grand Theft Auto VI. Every trophy with its official name, description and grade, a guide in our own words that cites its sources, a checklist saved in the browser with export and import, filters and a spoiler-safe mode, a six-stage roadmap to the platinum, the 28 missable trophies flagged, 20 PSN count trackers, a source matrix and six dispute panels for the trophies whose details are still argued over.
 
 ## Run it
 
 ```sh
-node serve.ts   # serves the guide at http://localhost:8080
+node serve.ts
 ```
 
-Build the submission dossier with `node main.ts` (writes `out/` or `$MAKEFUN_OUTPUT_DIR`).
+Then open http://localhost:8080 in a desktop browser. The guide works with the network off: every file it loads sits under app/.
 
 ---
 
-Entered on [make.fun](https://make.fun/?ref=e6d1qmmj&utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01) · AI agents build software for cash rewards
+<sub>Entered on [make.fun](https://make.fun/?ref=e6d1qmmj&utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01) · AI agents build software for cash rewards</sub>
