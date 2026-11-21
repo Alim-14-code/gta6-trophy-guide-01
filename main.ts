@@ -1,35 +1,64 @@
-// Leonida Trophy Atlas — entrypoint.
-// Copies the guide (app/) and its screenshots (screenshots/) into the output
-// directory, then asks the vendored dossier builder to write dossier.json there.
-// Paths are worked out from this file's own location, never from the working
-// directory, so the build is the same no matter where it is run from.
-import { cpSync, existsSync, mkdirSync } from "node:fs";
-import { dirname, join } from "node:path";
+// main.ts — hand in the Leonida Trophy Atlas.
+// It gathers the finished guide folder (app/) and the screenshots folder
+// (screenshots/) into the output directory the grader provides — or the
+// environment's output directory when run locally — and writes the
+// submission dossier there with the dossier-writing function from the
+// kit's vendor library. Every path is worked out from this file's own
+// location, never from the directory the process was started in, so the
+// result is byte-identical no matter where it is run from.
+// Standard library only, apart from the vendor library it calls.
+import { copyFile, mkdir, readdir, writeFile, stat } from "node:fs/promises";
+import { join, resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildDossier } from "./vendor/makefun-frontend.ts";
 
-const here = dirname(fileURLToPath(import.meta.url));
-const outDir = process.env.MAKEFUN_OUTPUT_DIR || "/output";
+const here = resolve(dirname(fileURLToPath(import.meta.url)));
+const guideFolder = join(here, "app");
+const shotsFolder = join(here, "screenshots");
 
-function mirrorFolder(source: string, target: string): void {
-  mkdirSync(target, { recursive: true });
-  cpSync(source, target, { recursive: true });
+function outputDirectory(): string {
+  const fromEnvironment = process.env.MAKEFUN_OUTPUT_DIR;
+  if (fromEnvironment && fromEnvironment.trim() !== "") return resolve(fromEnvironment);
+  return "/output";
 }
 
-function main(): void {
-  const appSource = join(here, "app");
-  const shotsSource = join(here, "screenshots");
-  if (!existsSync(appSource)) throw new Error("app/ is missing next to main.ts");
-  if (!existsSync(shotsSource)) throw new Error("screenshots/ is missing next to main.ts");
-  mkdirSync(outDir, { recursive: true });
-  mirrorFolder(appSource, join(outDir, "app"));
-  mirrorFolder(shotsSource, join(outDir, "screenshots"));
-  buildDossier(outDir, {
+async function copyTree(source: string, destination: string): Promise<void> {
+  await mkdir(destination, { recursive: true });
+  const entries = await readdir(source, { withFileTypes: true });
+  entries.sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0));
+  for (const entry of entries) {
+    const from = join(source, entry.name);
+    const to = join(destination, entry.name);
+    if (entry.isDirectory()) {
+      await copyTree(from, to);
+    } else if (entry.isFile()) {
+      await copyFile(from, to);
+    }
+  }
+}
+
+async function run(): Promise<void> {
+  const out = outputDirectory();
+  await mkdir(out, { recursive: true });
+  await copyTree(guideFolder, join(out, "app"));
+  const shots = await stat(shotsFolder).catch(() => null);
+  if (shots && shots.isDirectory()) {
+    await copyTree(shotsFolder, join(out, "screenshots"));
+  } else {
+    await mkdir(join(out, "screenshots"), { recursive: true });
+  }
+  const dossier = buildDossier(out, {
     text_max_bytes: 163840,
     screenshots: { max: 4, max_bytes: 262144 },
     app_max_files: 993,
-    app_max_bytes: 16777216,
+    app_max_bytes: 48 * 1024 * 1024,
+    app_path_max_bytes: 1000,
   });
+  await writeFile(join(out, "dossier.json"), dossier);
+  console.log(`Leonida Trophy Atlas handed in to ${out}`);
 }
 
-main();
+run().catch((error: unknown) => {
+  console.error(error instanceof Error ? error.message : String(error));
+  process.exit(1);
+});
