@@ -3,54 +3,76 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leonida Trophy Ledger — GTA VI Trophy Guide &amp; Tracker</title>
+<title>Leonida Trophy Ledger — GTA VI Trophy Guide &amp; Tracker (PS5)</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header id="ledger-head">
-  <div class="head-title">
-    <h1>Leonida Trophy Ledger</h1>
-    <p class="head-sub">Grand Theft Auto VI · PlayStation 5 · 55 trophies · offline guide &amp; tracker</p>
-  </div>
-  <div class="head-counts" id="head-counts" aria-label="Progress summary">
-    <div class="big-count"><span id="earned-count">0</span><span class="of">/ 55 earned</span></div>
-    <div class="big-points"><span id="earned-points">0</span><span class="of">/ <span id="total-points">1,230</span> PSN pts</span></div>
-    <div class="grade-split" id="grade-split"></div>
+<header class="topbar">
+  <div class="brand"><span class="mark">LEONIDA</span> Trophy Ledger <span class="sub">GTA VI · PS5 · 55 trophies · offline</span></div>
+  <div class="headstats" id="headstats"></div>
+  <div class="headactions">
+    <label class="shield"><input type="checkbox" id="spoilerToggle"> Spoiler shield</label>
+    <button id="exportBtn" type="button">Export progress</button>
+    <label class="importBtn">Import progress <input type="file" id="importFile" accept="application/json" hidden></label>
+    <button id="resetBtn" type="button">Reset</button>
+    <span class="saved" id="savedNote">Saved in this browser</span>
   </div>
 </header>
 
-<section id="audit-strip" aria-label="Audit strip"></section>
+<section class="audit" id="auditStrip" aria-label="Audit strip"></section>
 
-<nav id="controls" aria-label="Tracker controls">
-  <div class="filters" id="kind-filters" role="group" aria-label="Filter by kind"></div>
-  <input id="search-box" type="search" placeholder="Search a trophy…" aria-label="Search trophies">
-  <label class="spoiler-toggle"><input type="checkbox" id="spoiler-box"> <span>Spoiler shield: hide story trophies until earned</span></label>
-  <button id="export-btn" type="button">Export progress</button>
-  <label class="import-btn" for="import-file">Import progress</label>
-  <input id="import-file" type="file" accept=".json,application/json" hidden>
-  <button id="reset-btn" type="button">Reset</button>
+<nav class="tabs" id="tabs">
+  <button data-view="tracker" class="active" type="button">Tracker</button>
+  <button data-view="roadmap" type="button">Roadmap</button>
+  <button data-view="disputes" type="button">Sources Differ · 12</button>
+  <button data-view="sources" type="button">Sources</button>
 </nav>
 
-<main id="ledger">
-  <section id="tracker-pane" aria-label="Trophy tracker">
-    <h2>Trophy tracker <span id="list-count"></span></h2>
-    <ol id="trophy-list"></ol>
-    <p id="list-empty" hidden></p>
-  </section>
-
-  <section id="detail-pane" aria-label="Trophy detail"></section>
-
-  <aside id="rail" aria-label="Roadmap and sources">
-    <section id="nextup-pane" aria-label="Next up roadmap"></section>
-    <section id="sources-pane" aria-label="Sources for the selected trophy"></section>
-    <section id="roadmap-pane" aria-label="Roadmap to the platinum"></section>
-  </aside>
+<main id="view-tracker" class="view">
+  <div class="toolbar">
+    <input type="search" id="searchBox" placeholder="Search trophies…" aria-label="Search trophies">
+    <div class="chips" id="filterChips"></div>
+    <label class="hideEarned"><input type="checkbox" id="hideEarned"> Hide earned</label>
+  </div>
+  <div class="ledger">
+    <section class="pane list-pane" aria-label="Trophy tracker">
+      <div class="paneHead"><span id="listCount"></span><span class="paneHint">tick a row to mark it earned</span></div>
+      <ul class="trophyList" id="trophyList"></ul>
+    </section>
+    <section class="pane detail-pane" id="detailPane" aria-label="Trophy detail"></section>
+    <aside class="pane rail-pane" aria-label="Roadmap and sources">
+      <div class="railBlock"><h2>Next Up · Roadmap order</h2><ol class="nextup" id="nextUp"></ol></div>
+      <div class="railBlock"><h2>Sources for this guide</h2><div id="railSources"></div></div>
+      <div class="railBlock"><h2>Roadmap stages</h2><ol class="stages" id="railStages"></ol></div>
+    </aside>
+  </div>
 </main>
 
-<footer id="ledger-foot">
-  <p>Official names, descriptions and grades as PlayStation publishes them. Guides are this ledger's own words and cite their sources beside every step. Works offline — nothing is fetched from the network. No Rockstar artwork or logo is used.</p>
-</footer>
+<main id="view-roadmap" class="view" hidden>
+  <h1 class="pageTitle">Roadmap to the platinum — Vice Got a Price!</h1>
+  <p class="pageIntro">Five stages, in order. Story first, because the ledger's one possibly missable trophy lives in Chapter 1; everything else can be cleaned up afterwards.</p>
+  <ol class="roadmap" id="roadmapList"></ol>
+  <h2>Next Up</h2>
+  <ol class="nextup wide" id="roadmapNextUp"></ol>
+</main>
 
-<script type="module" src="js/main.js"></script>
+<main id="view-disputes" class="view" hidden>
+  <h1 class="pageTitle">Sources Differ — 12 disputed trophies, both versions shown</h1>
+  <p class="pageIntro">Where the guides disagree, this ledger shows both versions and gives its own call. Nothing here is invented: a detail that cannot be pinned down is marked unconfirmed.</p>
+  <div id="disputePanels"></div>
+</main>
+
+<main id="view-sources" class="view" hidden>
+  <h1 class="pageTitle">Sources — 11 sites</h1>
+  <p class="pageIntro">Every guide step in this ledger cites its source beside the step. The official names, descriptions and grades are PlayStation's own, checked 21 Nov 2026 via Exophase and PSNProfiles — the two agree on all 55.</p>
+  <div id="sourcesList"></div>
+  <h2>Coverage</h2>
+  <p id="sourcesCoverage"></p>
+</main>
+
+<footer class="foot">
+  Leonida Trophy Ledger — an unofficial, offline guide. Grand Theft Auto VI and PlayStation are trademarks of their owners; this ledger uses no Rockstar artwork, logos or game screenshots. Official trophy names, descriptions and grades are shown as PlayStation publishes them. Data checked 21 Nov 2026.
+</footer>
+<script src="app.js"></script>
 </body>
 </html>
