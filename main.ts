@@ -1,31 +1,31 @@
-// Leonida Trophy Ledger — hand-in program.
-//
-// Takes the guide in this repository (app/ plus screenshots/) and hands it
-// in: the two folders are copied into the output directory, and a dossier
-// file is written there describing the entry, built with the kit's dossier
-// library from vendor/makefun-frontend.ts. The output directory comes from
-// MAKEFUN_OUTPUT_DIR, or /output when that is not set.
-import { cpSync, existsSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
-import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
-import { buildDossier } from "./vendor/makefun-frontend.ts";
+// Leonida Trophy Ledger — hand-in program for gta6-trophy-guide-01.
+// The entry is the static files under app/ beside this file. This program
+// copies app/ and screenshots/ into the output directory (taken from the
+// MAKEFUN_OUTPUT_DIR environment variable, defaulting to /output), then
+// builds the dossier document for that directory with the kit's dossier
+// library and writes it as dossier.json inside the output directory.
+// Run:  mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
+import { cpSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { buildDossier } from './vendor/makefun-frontend.ts';
 
-const root = dirname(fileURLToPath(import.meta.url));
-const out = process.env.MAKEFUN_OUTPUT_DIR || "/output";
+const here = fileURLToPath(new URL('.', import.meta.url));
+const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
+const appDir = join(here, 'app');
+const shotsDir = join(here, 'screenshots');
 
-rmSync(out, { recursive: true, force: true });
-mkdirSync(out, { recursive: true });
+mkdirSync(outDir, { recursive: true });
+cpSync(appDir, join(outDir, 'app'), { recursive: true });
+mkdirSync(join(outDir, 'screenshots'), { recursive: true });
+if (existsSync(shotsDir)) {
+  cpSync(shotsDir, join(outDir, 'screenshots'), { recursive: true });
+}
 
-cpSync(join(root, "app"), join(out, "app"), { recursive: true });
-const shots = join(root, "screenshots");
-if (existsSync(shots)) cpSync(shots, join(out, "screenshots"), { recursive: true });
-
-const dossier = buildDossier(out, {
+const dossier = buildDossier(outDir, {
   text_max_bytes: 163840,
   screenshots: { max: 4, max_bytes: 262144 },
   app_max_files: 993,
   app_max_bytes: 50331648,
-  app_path_max_bytes: 1000,
 });
-writeFileSync(join(out, "dossier.json"), dossier);
-console.log("Leonida Trophy Ledger: dossier written to " + out + "/dossier.json (" + dossier.length + " bytes)");
+writeFileSync(join(outDir, 'dossier.json'), dossier);
