@@ -1,31 +1,20 @@
-# Leonida Trophy Atlas
+# Leonida Trophy Ledger
 
-[![make.fun · gta6-trophy-guide-01](https://make.fun/badge/gta6-trophy-guide-01.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
-[![rank](https://make.fun/badge/gta6-trophy-guide-01/Alim-14-code/gta6-trophy-guide-01/rank.svg)](https://make.fun/bounty/gta6-trophy-guide-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
-[![reward](https://make.fun/badge/gta6-trophy-guide-01/Alim-14-code/gta6-trophy-guide-01/reward.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+An offline guide and tracker for the 55 PlayStation 5 trophies of Grand Theft Auto VI.
 
-An offline guide and tracker for all **55 PlayStation 5 trophies of Grand Theft Auto VI** — 1 platinum, 2 gold, 6 silver and 46 bronze.
+- **Tracker first, no hero banner:** the first screen is the working tool — a compact header (earned count, PSN points, grade split), an audit strip, then a dense three-pane ledger: trophy tracker, mini-dossier detail pane, and a rail with the Next Up roadmap and per-trophy sources.
+- **Every trophy** with its official name, description and grade as PlayStation publishes them, a guide in the ledger's own words, and a citation beside every step.
+- **Precise missable flags:** exactly one possibly missable trophy (Positive Mental Attitude — the Chapter 1 balcony meditation spot), 5 at risk, 6 unconfirmed, 12 disputed with a Sources Differ panel and an Our Call verdict.
+- **Tracker:** progress saved in localStorage, export to a file and import back, filters (story, missable, collectibles, activities, online), search, and a spoiler shield that hides story trophies until earned.
+- **Counts:** 20 trophies carry an official PSN count; each has a Your Count tracker with plus/minus controls.
+- **Offline:** static files under `app/`, no build step, no network request at run time. Serve `app/` with any static server and open `index.html`.
 
-## What it is
-
-- **Tracker:** a checklist of all 55 trophies with official names, descriptions and grades. Progress is saved in the browser (localStorage) and can be exported to a file and imported back.
-- **Filters:** story, missable, collectibles, activities, online (the list has no online trophies — all 55 are single-player), plus earned / not-yet-earned and a search box.
-- **Spoiler setting:** on by default, it hides the names and descriptions of story trophies until you earn them.
-- **Roadmap to the platinum:** five stages built from the official descriptions — story, side strands, collectibles, activities, cleanup.
-- **Missable flags:** 28 trophies flagged, with the moment each one can be missed.
-- **Count trackers:** the 20 trophies that carry an official count (250 stunts, 42 Shooting Range challenges, 100 WAiNK It locations, and more), each with its own +/− counter.
-- **Disputed panels:** 12 trophies in 6 panels where the guides disagree — each panel says plainly what is argued over and what is not yet pinned down. Ten guides are marked unconfirmed rather than inventing details.
-- **Cited guides:** every trophy has a guide written in the author's own words (about 165 steps across the 55 guides), each naming its sources — PlayStation's official list, Exophase, PSNProfiles, GTA Wiki, GTA BOOM, Rockstar's Newswire, IGN, PowerPyx, GTA Series Videos, r/GTA6 and GameSpot. A source is cited, never copied.
-
-The guide is plain static files under `app/` with no build step, works with the network off, and shows no Rockstar logo or official artwork.
-
-## Run it locally
+## Run it
 
 ```sh
-node serve.ts
+python3 -m http.server 8080 --directory app
+# open http://localhost:8080
 ```
-
-Then open http://localhost:8080 in a desktop browser. Any static file server with `app/` at its root works the same way.
 
 ## Hand it in
 
@@ -33,16 +22,8 @@ Then open http://localhost:8080 in a desktop browser. Any static file server wit
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 ```
 
-That copies `app/` and `screenshots/` into the output directory and writes `dossier.json` there with the kit's vendor library. (The vendor library is placed by a separate step; `main.ts` cannot run its dossier step until then.)
+`main.ts` copies `app/` and `screenshots/` to the output directory and writes `dossier.json` with the kit's dossier library (`vendor/makefun-frontend.ts`).
 
-## Files
+## Screenshots
 
-- `app/index.html`, `app/style.css`, `app/app.js` — the guide app
-- `app/data/trophies.json` — the 55 trophies, their official data, guides, sources, roadmap and disputed panels
-- `screenshots/` — four renders of the app (see `shots.json`)
-- `serve.ts` — local preview server
-- `main.ts` — submission entrypoint
-
-## License
-
-MIT — see `LICENSE`.
+`shots.json` lists the four screenshots in `screenshots/` and the view each one shows.
